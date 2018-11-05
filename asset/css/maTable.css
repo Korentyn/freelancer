@@ -1,0 +1,39 @@
+#bodyForm{
+
+ }
+
+#bodyForm:not(div) {
+    background-color: #f6fffb;
+}
+
+.wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 80%;
+}
+
+#myForm-wrapper{
+    display: flex;
+}
+
+#myFormInscription{
+    width : 60vh;
+    height: 80vh;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 12px #aaa;
+
+}
+
+.titleForm{
+    text-align: center;
+}
+
+#register{
+    min-height: 30vh;
+}
+
+.helper-text{
+    color: #bc121e;
+}
