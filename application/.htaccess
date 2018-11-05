@@ -5,10 +5,10 @@
     Deny from all
 </IfModule>
 # DirectoryIndex index.php
- 
+
 # Rewrite engine
 RewriteEngine On
- 
+
 # condition with escaping special chars
 RewriteCond $1 !^(index\.php|resources|robots\.txt)
 RewriteCond %{REQUEST_FILENAME} !-f
