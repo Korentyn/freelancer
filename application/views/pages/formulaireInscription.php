@@ -18,18 +18,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/maTable.css'); ?>">
 </head>
 <body id="bodyForm">
-<nav>
-    <div class="nav-wrapper grey darken-4">
-        <a href="<?php echo site_url(''); ?>" class="brand-logo center">Legion d'honneur</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
-        </ul>
-    </div>
-</nav>
-<ul class="sidenav" id="mobile-demo">
-    <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
-</ul>
+
 
 
 

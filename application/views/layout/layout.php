@@ -1,7 +1,6 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <!--    NAVBAR CLASH ROYALE API -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,16 +9,24 @@
 <body>
 
 <nav>
-    <div class="nav-wrapper grey darken-4">
-        <a href="<?php echo site_url(''); ?>" class="brand-logo center">Night Watch Tavern</a>
+    <div class="nav-wrapper indigo lighten-5">
+        <a href="<?php echo site_url(''); ?>" class="brand-logo center">Freelancer</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a class="orange-text text-darken-1" href="#">Recruter</a></li>
+            <li><a class="grey-text text-darken-4" href="#">Travailler</a></li>
+            <li><a class="grey-text text-darken-4" href="#">Comment ça marche ?</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
         </ul>
     </div>
 </nav>
 <ul class="sidenav" id="mobile-demo">
+    <li><a class="orange-text text-darken-1" href="#">Recruter</a></li>
+    <li><a class="grey-text text-darken-4" href="#">Travailler</a></li>
+    <li><a class="grey-text text-darken-4" href="#">Comment ça marche ?</a></li>
     <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
 
 </ul>

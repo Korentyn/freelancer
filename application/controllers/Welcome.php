@@ -23,6 +23,6 @@ class Welcome extends CI_Controller
     {
         $this->load->helper('url');
         $this->load->view('layout/layout');
-        $this->load->view('pages/tavern_home');
+        $this->load->view('pages/accueil');
     }
 }
