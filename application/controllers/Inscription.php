@@ -15,6 +15,7 @@ class Inscription extends CI_Controller {
     public function index()
     {
         $this->load->helper('url');
+        $this->load->view('layout/layout');
         $this->load->view('pages/formulaireInscription');
         $this->load->view('layout/footer');
     }
