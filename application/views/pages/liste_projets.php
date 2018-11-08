@@ -15,67 +15,128 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo base_url()?>asset/css/style.css" />
     <link rel="stylesheet" href="<?php echo base_url()?>asset/css/nouislider.min.css" />
+
     <title>Document</title>
 </head>
 <body>
 <div class="header">
 <div class="row">
+
     <form class="col s12">
+        <label style="color:black;font-size: 1em;">Pour ajouter une compétence, écrivez la puis appuyez sur entrer</label>
         <div class="row">
             <div class="input-field col s10">
-                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                <label for="textarea1">Compétences</label>
+                <div class="chips chips-autocomplete"></div>
             </div>
         </div>
     </form>
 
 </div>
     <div id="" class="row">
-        <form class="col s4" action="#">
-            <p class="range-field">
-            Prix total : <br>
-            <div id="test-slider"></div>
-            </p>
-        </form>
-        <form class="col s4" action="#">
-            <p class="range-field">
-                Prix / heure : <br>
-            <div id="test-slider2"></div>
-            </p>
-        </form>
+        <form class="col s12" action="#">
+            <div class="input-field col s5">
+                <select>
+                    <option value="" disabled selected>> 0 €</option>
+                    <option value="1">> 50 €</option>
+                    <option value="2">> 100 €</option>
+                    <option value="3">> 200 €</option>
+                    <option value="4">> 500 €</option>
+                </select>
+                <label>Prix total minimum</label>
+            </div>
+
+            <form class="col s6" action="#">
+                <div class="input-field col s5">
+                    <select>
+                        <option value="" disabled selected>> 0 €/h</option>
+                        <option value="1">> 15 €/h</option>
+                        <option value="2">> 20 €/h</option>
+                        <option value="3">> 25 €/h</option>
+                        <option value="4">> 30 €/h</option>
+                    </select>
+                    <label>Prix / heure minimum</label>
+                </div>
     </div>
+</div>
 
+<div class="liste-elem">
+    <div class="liste-elem-title">
+        <div class="nb-resultats">XX Résultats</div>
+        <div class="filtre-resultats">Trier par :</div>
+    </div>
+    <div class="elem">
+        <div class="header-elem">
+            <div class="prix-elem">500 - 750 € fixe</div>
+            <div class="titre-elem">Créer logo + application</div>
+            <div class="createur-elem">DavidCoj</div>
+        </div>
+        <div class="body-elem">
+            <div class="description-elem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque malesuada leo,
+                nec scelerisque ligula mollis ullamcorper. Nunc condimentum erat mi, ut sollicitudin diam
+                hendrerit ac.</div>
+        </div>
+        <div class="footer-elem">
+            <div class="comp-elem">Compétences : Java</div>
+            <div class="postuler-elem"><button class="btn waves-effect waves-light" type="submit" name="action">Postuler
+                    <i class="material-icons left">send</i>
+                </button></div>
+        </div>
 
+    </div>
+    <div class="elem">
+        <div class="header-elem">
+            <div class="prix-elem">500 - 750 € fixe</div>
+            <div class="titre-elem">Créer logo + application</div>
+            <div class="createur-elem">DavidCoj</div>
+        </div>
+        <div class="body-elem">
+            <div class="description-elem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque malesuada leo,
+                nec scelerisque ligula mollis ullamcorper. Nunc condimentum erat mi, ut sollicitudin diam
+                hendrerit ac.</div>
+        </div>
+        <div class="footer-elem">
+            <div class="comp-elem">Compétences : Java</div>
+            <div class="postuler-elem">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Postuler
+                    <i class="material-icons left">send</i>
+                </button>
+            </div>
+        </div>
 
+    </div>
 </div>
 
 <script src="<?php echo base_url()?>asset/js/nouislider.min.js"></script>
 <script>
     $(document).ready(function () {
 
-        var slider = document.getElementById('test-slider');
-        noUiSlider.create(slider, {
-            start: [20, 80],
-            connect: true,
-            step: 1,
-            orientation: 'horizontal', // 'horizontal' or 'vertical'
-            range: {
-                'min': 0,
-                'max': 100
+        //Initialisation champ compétences
+        $('.chips').chips();
+        $('.chips-autocomplete').chips({
+            autocompleteOptions: {
+                data: {
+                    'PHP': null,
+                    'HTML': null,
+                    'Javascript': null,
+                    'Java/JEE': null,
+                    'C': null,
+                    'C++': null,
+                    'C#': null,
+                    'Unity': null,
+                    'Unreal engine': null,
+                    'NodeJS' : null,
+                    'Angular' : null
+
+                },
+                limit: Infinity,
+                minLength: 1
             }
         });
 
-        var slider2 = document.getElementById('test-slider2');
-        noUiSlider.create(slider2, {
-            start: [20, 80],
-            connect: true,
-            step: 1,
-            orientation: 'horizontal', // 'horizontal' or 'vertical'
-            range: {
-                'min': 0,
-                'max': 100
-            }
-        });
+        //Initialisation input prix tt + prix /h
+        $('select').formSelect();
+
+
     });
 </script>
 </body>
