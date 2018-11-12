@@ -77,7 +77,7 @@
         </div>
         <div class="footer-elem">
             <div class="comp-elem">Compétences : Java</div>
-            <div class="postuler-elem"><button class="btn waves-effect waves-light" type="submit" name="action">Postuler
+            <div class="postuler-elem"><button class="btn waves-effect waves-light orange accent-4" type="submit" name="action">Postuler
                     <i class="material-icons left">send</i>
                 </button></div>
         </div>
@@ -97,7 +97,7 @@
         <div class="footer-elem">
             <div class="comp-elem">Compétences : Java</div>
             <div class="postuler-elem">
-                <button class="btn waves-effect waves-light" type="submit" name="action">Postuler
+                <button class="btn waves-effect waves-light orange accent-4" type="submit" name="action">Postuler
                     <i class="material-icons left">send</i>
                 </button>
             </div>
