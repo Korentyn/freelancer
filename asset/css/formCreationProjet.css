@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#myForm-wrapper{
+    width : 80vh;
+
+}
+
+
+#myForm-wrapper > h2{
+    text-align: center;
+}
+
+#myForm-wrapper > button{
+    text-align: center;
+}

@@ -13,52 +13,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inscription</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/menu.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/maTable.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/formCreationProjet.css'); ?>">
 </head>
 <body id="bodyForm">
-
+<form method="post" action="#" enctype="multipart/form-data">
 
 
 
 
 <div id="myForm-wrapper" class="row">
-    <form id="myFormInscription" class="col s12">
-        <h2 class="titleForm">Inscription</h2>
+    <form id="myFormInscription" class="col s12" action="#">
+        <h2 class="titleForm">Création projet</h2>
         <div class="row">
             <div class="input-field col s6">
                 <input id="pseudo" type="text" class="validate">
-                <label for="pseudo">Pseudo</label>
+                <label for="pseudo">Titre du projet</label>
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s6">
-                <input id="password1" type="password" class="validate">
-                <label for="password1">Mot de passe</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="password2" type="password" class="validate" oninput="verifPassword()">
-                <label for="password2">Vérification mot de passe</label>
-                <span class="helper-text" data-error="wrong" data-success="right">On dirait que tu ne sais pas recopier un mot de passe</span>
+            <div class="input-field col s12">
+                <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
+                <label for="textarea2">Description</label>
             </div>
         </div>
         <div class="row">
-            <div id="register" class="flex">
-                <a href="#" id="sign" class="bttn">Enregistrer</a>
+            <div class="input-field col s12">
+                <select>
+                    <option value="" disabled selected>Choisissez votre catégorie</option>
+                    <option value="1">0-250€ (Petit projet)</option>
+                    <option value="2">250-500€ (Moyen projet)</option>
+                    <option value="3">500-1000€ (Grand projet)</option>
+                    <option value="3">+1000€ (Très grand projet)</option>
+                </select>
+                <label>Coût du projet</label>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col s12">
+                <label style="color:black;font-size: 1em;">Pour ajouter une compétence, écrivez la puis appuyez sur entrer</label>
+                <div class="row">
+                    <div class="input-field col s10">
+                        <div class="chips chips-autocomplete"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            Entrez un tag pour définir votre projet (site, logo,...) puis appuyez sur "Entrer" (3 maximum)
+            <div class="input-field col s12">
+                <div class="chips chips-placeholder"></div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>File</span>
+                        <input type="file" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="60" />
+                        <input class="file-path validate" type="text" placeholder="Upload un ou plusieurs fichier(s) < 50 Mo ">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Poster mon projet
+                <i class="material-icons right">send</i>
+            </button>
+
     </form>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+</form>
 <script>
 
     $(document).ready(function () {
+        //Initialisation "Cout du projet"
+        $('select').formSelect();
 
+        //Initialisation de l'input "Tags"
+        $('.chips-placeholder').chips({
+            placeholder: '',
+
+        });
+
+        //Initialisation input compétences + tableau autocomplétion
+        $('.chips-autocomplete').chips({
+            autocompleteOptions: {
+                data: {
+                    'PHP': null,
+                    'HTML': null,
+                    'Javascript': null,
+                    'Java/JEE': null,
+                    'C': null,
+                    'C++': null,
+                    'C#': null,
+                    'Unity': null,
+                    'Unreal engine': null,
+                    'NodeJS' : null,
+                    'Angular' : null
+
+                },
+                limit: Infinity,
+                minLength: 1
+            }
+        });
 
 
         $('#sign').click(function () {

@@ -45,7 +45,7 @@
                 <label>Prix total minimum</label>
             </div>
 
-            <form class="col s6" action="#">
+
                 <div class="input-field col s5">
                     <select>
                         <option value="" disabled selected>> 0 €/h</option>
@@ -56,6 +56,7 @@
                     </select>
                     <label>Prix / heure minimum</label>
                 </div>
+            </form>
     </div>
 </div>
 
