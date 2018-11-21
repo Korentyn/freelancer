@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/formCreationProjet.css'); ?>">
 </head>
 <body id="bodyForm">
+<?php echo validation_errors(); ?>
+
 <form method="post" action="#" enctype="multipart/form-data">
 
 
@@ -24,21 +26,23 @@
 <div id="myForm-wrapper" class="row">
     <form id="myFormInscription" class="col s12" action="#">
         <h2 class="titleForm">Création projet</h2>
+        <div class="champsObligatoires">
+            <h5>Champs obligatoires</h5>
         <div class="row">
             <div class="input-field col s6">
-                <input id="pseudo" type="text" class="validate">
-                <label for="pseudo">Titre du projet</label>
+                <textarea id="titre" class="materialize-textarea" size="30" data-length="30"></textarea>
+                <label for="titre">Titre du projet</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="textarea2" class="materialize-textarea" data-length="120"></textarea>
-                <label for="textarea2">Description</label>
+                <textarea id="description" class="materialize-textarea" size="1200" data-length="1200"></textarea>
+                <label for="description">Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <select>
+                <select id="catProjet">
                     <option value="" disabled selected>Choisissez votre catégorie</option>
                     <option value="1">0-250€ (Petit projet)</option>
                     <option value="2">250-500€ (Moyen projet)</option>
@@ -53,13 +57,15 @@
             <div class="col s12">
                 <label style="color:black;font-size: 1em;">Pour ajouter une compétence, écrivez la puis appuyez sur entrer</label>
                 <div class="row">
-                    <div class="input-field col s10">
+                    <div id="competences" class="input-field col s10">
                         <div class="chips chips-autocomplete"></div>
                     </div>
                 </div>
             </div>
         </div>
-        
+        </div>
+        <div class="champsOptionnels">
+            <h5>Champs facultatifs</h5>
         <div class="row">
             Entrez un tag pour définir votre projet (site, logo,...) puis appuyez sur "Entrer" (3 maximum)
             <div class="input-field col s12">
@@ -81,8 +87,8 @@
                 </div>
             </div>
         </div>
-
-            <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Poster mon projet
+        </div>
+            <button id="boutonEnvoi" class="btn waves-effect waves-light btn-large orange darken-1" type="submit" name="action">Poster mon projet
                 <i class="material-icons right">send</i>
             </button>
 
@@ -92,6 +98,10 @@
 <script>
 
     $(document).ready(function () {
+
+        $('input#input_text, textarea#description').characterCounter();
+        $('input#input_text, textarea#titre').characterCounter();
+
         //Initialisation "Cout du projet"
         $('select').formSelect();
 
@@ -124,14 +134,17 @@
         });
 
 
-        $('#sign').click(function () {
-            var $nom = $("#pseudo").val();
-            var $prenom = $("#password1").val();
-
-            //alert("Vous avez tapé : " + $nom );
-
-            poster_event($nom, $prenom, $note);
-        });
+        // $('#boutonEnvoi').click(function () {
+        //     $titre = $("#titre").val();
+        //     $description = $("#description").val();
+        //     $categorie = $("#catProjet").val();
+        //     $competences = $("#competences").val();
+        //
+        //
+        //     // alert("Vous avez tapé : " + $titre + $description + $categorie + $competences );
+        //
+        //     // poster_event($nom, $prenom, $note);
+        // });
 
     });
 

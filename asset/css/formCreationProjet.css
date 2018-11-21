@@ -7,6 +7,8 @@
 #myForm-wrapper{
     width : 80vh;
 
+    padding : 5px;
+    box-shadow: 3px 6px 4px #bbb4b5;
 }
 
 
@@ -14,6 +16,28 @@
     text-align: center;
 }
 
-#myForm-wrapper > button{
-    text-align: center;
+#boutonEnvoi{
+
+}
+
+.row{
+    margin-top : 20px;
+    padding-left: 5px;
+}
+
+.champsOptionnels{
+    border-left: 3px solid #4A77BF;
+}
+
+.champsOptionnels > h5{
+    color: #4A77BF;
+}
+
+
+.champsObligatoires{
+    border-left: 3px solid #F2A562;
+}
+
+.champsObligatoires > h5{
+    color: #F2A562;
 }

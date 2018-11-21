@@ -9,15 +9,15 @@
 <body>
 <!-- NAVBAR PRINCIPALE -->
 <nav>
-    <div class="nav-wrapper indigo lighten-5">
+    <div class="nav-wrapper indigo darken-2">
         <a href="<?php echo site_url(''); ?>" class="brand-logo center">Freelancer</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a class="orange-text text-darken-1" href="<?php echo site_url('index.php/Inscription/projet'); ?>">Poster un projet</a></li>
-            <li><a class="grey-text text-darken-4" href="<?php echo site_url('index.php/Trouver/freelance'); ?>">Recruter</a></li>
-            <li><a class="grey-text text-darken-4" href="<?php echo site_url('index.php/Trouver/projets'); ?>">Travailler</a></li>
-            <li><a class="grey-text text-darken-4" href="#">Comment ça marche ?</a></li>
+            <li><a class="white-text " href="<?php echo site_url('index.php/Trouver/freelance'); ?>">Recruter</a></li>
+            <li><a class="white-text " href="<?php echo site_url('index.php/Trouver/projets'); ?>">Travailler</a></li>
+            <li><a class="gwhite-text " href="#">Comment ça marche ?</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
