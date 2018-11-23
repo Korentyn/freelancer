@@ -1,83 +1,95 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require(APPPATH . '/libraries/REST_Controller.php');
 
 
 
-class Projet extends REST_Controller
+class Projet extends CI_Controller
 {
 
 
-    //----------------------------------------------------
-    public function projet_put()
+
+
+    public function creer()
     {
-
-//        $id_user = $this->put('id_user');
-//        $nom = $this->put('nom');
-//        $mail = $this->put('mail');
-//
-//        if ($id_user != "" && $nom != "" && $mail != "") {
-//            $this->load->model('Userbdd');
-//            $this->Userbdd->modifierUser($id_user, $nom, $mail);
-//            $donnees_reponse = array("message" => "Profil modifie, Merci !");
-//            $status = 201;
-//        } else {
-//
-//            $donnees_reponse = array("message" => "erreur de modification du profil");
-//            $status = 408;
-//
-//
-//        }
-//        $this->response($donnees_reponse, $status);
-
-
-    }
-
-
-    //----------------------------------------------------
-    public function projet_get()
-    {
-// je récupère des data dans l'url (params) de la requete HTTP
-        $id = $this->get('id');
-
-
+        $this->load->library('form_validation');
+        $this->load->helper('url_helper');
+        $this->load->helper(array('form', 'url'));
         $this->load->model('Projetbdd');
-        $donnees = $this->Projetbdd->listerProjetTous();
+        $this->load->view('layout/layout');
 
+//        $this->form_validation->set_rules('titre', 'Titre', 'required');
+//        $this->form_validation->set_rules('description', 'Description', 'required');
+//
+//        $this->form_validation->set_rules('categorie','Categories','required|callback_check_default');
+//        $this->form_validation->set_message('check_default', 'Vous devez sélectionner une catégorie de projet');
+//
+//        $this->form_validation->set_rules('tableau-competences', 'Compétences attendues', 'required');
+//
 
-        $this->response($donnees, 200);
+            $this->load->view('pages/formCreationProjet');
+
+        $this->load->view('layout/footer');
+
 
 
     }
 
 
     //----------------------------------------------------
-    public function projet_post()
+    public function lister()
+    {
+        $this->load->helper('url');
+        $this->load->view('layout/layout');
+        $this->load->view('pages/liste_projets');
+    }
+
+
+    //----------------------------------------------------
+    public function enregistrer()
     {
 
-        // je récupère des data dans le body de la requete HTTP
-        $nom = $this->post('nom');
-        $prenom = $this->post('prenom');
-        $note = $this->post('note');
+        $titre = $this->input->post('titre');
+        $description = $this->input->post('description');
+        $budget = $this->input->post('categorie');
+        $competences = $this->input->post('competences');
+        $motclefs = $this->input->post('motclefs');
+        $porteur_projet_id = 1;
 
-        if ($nom != "" && $prenom != "") {
-            $this->load->model('Projetbdd');
-            $this->Projetbdd->creerProjet($nom, $prenom, $note);
+        $competences = explode(";", $competences);
+        echo $competences[0];
+        echo $competences[1];
 
-            $donnees_reponse = array("message" => "creation " . $nom . " et " . $prenom . " ok !");
-            $status = 201;
-        } else {
-            $donnees_reponse = array("message" => "erreur creation manque prenom");
-            $status = 408;
-        }
+//        if ($titre!= "" && $description!= "" && $budget!= "" && $competences!= "") {
+//
+//
+//            $competences = explode(";", $competences);
+//            echo $competences[0];
+//            echo $competences[1];
+//
+//
+//
+//            $this->load->model('Projetbdd');
+//            $this->Projetbdd->creerProjet($titre, $description, $budget, $motclef1, $motclef2,
+//                $motclef3, $porteur_projet_id);
+//        }
 
-        $this->response($donnees_reponse, $status);
+
+
+
+        $this->load->helper('url');
+        $this->load->view('layout/layout');
+        $this->load->view('pages/formCreationProjetSuccess');
 
 
     }
 
+    public function listeComp(){
+        $this->load->model('Projetbdd');
+        $competences = $this->Userbdd->listerTechnologies();
 
+        return $competences;
+    }
 
 
 

@@ -25,14 +25,17 @@ class Inscription extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('url_helper');
         $this->load->helper(array('form', 'url'));
+        $this->load->model('Projetbdd');
+        $this->load->view('layout/layout');
 
         $this->form_validation->set_rules('titre', 'Titre', 'required');
         $this->form_validation->set_rules('description', 'Description', 'required');
-        $this->form_validation->set_rules('catProjet', 'Coût du projet', 'required');
-        $this->form_validation->set_rules('competences', 'Compétences attendues', 'required');
 
-        $this->load->model('Projetbdd');
-        $this->load->view('layout/layout');
+        $this->form_validation->set_rules('categorie','Categories','required|callback_check_default');
+        $this->form_validation->set_message('check_default', 'Vous devez sélectionner une catégorie de projet');
+
+        $this->form_validation->set_rules('tableau-competences', 'Compétences attendues', 'required');
+
         if ($this->form_validation->run() == FALSE)
         {
             $this->load->view('pages/formCreationProjet');
@@ -44,5 +47,8 @@ class Inscription extends CI_Controller {
         $this->load->view('layout/footer');
     }
 
-
+    function check_default($post_string)
+    {
+        return $post_string == '0' ? FALSE : TRUE;
+    }
 }

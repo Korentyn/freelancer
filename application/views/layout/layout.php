@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
@@ -14,9 +14,9 @@
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-            <li><a class="orange-text text-darken-1" href="<?php echo site_url('index.php/Inscription/projet'); ?>">Poster un projet</a></li>
-            <li><a class="white-text " href="<?php echo site_url('index.php/Trouver/freelance'); ?>">Recruter</a></li>
-            <li><a class="white-text " href="<?php echo site_url('index.php/Trouver/projets'); ?>">Travailler</a></li>
+            <li><a class="orange-text text-darken-1" href="<?php echo site_url('index.php/Projet/creer'); ?>">Poster un projet</a></li>
+            <li><a class="white-text " href="<?php echo site_url('index.php/Utilisateur/freelance'); ?>">Recruter</a></li>
+            <li><a class="white-text " href="<?php echo site_url('index.php/Projet/lister'); ?>">Travailler</a></li>
             <li><a class="gwhite-text " href="#">Comment ça marche ?</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">

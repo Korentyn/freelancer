@@ -17,14 +17,14 @@ class Projetbdd extends CI_Model {
 
 
 
-    public function creerProjet($titre, $presentation, $budget, $tarif_max,$motclef1, $motclef2,
+    public function creerProjet($titre, $description, $budget, $motclef1, $motclef2,
                                 $motclef3, $porteur_projet_id)
     {
         $this->load->database();
 
-        $sql = "INSERT INTO `projet` SET `titre`=?, `presentation`=?, `budget`=?, `tarif_hor_max`=?, `mot_cle1`=?,
+        $sql = "INSERT INTO `projet` SET `titre`=?, `description`=?, `budget`=?, `tarif_hor_max`=?, `mot_cle1`=?,
                  `mot_cle2`=?, `mot_cle3`=?, `porteur_projet_id`=?";
-        $query = $this->db->query($sql, array($titre, $presentation, $budget, $tarif_max,$motclef1, $motclef2,
+        $query = $this->db->query($sql, array($titre, $description, $budget, $motclef1, $motclef2,
             $motclef3, $porteur_projet_id));
 
 
@@ -32,7 +32,24 @@ class Projetbdd extends CI_Model {
         return $query;
     }
 
+    public function creerInfos($date, $url, $titre, $projetId){
+        $this->load->database();
 
+        $sql = "INSERT INTO `infos` SET `date`=?, `url`=?, `titre`=?, `projet_id`=?";
+        $query = $this->db->query($sql, array($date, $url, $titre, $projetId));
+
+
+
+        return $query;
+
+    }
+
+    public function listerTechnologies(){
+        $this->load->database();
+        $query = $this->db->query('SELECT * FROM `technologies`');
+
+        return $query;
+    }
 
 
     public function modifierProjet($id_user, $nom, $prenom, $note) {

@@ -16,38 +16,39 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/formCreationProjet.css'); ?>">
 </head>
 <body id="bodyForm">
-<?php echo validation_errors(); ?>
+<?php //echo validation_errors(); ?>
+<?php //echo form_open('index.php/Inscription/projet'); ?>
+<form method="post" action="http://localhost/ISTEF/freelancer/App/index.php/Projet/enregistrer" <!--enctype="multipart/form-data"-->>
 
-<form method="post" action="#" enctype="multipart/form-data">
 
-
-
+    <h2 class="titleForm">Création projet</h2>
 
 <div id="myForm-wrapper" class="row">
-    <form id="myFormInscription" class="col s12" action="#">
-        <h2 class="titleForm">Création projet</h2>
+
+
+
         <div class="champsObligatoires">
             <h5>Champs obligatoires</h5>
         <div class="row">
             <div class="input-field col s6">
-                <textarea id="titre" class="materialize-textarea" size="30" data-length="30"></textarea>
+                <textarea id="titre" name="titre" value="<?php echo set_value('titre'); ?>" class="materialize-textarea" size="30" data-length="30"></textarea>
                 <label for="titre">Titre du projet</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="description" class="materialize-textarea" size="1200" data-length="1200"></textarea>
+                <textarea id="description" name="description" value="<?php echo set_value('description'); ?>" class="materialize-textarea" size="1200" data-length="1200"></textarea>
                 <label for="description">Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <select id="catProjet">
-                    <option value="" disabled selected>Choisissez votre catégorie</option>
-                    <option value="1">0-250€ (Petit projet)</option>
-                    <option value="2">250-500€ (Moyen projet)</option>
-                    <option value="3">500-1000€ (Grand projet)</option>
-                    <option value="3">+1000€ (Très grand projet)</option>
+                <select name="categorie" value="<?php echo set_value('categorie'); ?>" id="catProjet">
+                    <option value="0" disabled selected>Choisissez votre catégorie</option>
+                <option value="1">0-250€ (Petit projet)</option>
+                <option value="2">250-500€ (Moyen projet)</option>
+                <option value="3">500-1000€ (Grand projet)</option>
+                <option value="3">+1000€ (Très grand projet)</option>
                 </select>
                 <label>Coût du projet</label>
             </div>
@@ -57,8 +58,9 @@
             <div class="col s12">
                 <label style="color:black;font-size: 1em;">Pour ajouter une compétence, écrivez la puis appuyez sur entrer</label>
                 <div class="row">
-                    <div id="competences" class="input-field col s10">
+                    <div id="" value="" class="input-field col s10">
                         <div class="chips chips-autocomplete"></div>
+                        <input name="competences" id="competences" type="text">
                     </div>
                 </div>
             </div>
@@ -70,7 +72,7 @@
             Entrez un tag pour définir votre projet (site, logo,...) puis appuyez sur "Entrer" (3 maximum)
             <div class="input-field col s12">
                 <div class="chips chips-placeholder"></div>
-
+                <input name="motclefs" id="motclefs" type="text">
             </div>
         </div>
         <div class="row">
@@ -92,12 +94,14 @@
                 <i class="material-icons right">send</i>
             </button>
 
-    </form>
+
 </div>
 </form>
 <script>
 
     $(document).ready(function () {
+
+        recup_competences ();
 
         $('input#input_text, textarea#description').characterCounter();
         $('input#input_text, textarea#titre').characterCounter();
@@ -126,11 +130,19 @@
                     'Unreal engine': null,
                     'NodeJS' : null,
                     'Angular' : null
-
                 },
                 limit: Infinity,
                 minLength: 1
             }
+        });
+        $('.chips').on('chip.add', function(e, chip){
+            console.log("Added",chip);
+        });
+        $('.chips').on('chip.delete', function(e, chip){
+            console.log("Delete",chip);
+        });
+        $('.chips').on('chip.select', function(e, chip){
+            console.log("Select",chip);
         });
 
 
@@ -157,6 +169,22 @@
         }
     }
 
+    function recup_competences (){
+        $.ajax(
+            {
+                type: 'POST',
+                url: 'http://localhost/ISTEF/freelancer/App/index.php/Projet/listeComp',
+                header: "Accept : application/json",
+                success: function (data) {
+                    console.log(data);
+
+                },
+                error: function (errorThrown) {
+                    // Une erreur s'est produite lors de la requete
+                    console.log(errorThrown);
+                }
+            });
+    }
 
     function poster_event(nom, prenom, note) {
 

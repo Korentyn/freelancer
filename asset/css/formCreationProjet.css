@@ -5,24 +5,28 @@
 }
 
 #myForm-wrapper{
-    width : 80vh;
-
+    width: 80%;
     padding : 5px;
+    margin-bottom: 10px;
     box-shadow: 3px 6px 4px #bbb4b5;
 }
 
+.hiddendiv{
+    display: none;
+}
 
-#myForm-wrapper > h2{
+h2{
     text-align: center;
 }
 
 #boutonEnvoi{
-
+    display: block;
+    margin: auto;
 }
 
 .row{
     margin-top : 20px;
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 .champsOptionnels{
