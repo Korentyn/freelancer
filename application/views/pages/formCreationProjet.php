@@ -173,7 +173,7 @@
         $.ajax(
             {
                 type: 'POST',
-                url: 'http://localhost/ISTEF/freelancer/App/index.php/Projet/listeComp',
+                url: 'http://localhost/freelancer/index.php/Projet/listeComp',
                 header: "Accept : application/json",
                 success: function (data) {
                     console.log(data);
