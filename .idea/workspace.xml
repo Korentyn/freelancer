@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="673de53c-e446-4e3d-853e-b40ebafe1b2c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/asset/css/formCreationProjet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layout/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layout/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Projet.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Projet.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/pages/formCreationProjet.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/pages/formCreationProjet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/pages/liste_projets.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/pages/liste_projets.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,26 +24,8 @@
           <file leaf-file-name="liste_projets.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/pages/liste_projets.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="792">
-                  <caret line="134" column="11" lean-forward="true" selection-start-line="115" selection-start-column="8" selection-end-line="134" selection-end-column="11" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="accueil.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/pages/accueil.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="19" selection-start-line="19" selection-end-line="19" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/layout/layout.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1474">
-                  <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+                <state relative-caret-position="527">
+                  <caret line="134" column="11" selection-start-line="115" selection-start-column="8" selection-end-line="134" selection-end-column="11" />
                 </state>
               </provider>
             </entry>
@@ -59,34 +39,66 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Projet.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Projet.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
-              <provider selected="true" editor-type-id="text-editor" />
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="629">
+                  <caret line="90" column="46" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-506">
+                  <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Utilisateur.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-911" />
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Projetbdd.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/models/Projetbdd.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1055">
+                  <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="739">
+                  <caret line="144" column="31" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
+                </state>
+              </provider>
             </entry>
           </file>
           <file leaf-file-name="Inscription.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/controllers/Inscription.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="396">
-                  <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
+                  <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="welcome_message.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/application/views/welcome_message.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1716">
-                  <caret line="78" column="57" lean-forward="true" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="formCreationProjet.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="formCreationProjet.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjet.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="440">
-                  <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+                <state relative-caret-position="461">
+                  <caret line="182" column="13" lean-forward="true" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+                  <folding>
+                    <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -103,12 +115,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="formCreationProjet.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/asset/css/formCreationProjet.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+                <state relative-caret-position="739">
+                  <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -144,7 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/models/Supprimerbdd.php" />
         <option value="$PROJECT_DIR$/application/views/groupesupprimer.php" />
         <option value="$PROJECT_DIR$/application/controllers/Produit.php" />
         <option value="$PROJECT_DIR$/application/views/vueartistecree.php" />
@@ -166,7 +177,6 @@
         <option value="$PROJECT_DIR$/application/models/Evenementbdd.php" />
         <option value="$PROJECT_DIR$/application/controllers/user.php" />
         <option value="$PROJECT_DIR$/application/models/Userbdd.php" />
-        <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/application/controllers/Signalement.php" />
         <option value="$PROJECT_DIR$/application/models/Commentairebdd.php" />
         <option value="$PROJECT_DIR$/application/models/Signalementbdd.php" />
@@ -195,6 +205,8 @@
         <option value="$PROJECT_DIR$/application/views/layout/footer.php" />
         <option value="$PROJECT_DIR$/asset/css/formCreationProjet.css" />
         <option value="$PROJECT_DIR$/application/views/pages/formCreationProjet.php" />
+        <option value="$PROJECT_DIR$/application/config/autoload.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Projet.php" />
       </list>
     </option>
   </component>
@@ -236,7 +248,19 @@
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
               <item name="freelancer" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
@@ -349,7 +373,8 @@
       <workItem from="1536061399596" duration="21000" />
       <workItem from="1541452994935" duration="3749000" />
       <workItem from="1542618477762" duration="5471000" />
-      <workItem from="1542711377699" duration="9560000" />
+      <workItem from="1542711377699" duration="9613000" />
+      <workItem from="1543857897603" duration="5022000" />
     </task>
     <task id="LOCAL-00001" summary="Test github">
       <created>1531130734270</created>
@@ -386,15 +411,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541456728537</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="formulaire creation projet html + css">
+      <created>1542745969136</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542745969136</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244318000" />
+    <option name="totallyTimeSpent" value="249393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15625" />
       <window_info anchor="bottom" id="TODO" order="11" />
@@ -429,7 +460,8 @@
     <MESSAGE value="Finalisation partie Préférences de l'user" />
     <MESSAGE value="ajout navbar + geolocalisartion de l'user" />
     <MESSAGE value="swqdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="swqdf" />
+    <MESSAGE value="formulaire creation projet html + css" />
+    <option name="LAST_COMMIT_MESSAGE" value="formulaire creation projet html + css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -437,14 +469,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/libraries/layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="84" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Dev/ISTEF/Web services/version codeiniter/testrest.php" />
     <entry file="file://D:/Dev/ISTEF/Web services/version codeiniter/routes.php" />
     <entry file="file://D:/Dev/ISTEF/Web services/exemples/exemple_request_data.php" />
     <entry file="file://$PROJECT_DIR$/application/views/groupesupprimer.php" />
@@ -458,20 +482,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/by.css" />
-    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="822">
-          <caret line="61" selection-start-line="61" selection-end-line="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Signalementbdd.php" />
     <entry file="file://$PROJECT_DIR$/application/models/Commentairebdd.php" />
     <entry file="file://$PROJECT_DIR$/application/models/Userbdd.php">
@@ -544,7 +554,7 @@
     <entry file="file://$PROJECT_DIR$/application/views/welcome_message.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1716">
-          <caret line="78" column="57" lean-forward="true" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
+          <caret line="78" column="57" selection-start-line="78" selection-start-column="57" selection-end-line="78" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -558,7 +568,7 @@
     <entry file="file://$PROJECT_DIR$/application/views/layout/layout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1474">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
@@ -572,27 +582,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/liste_freelancer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Inscription.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
-          <caret line="18" column="43" lean-forward="true" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/liste_projets.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="134" column="11" lean-forward="true" selection-start-line="115" selection-start-column="8" selection-end-line="134" selection-end-column="11" />
+          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -615,8 +608,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjet.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+        <state relative-caret-position="461">
+          <caret line="182" column="13" lean-forward="true" selection-start-line="182" selection-start-column="13" selection-end-line="182" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#div#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="144" column="31" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-911" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Projetbdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1055">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-506">
+          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/liste_projets.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="134" column="11" selection-start-line="115" selection-start-column="8" selection-end-line="134" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/liste_freelancer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="90" column="46" selection-start-line="90" selection-start-column="46" selection-end-line="90" selection-end-column="46" />
         </state>
       </provider>
     </entry>

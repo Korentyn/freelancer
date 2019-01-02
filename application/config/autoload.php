@@ -142,4 +142,4 @@ $autoload['model'] = array();
 |
 */
 
-$autoload['libraries'] = array('session');
+$autoload['libraries'] = array( 'session');
