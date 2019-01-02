@@ -101,7 +101,7 @@
 
     $(document).ready(function () {
 
-        recup_competences ();
+        recup_competences();
 
         $('input#input_text, textarea#description').characterCounter();
         $('input#input_text, textarea#titre').characterCounter();
@@ -174,9 +174,10 @@
             {
                 type: 'POST',
                 url: 'http://localhost/ISTEF/freelancer/App/index.php/Projet/listeComp',
-                header: "Accept : application/json",
+
                 success: function (data) {
                     console.log(data);
+                    
 
                 },
                 error: function (errorThrown) {
@@ -184,6 +185,8 @@
                     console.log(errorThrown);
                 }
             });
+
+
     }
 
     function poster_event(nom, prenom, note) {

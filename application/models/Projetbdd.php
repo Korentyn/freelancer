@@ -40,15 +40,17 @@ class Projetbdd extends CI_Model {
 
 
 
-        return $query;
+        return $query->result_object();
 
     }
 
+
     public function listerTechnologies(){
         $this->load->database();
+
         $query = $this->db->query('SELECT * FROM `technologies`');
 
-        return $query;
+        return $query->result_object();
     }
 
 

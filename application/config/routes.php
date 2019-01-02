@@ -54,6 +54,7 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
 $route['Inscription'] = 'Inscription';
+$route['validation'] = 'Inscription';
 /*
 | -------------------------------------------------------------------------
 | Sample REST API Routes

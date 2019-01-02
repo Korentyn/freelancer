@@ -86,9 +86,9 @@ class Projet extends CI_Controller
 
     public function listeComp(){
         $this->load->model('Projetbdd');
-        $competences = $this->Userbdd->listerTechnologies();
+        $competences = $this->Projetbdd->listerTechnologies();
+var_dump($competences);
 
-        return $competences;
     }
 
 
