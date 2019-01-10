@@ -87,7 +87,8 @@ class Projet extends CI_Controller
     public function listeComp(){
         $this->load->model('Projetbdd');
         $competences = $this->Projetbdd->listerTechnologies();
-var_dump($competences);
+        $json = json_encode($competences);
+        echo($json);
 
     }
 

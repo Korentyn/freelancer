@@ -177,7 +177,14 @@
 
                 success: function (data) {
                     console.log(data);
-                    
+                    $arrayLength = data.length;
+
+                    console.log(data);
+
+
+                    // for (var i = 0; i < $arrayLength; i++) {
+                    //     console.log(data["titre"]);
+                    // }
 
                 },
                 error: function (errorThrown) {
