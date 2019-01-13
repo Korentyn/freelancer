@@ -116,25 +116,27 @@
         });
 
         //Initialisation input compétences + tableau autocomplétion
-        $('.chips-autocomplete').chips({
-            autocompleteOptions: {
-                data: {
-                    'PHP': null,
-                    'HTML': null,
-                    'Javascript': null,
-                    'Java/JEE': null,
-                    'C': null,
-                    'C++': null,
-                    'C#': null,
-                    'Unity': null,
-                    'Unreal engine': null,
-                    'NodeJS' : null,
-                    'Angular' : null
-                },
-                limit: Infinity,
-                minLength: 1
-            }
-        });
+        // $('.chips-autocomplete').chips({
+        //     autocompleteOptions: {
+        //         data: {
+        //             'PHP': null,
+        //             'HTML': null,
+        //             'Javascript': null,
+        //             'Java/JEE': null,
+        //             'C': null,
+        //             'C++': null,
+        //             'C#': null,
+        //             'Unity': null,
+        //             'Unreal engine': null,
+        //             'NodeJS' : null,
+        //             'Angular' : null
+        //         },
+        //         limit: Infinity,
+        //         minLength: 1
+        //
+        //     }
+        // });
+
         $('.chips').on('chip.add', function(e, chip){
             console.log("Added",chip);
         });
@@ -174,17 +176,33 @@
             {
                 type: 'POST',
                 url: 'http://localhost/ISTEF/freelancer/App/index.php/Projet/listeComp',
-
+                dataType: 'json',
                 success: function (data) {
-                    console.log(data);
+                    //array = JSON.parse(data);
                     $arrayLength = data.length;
+                    //console.log(typeof data);
+                     //console.log(data);
+                    var nul = null;
+                    var newTab = data.map(function(item) {
+                        return item.titre+" : "+null;
+                    });
 
-                    console.log(data);
+                    console.log(typeof newTab);
+                    console.log(newTab);
+
+                    $('.chips-autocomplete').chips({
+                        autocompleteOptions: {
+                            data: {
 
 
-                    // for (var i = 0; i < $arrayLength; i++) {
-                    //     console.log(data["titre"]);
-                    // }
+
+                                        },
+                            limit: Infinity,
+                            minLength: 1
+
+                        }
+                    });
+
 
                 },
                 error: function (errorThrown) {
