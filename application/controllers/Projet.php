@@ -12,23 +12,13 @@ class Projet extends CI_Controller
 
     public function creer()
     {
-        $this->load->library('form_validation');
         $this->load->helper('url_helper');
-        $this->load->helper(array('form', 'url'));
+        $this->load->helper( 'url');
         $this->load->model('Projetbdd');
+        $data['budget'] = $this->Projetbdd->listerBudget();
+        $data['competence'] = $this->Projetbdd->listerTechnologies();
         $this->load->view('layout/layout');
-
-//        $this->form_validation->set_rules('titre', 'Titre', 'required');
-//        $this->form_validation->set_rules('description', 'Description', 'required');
-//
-//        $this->form_validation->set_rules('categorie','Categories','required|callback_check_default');
-//        $this->form_validation->set_message('check_default', 'Vous devez sélectionner une catégorie de projet');
-//
-//        $this->form_validation->set_rules('tableau-competences', 'Compétences attendues', 'required');
-//
-
-            $this->load->view('pages/formCreationProjet');
-
+        $this->load->view('pages/formCreationProjet', $data);
         $this->load->view('layout/footer');
 
 
@@ -40,8 +30,11 @@ class Projet extends CI_Controller
     public function lister()
     {
         $this->load->helper('url');
+        $this->load->model('Projetbdd');
+        $data['news'] = $this->Projetbdd->listerProjetTous();
+
         $this->load->view('layout/layout');
-        $this->load->view('pages/liste_projets');
+        $this->load->view('pages/liste_projets', $data);
     }
 
 
@@ -52,34 +45,57 @@ class Projet extends CI_Controller
         $titre = $this->input->post('titre');
         $description = $this->input->post('description');
         $budget = $this->input->post('categorie');
-        $competences = $this->input->post('competences');
-        $motclefs = $this->input->post('motclefs');
+        $competence = $this->input->post('competence');
+        $motcle = $this->input->post('motcle');
         $porteur_projet_id = 1;
 
-        $competences = explode(";", $competences);
-        echo $competences[0];
-        echo $competences[1];
+        echo $titre.' '.$description.' '.$budget.' '.$competence;
 
-//        if ($titre!= "" && $description!= "" && $budget!= "" && $competences!= "") {
+//        $competences = explode(";", $competences);
+//        echo $competences[0];
+//        echo $competences[1];
+
+//       if ($titre!= "" && $description!= "" && $budget != "" ) {
 //
+
+////            $competences = explode(";", $competences);
+////            echo $competences[0];
+////            echo $competences[1];
+//           if(isset($competences)) {
 //
-//            $competences = explode(";", $competences);
-//            echo $competences[0];
-//            echo $competences[1];
+//           }else {
+//               $competences = "";
+//           }
+//           if(empty($motclefs)) {
+//               $motclef1 = "";
+//               $motclef2 = "";
+//               $motclef3 = "";
+//           }else {
 //
-//
+//           }
 //
 //            $this->load->model('Projetbdd');
-//            $this->Projetbdd->creerProjet($titre, $description, $budget, $motclef1, $motclef2,
-//                $motclef3, $porteur_projet_id);
+//
+//            if( $this->Projetbdd->creerProjet($titre, $description, $budget, $motclef1, $motclef2,
+//               $motclef3, $porteur_projet_id)!=1){
+//                $this->load->helper('url');
+//                $this->load->view('layout/layout');
+//                $this->load->view('pages/formCreationProjetFail');
+//
+//            }else{
+//                $this->load->helper('url');
+//                $this->load->view('layout/layout');
+//                $this->load->view('pages/formCreationProjetSuccess');
+//            }
+//
 //        }
+//
+//        $this->load->helper('url');
+//        $this->load->view('layout/layout');
+//        $this->load->view('pages/formCreationProjetFail');
 
 
 
-
-        $this->load->helper('url');
-        $this->load->view('layout/layout');
-        $this->load->view('pages/formCreationProjetSuccess');
 
 
     }
@@ -87,8 +103,8 @@ class Projet extends CI_Controller
     public function listeComp(){
         $this->load->model('Projetbdd');
         $competences = $this->Projetbdd->listerTechnologies();
-        $json = json_encode($competences);
-        echo($json);
+        echo(json_encode($competences));
+
 
     }
 

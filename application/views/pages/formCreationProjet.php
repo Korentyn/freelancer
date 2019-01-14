@@ -18,7 +18,7 @@
 <body id="bodyForm">
 <?php //echo validation_errors(); ?>
 <?php //echo form_open('index.php/Inscription/projet'); ?>
-<form method="post" action="http://localhost/ISTEF/freelancer/App/index.php/Projet/enregistrer" <!--enctype="multipart/form-data"-->>
+<form method="post" action="http://localhost/freelancer/index.php/Projet/enregistrer" <!--enctype="multipart/form-data"-->>
 
 
     <h2 class="titleForm">Création projet</h2>
@@ -27,52 +27,54 @@
 
 
 
-        <div class="champsObligatoires">
-            <h5>Champs obligatoires</h5>
+    <div class="champsObligatoires">
+        <h5>Champs obligatoires</h5>
         <div class="row">
             <div class="input-field col s6">
-                <textarea id="titre" name="titre" value="<?php echo set_value('titre'); ?>" class="materialize-textarea" size="30" data-length="30"></textarea>
+                <textarea id="titre" name="titre" class="materialize-textarea" size="30" data-length="30"></textarea>
                 <label for="titre">Titre du projet</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="description" name="description" value="<?php echo set_value('description'); ?>" class="materialize-textarea" size="1200" data-length="1200"></textarea>
+                <textarea id="description" name="description" class="materialize-textarea" size="1200" data-length="1200"></textarea>
                 <label for="description">Description</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <select name="categorie" value="<?php echo set_value('categorie'); ?>" id="catProjet">
-                    <option value="0" disabled selected>Choisissez votre catégorie</option>
-                <option value="1">0-250€ (Petit projet)</option>
-                <option value="2">250-500€ (Moyen projet)</option>
-                <option value="3">500-1000€ (Grand projet)</option>
-                <option value="3">+1000€ (Très grand projet)</option>
+                <select name="categorie" >
+                    <option value="" disabled selected>Choisissez votre catégorie</option>
+                    <?php foreach($budget as $budget) : ?>
+                        <option value="<?php echo $budget['id']; ?>"><?php echo $budget['description']; ?></option>
+                    <?php endforeach; ?>
                 </select>
                 <label>Coût du projet</label>
             </div>
         </div>
-
+    </div>
+    <h5>Champs facultatifs</h5>
+    <div class="champsOptionnels">
         <div class="row">
-            <div class="col s12">
-                <label style="color:black;font-size: 1em;">Pour ajouter une compétence, écrivez la puis appuyez sur entrer</label>
-                <div class="row">
-                    <div id="" value="" class="input-field col s10">
-                        <div class="chips chips-autocomplete"></div>
-                        <input name="competences" id="competences" type="text">
-                    </div>
-                </div>
+            <div class="input-field col s12">
+                <select name="competence" id="catTechnologie">
+                    <option value="0">Libre</option>
+                    <?php foreach($competence as $competence) : ?>
+                        <option value="<?php echo $competence['id']; ?>"><?php echo $competence['titre']; ?></option>
+                    <?php endforeach; ?>
+                </select>
+                <label>Technologie souhaité </label>
             </div>
         </div>
-        </div>
-        <div class="champsOptionnels">
-            <h5>Champs facultatifs</h5>
+
+
+
         <div class="row">
-            Entrez un tag pour définir votre projet (site, logo,...) puis appuyez sur "Entrer" (3 maximum)
+            <label>Entrez un tag pour définir votre projet puis appuyez sur "Entrer"</label>
             <div class="input-field col s12">
-                <div class="chips chips-placeholder"></div>
-                <input name="motclefs" id="motclefs" type="text">
+                <div name="motcle" class="chips chips-placeholder"></div>
+                <input  id="motcle" type="text">
+
             </div>
         </div>
         <div class="row">
@@ -111,31 +113,32 @@
 
         //Initialisation de l'input "Tags"
         $('.chips-placeholder').chips({
-            placeholder: '',
-
+            autocompleteOptions: {
+                data: {
+                    'Site web': null,
+                    'Logo': null,
+                    'Mobile': null,
+                    'iOS': null,
+                    'Android': null,
+                    'Logiciel': null,
+                    'Design': null
+                },
+                limit: Infinity,
+                minLength: 1
+            },
+            onChipAdd: () => {
+                console.log("Chip Added");
+                $tag = document.getElementsByClassName("chip").value;
+                document.getElementById("motcle").value = $tag;
+            },
+            onChipSelect: () => {
+                console.log("Chip Selected");
+            },
+            onChipDelete: () => {
+                console.log("Chip Deleted");
+            }
         });
 
-        //Initialisation input compétences + tableau autocomplétion
-        // $('.chips-autocomplete').chips({
-        //     autocompleteOptions: {
-        //         data: {
-        //             'PHP': null,
-        //             'HTML': null,
-        //             'Javascript': null,
-        //             'Java/JEE': null,
-        //             'C': null,
-        //             'C++': null,
-        //             'C#': null,
-        //             'Unity': null,
-        //             'Unreal engine': null,
-        //             'NodeJS' : null,
-        //             'Angular' : null
-        //         },
-        //         limit: Infinity,
-        //         minLength: 1
-        //
-        //     }
-        // });
 
         $('.chips').on('chip.add', function(e, chip){
             console.log("Added",chip);
@@ -175,38 +178,19 @@
         $.ajax(
             {
                 type: 'POST',
-                url: 'http://localhost/ISTEF/freelancer/App/index.php/Projet/listeComp',
-                dataType: 'json',
+                url: 'http://localhost/freelancer/index.php/Projet/listeComp',
+
                 success: function (data) {
-                    //array = JSON.parse(data);
+                    console.log(data);
                     $arrayLength = data.length;
-                    //console.log(typeof data);
-                     //console.log(data);
-                    var nul = null;
-                    var newTab = data.map(function(item) {
-                        return item.titre+" : "+null;
-                    });
-
-                    console.log(typeof newTab);
-                    console.log(newTab);
-
-                    $('.chips-autocomplete').chips({
-                        autocompleteOptions: {
-                            data: {
 
 
 
-                                        },
-                            limit: Infinity,
-                            minLength: 1
 
-                        }
-                    });
 
 
                 },
                 error: function (errorThrown) {
-                    // Une erreur s'est produite lors de la requete
                     console.log(errorThrown);
                 }
             });
@@ -214,7 +198,7 @@
 
     }
 
-    function poster_event(nom, prenom, note) {
+    $('#id_formulaire').submit(function(nom, prenom, note) {
 
         $.ajax(
             {
@@ -238,7 +222,7 @@
                     console.log(errorThrown);
                 }
             });
-    }
+    });
 </script>
 </body>
 </html>

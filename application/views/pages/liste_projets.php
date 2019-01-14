@@ -1,10 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: coren
- * Date: 05/11/2018
- * Time: 22:52
- */
+
+
+
+
 ?>
 <!doctype html>
 <html lang="fr">
@@ -37,25 +35,16 @@
             <div class="input-field col s5">
                 <select>
                     <option value="" disabled selected>> 0 €</option>
-                    <option value="1">> 50 €</option>
-                    <option value="2">> 100 €</option>
-                    <option value="3">> 200 €</option>
-                    <option value="4">> 500 €</option>
+                    <option value="1">0-250€ (Petit projet)</option>
+                    <option value="2">250-500€ (Moyen projet)</option>
+                    <option value="3">500-1000€ (Grand projet)</option>
+                    <option value="3">+1000€ (Très grand projet)</option>
                 </select>
-                <label>Prix total minimum</label>
+                <label>Type de projet</label>
             </div>
 
 
-                <div class="input-field col s5">
-                    <select>
-                        <option value="" disabled selected>> 0 €/h</option>
-                        <option value="1">> 15 €/h</option>
-                        <option value="2">> 20 €/h</option>
-                        <option value="3">> 25 €/h</option>
-                        <option value="4">> 30 €/h</option>
-                    </select>
-                    <label>Prix / heure minimum</label>
-                </div>
+
             </form>
     </div>
 </div>
@@ -65,38 +54,43 @@
         <div class="nb-resultats">XX Résultats</div>
         <div class="filtre-resultats">Trier par :</div>
     </div>
+<!--    <div class="elem">-->
+<!--        <div class="header-elem">-->
+<!--            <div class="prix-elem">500 - 750 € fixe</div>-->
+<!--            <div class="titre-elem">Créer logo + application</div>-->
+<!--            <div class="createur-elem">DavidCoj</div>-->
+<!--        </div>-->
+<!--        <div class="body-elem">-->
+<!--            <div class="description-elem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque malesuada leo,-->
+<!--                nec scelerisque ligula mollis ullamcorper. Nunc condimentum erat mi, ut sollicitudin diam-->
+<!--                hendrerit ac.</div>-->
+<!--        </div>-->
+<!--        <div class="footer-elem">-->
+<!--            <div class="comp-elem">Compétences : Java</div>-->
+<!--            <div class="postuler-elem"><button class="btn waves-effect waves-light orange accent-4" type="submit" name="action">Postuler-->
+<!--                    <i class="material-icons left">send</i>-->
+<!--                </button></div>-->
+<!--        </div>-->
+<!---->
+<!--    </div>-->
+    <?php foreach($news as $news) { ?>
     <div class="elem">
-        <div class="header-elem">
-            <div class="prix-elem">500 - 750 € fixe</div>
-            <div class="titre-elem">Créer logo + application</div>
-            <div class="createur-elem">DavidCoj</div>
-        </div>
-        <div class="body-elem">
-            <div class="description-elem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque malesuada leo,
-                nec scelerisque ligula mollis ullamcorper. Nunc condimentum erat mi, ut sollicitudin diam
-                hendrerit ac.</div>
-        </div>
-        <div class="footer-elem">
-            <div class="comp-elem">Compétences : Java</div>
-            <div class="postuler-elem"><button class="btn waves-effect waves-light orange accent-4" type="submit" name="action">Postuler
-                    <i class="material-icons left">send</i>
-                </button></div>
-        </div>
 
-    </div>
-    <div class="elem">
         <div class="header-elem">
-            <div class="prix-elem">500 - 750 € fixe</div>
-            <div class="titre-elem">Créer logo + application</div>
-            <div class="createur-elem">DavidCoj</div>
+            <div class="prix-elem"><?php echo $news['description']; ?></div>
+            <div class="titre-elem"><?php echo $news['titre']; ?></div>
+            <div class="createur-elem"><?php echo $news['login']; ?></div>
         </div>
         <div class="body-elem">
-            <div class="description-elem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque malesuada leo,
-                nec scelerisque ligula mollis ullamcorper. Nunc condimentum erat mi, ut sollicitudin diam
-                hendrerit ac.</div>
+            <div class="description-elem"><?php echo $news['presentation']; ?></div>
         </div>
         <div class="footer-elem">
-            <div class="comp-elem">Compétences : Java</div>
+            <div class="comp-elem"><?php
+                if(($news['mot_cle'])!="") {
+                    echo $news['mot_cle'];
+                }else{
+                    echo ("Libre");
+                } ?></div>
             <div class="postuler-elem">
                 <button class="btn waves-effect waves-light orange accent-4" type="submit" name="action">Postuler
                     <i class="material-icons left">send</i>
@@ -105,6 +99,7 @@
         </div>
 
     </div>
+    <?php } ?>
 </div>
 
 <script src="<?php echo base_url()?>asset/js/nouislider.min.js"></script>
