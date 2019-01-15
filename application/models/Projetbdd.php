@@ -44,20 +44,26 @@ FROM `projet`
         return $result;
     }
 
-    public function creerProjet($titre, $description, $budget, $motclef1, $motclef2,
-                                $motclef3, $porteur_projet_id)
+    //Insérer projet en bdd
+    public function creerProjet($titre, $description, $budget, $motcle, $porteur_projet_id)
     {
         $this->load->database();
+        $sql = "INSERT INTO `projet` SET `titre`=?, `presentation`=?, `budget`=?, `mot_cle`=?,
+                  `porteur_projet_id`=?";
+        $query = $this->db->query($sql, array($titre, $description, $budget, $motcle, $porteur_projet_id));
 
-        $sql = "INSERT INTO `projet` SET `titre`=?, `presentation`=?, `budget`=?, `mot_cle1`=?,
-                 `mot_cle2`=?, `mot_cle3`=?, `porteur_projet_id`=?";
-        $query = $this->db->query($sql, array($titre, $description, $budget, $motclef1, $motclef2,
-            $motclef3, $porteur_projet_id));
+        if ($query !=1){
+            return 0;
+        }else{
+            $sql = "INSERT INTO `projet` SET `titre`=?, `presentation`=?, `budget`=?, `mot_cle`=?,
+                  `porteur_projet_id`=?";
 
-
-
-        return $query;
+        }
     }
+
+    public function attribuerProjetTechnologies($titre, $idTechno){
+
+}
 
     public function creerInfos($date, $url, $titre, $projetId){
         $this->load->database();

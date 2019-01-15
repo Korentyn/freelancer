@@ -49,55 +49,29 @@ class Projet extends CI_Controller
         $motcle = $this->input->post('motcle');
         $porteur_projet_id = 1;
 
-        echo $titre.' '.$description.' '.$budget.' '.$competence;
-
-//        $competences = explode(";", $competences);
-//        echo $competences[0];
-//        echo $competences[1];
-
-//       if ($titre!= "" && $description!= "" && $budget != "" ) {
-//
-
-////            $competences = explode(";", $competences);
-////            echo $competences[0];
-////            echo $competences[1];
-//           if(isset($competences)) {
-//
-//           }else {
-//               $competences = "";
-//           }
-//           if(empty($motclefs)) {
-//               $motclef1 = "";
-//               $motclef2 = "";
-//               $motclef3 = "";
-//           }else {
-//
-//           }
-//
-//            $this->load->model('Projetbdd');
-//
-//            if( $this->Projetbdd->creerProjet($titre, $description, $budget, $motclef1, $motclef2,
-//               $motclef3, $porteur_projet_id)!=1){
-//                $this->load->helper('url');
-//                $this->load->view('layout/layout');
-//                $this->load->view('pages/formCreationProjetFail');
-//
-//            }else{
-//                $this->load->helper('url');
-//                $this->load->view('layout/layout');
-//                $this->load->view('pages/formCreationProjetSuccess');
-//            }
-//
-//        }
-//
-//        $this->load->helper('url');
-//        $this->load->view('layout/layout');
-//        $this->load->view('pages/formCreationProjetFail');
+        //echo $titre.' '.$description.' '.$budget.' '.$competence.' '.$motcle;
 
 
 
+       if ($titre!= "" && $description!= "" && $budget != "" ) {
 
+            $this->load->model('Projetbdd');
 
+            if( $this->Projetbdd->creerProjet($titre, $description, $budget, $motcle, $porteur_projet_id)!=1){
+                $this->load->helper('url');
+                $this->load->view('layout/layout');
+                $this->load->view('pages/formCreationProjetFail');
+
+            }else{
+
+                $this->load->helper('url');
+                $this->load->view('layout/layout');
+                $this->load->view('pages/formCreationProjetSuccess');
+            }
+        }
+        $this->load->helper('url');
+        $this->load->view('layout/layout');
+        $this->load->view('pages/formCreationProjetFail');
     }
 
     public function listeComp(){

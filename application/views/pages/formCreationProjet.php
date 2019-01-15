@@ -45,9 +45,9 @@
             <div class="input-field col s12">
                 <select name="categorie" >
                     <option value="" disabled selected>Choisissez votre catégorie</option>
-                    <?php foreach($budget as $budget) : ?>
+                    <?php foreach($budget as $budget) { ?>
                         <option value="<?php echo $budget['id']; ?>"><?php echo $budget['description']; ?></option>
-                    <?php endforeach; ?>
+                    <?php } ?>
                 </select>
                 <label>Coût du projet</label>
             </div>
@@ -72,8 +72,8 @@
         <div class="row">
             <label>Entrez un tag pour définir votre projet puis appuyez sur "Entrer"</label>
             <div class="input-field col s12">
-                <div name="motcle" class="chips chips-placeholder"></div>
-                <input  id="motcle" type="text">
+                <div  class="chips chips-placeholder"></div>
+                <input type="hidden" name="motcle" id="motcle" type="text">
 
             </div>
         </div>
@@ -103,7 +103,7 @@
 
     $(document).ready(function () {
 
-        recup_competences();
+
 
         $('input#input_text, textarea#description').characterCounter();
         $('input#input_text, textarea#titre').characterCounter();
@@ -123,19 +123,20 @@
                     'Logiciel': null,
                     'Design': null
                 },
-                limit: Infinity,
+                limit: 1,
                 minLength: 1
             },
             onChipAdd: () => {
-                console.log("Chip Added");
-                $tag = document.getElementsByClassName("chip").value;
+                //console.log("Chip Added");
+                $tag = $(".chip").text().slice(0, -5);
                 document.getElementById("motcle").value = $tag;
             },
             onChipSelect: () => {
-                console.log("Chip Selected");
+                //console.log("Chip Selected");
             },
             onChipDelete: () => {
-                console.log("Chip Deleted");
+                //console.log("Chip Deleted");
+                document.getElementById("motcle").value = "";
             }
         });
 
@@ -174,29 +175,7 @@
         }
     }
 
-    function recup_competences (){
-        $.ajax(
-            {
-                type: 'POST',
-                url: 'http://localhost/freelancer/index.php/Projet/listeComp',
 
-                success: function (data) {
-                    console.log(data);
-                    $arrayLength = data.length;
-
-
-
-
-
-
-                },
-                error: function (errorThrown) {
-                    console.log(errorThrown);
-                }
-            });
-
-
-    }
 
     $('#id_formulaire').submit(function(nom, prenom, note) {
 
