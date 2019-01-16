@@ -29,48 +29,40 @@ class Utilisateur extends CI_Controller
 
 
     //--------------------------------------------------------------------------------
-    public function user_post()
+    public function enregistrer()
     {
-
         // je récupère des data dans le body de la requete HTTP
+        $login = $this->post('login');
+        $civilite = $this->post('civilite');
         $nom = $this->post('nom');
         $prenom = $this->post('prenom');
-        $note = $this->post('note');
+        $password = $this->post('password');
+        $passwordVerif = $this->post('passwordVerif');
+        $email = $this->post('email');
+        $emailVerif = $this->post('emailVerif');
+        $telephone = $this->post('telephone');
+        $presentation = $this->post('presentation');
 
-        if ($nom != "" && $prenom != "") {
-            $this->load->model('Userbdd');
-            $this->Userbdd->creerUser($nom, $prenom, $note);
 
-            $donnees_reponse = array("message" => "creation " . $nom . " et " . $prenom . " ok !");
-            $status = 201;
-        } else {
-            $donnees_reponse = array("message" => "erreur creation manque prenom");
-            $status = 408;
-        }
+        echo $login." ".$civilite." ".$nom." ".$prenom." ".$password." ".$passwordVerif." ".$email." ".$emailVerif." ".$telephone." ".$presentation;
 
-        $this->response($donnees_reponse, $status);
+//        if ($nom != "" && $prenom != "") {
+//            $this->load->model('Userbdd');
+//            $this->Userbdd->creerUser($nom, $prenom, $note);
+//
+//            $donnees_reponse = array("message" => "creation " . $nom . " et " . $prenom . " ok !");
+//            $status = 201;
+//        } else {
+//            $donnees_reponse = array("message" => "erreur creation manque prenom");
+//            $status = 408;
+//        }
+//
+//        $this->response($donnees_reponse, $status);
 
 
     }
 
 
-    public function supuser_get()
-    {
-        $id = $this->get('id_user');
-
-        if ($id != "") {
-            $this->load->model('Userbdd');
-            $this->Userbdd->supprimerUser($id);
-            $donnees_reponse = array("message" => "Compte supprime, Merci !");
-            $status = 201;
-        } else {
-
-            $donnees_reponse = array("message" => "erreur de suppression du commentaire");
-            $status = 408;
-
-        }
-        $this->response($donnees_reponse, $status);
-    }
 
 
 }

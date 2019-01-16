@@ -40,6 +40,7 @@
                 <div class="row">
 
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
                         <input id="login1" type="text" class="validate">
                         <label for="login1">Login</label>
                         <span class="helper-text" data-error="wrong" data-success="right">Pas de compte ? <a href="<?php echo site_url('index.php/Inscription/'); ?>">Créer mon compte</a></span>

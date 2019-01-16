@@ -20,48 +20,59 @@
 <body id="bodyForm">
 <div id="myForm-wrapper" class="row">
 
-    <form id="myFormInscription" class="col s12">
+    <form id="myFormInscription" method="post" action="http://localhost/freelancer/index.php/Utilisateur/enregistrer">
         <h3 class="titleForm">Mon inscription en quelques étapes</h3>
 
         <div class="champsObligatoires">
             <h5>Champs Obligatoires</h5>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input placeholder="" id="login" name="login" type="text" class="validate">
+                    <label for="login">Votre pseudo</label>
+                </div>
+                <div class="input-field col s6">
+                    <select name="civilite">
+                        <option value="" disabled selected>Sélectionner votre civilité</option>
+                        <option value="1">M.</option>
+                        <option value="2">MM.</option>
+                        <option value="3">Mlle</option>
+                    </select>
+                    <label>Civilité</label>
+                </div>
+            </div>
         <div class="row">
             <div class="input-field col s6">
-                <input placeholder="" id="nom" type="text" class="validate">
+                <input name="nom" placeholder="" id="nom" type="text" class="validate">
                 <label for="nom">Nom</label>
             </div>
         <div class="input-field col s6">
-            <input placeholder="" id="prenom" type="text" class="validate">
+            <input name="prenom" placeholder="" id="prenom" type="text" class="validate">
             <label for="prenom">Prénom</label>
         </div>
         </div>
 
-        <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="" id="login" type="text" class="validate">
-                <label for="login">Votre pseudo</label>
-            </div>
-        </div>
+
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="password" type="password" class="validate">
+                    <input name="password" id="password" type="password" class="validate">
                     <label for="password">Mot de passe</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="password2" type="password" class="validate" oninput="verifPassword()">
-                        <label for="password2">Vérification du mot de passe</label>
+                    <input name="passwordVerif" id="passwordVerif" type="password" class="validate" oninput="verifPassword()">
+                        <label for="passwordVerif">Vérification du mot de passe</label>
                     <span class="helper-text" data-error="wrong" data-success="right"></span>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="email" type="email" class="validate">
+                    <input name="email" id="email" type="email" class="validate">
                         <label for="email">Email</label>
                     <span class="helper-text" data-error="wrong" data-success="right"></span>
                 </div>
                 <div class="input-field col s6">
-                    <input id="email" type="email" class="validate">
-                        <label for="email">Vérification du mail</label>
+                    <input name="emailVerif" id="emailVerif" type="email" class="validate">
+                        <label for="emailVerif">Vérification du mail</label>
                     <span class="helper-text" data-error="wrong" data-success="right"></span>
                 </div>
             </div>
@@ -70,12 +81,27 @@
         <div class="champsOptionnels">
                 <h5>Champs facultatifs</h5>
             <div class="row">
-
-                <div id="register" class="flex">
-                    <a href="#" id="sign" class="bttn">Enregistrer</a>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone</i>
+                    <input name="telephone" id="icon_telephone" type="tel" class="validate">
+                    <label for="icon_telephone">Telephone</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea name="presentation" id="presentation" name="presentation" class="materialize-textarea" size="1200" data-length="1200"></textarea>
+                    <label for="presentation">Votre présentation</label>
                 </div>
             </div>
         </div>
+            <div class="row">
+
+                <div id="register" class="flex">
+                    <button type="submit" name="action" id="sign" class="bttn">Enregistrer</button>
+                </div>
+            </div>
+
 
     </form>
 </div>
@@ -83,17 +109,18 @@
 <script>
 
     $(document).ready(function () {
+        $('select').formSelect();
 
+        $('input#input_text, textarea#presentation').characterCounter();
 
-
-        $('#sign').click(function () {
-            var $nom = $("#pseudo").val();
-            var $prenom = $("#password1").val();
-
-            //alert("Vous avez tapé : " + $nom );
-
-            poster_event($nom, $prenom, $note);
-        });
+        // $('#sign').click(function () {
+        //     var $nom = $("#pseudo").val();
+        //     var $prenom = $("#password1").val();
+        //
+        //     //alert("Vous avez tapé : " + $nom );
+        //
+        //     poster_event($nom, $prenom, $note);
+        // });
 
     });
 

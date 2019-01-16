@@ -19,7 +19,6 @@
 
 #myFormInscription{
     width : 99vh;
-    height: 80vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -27,10 +26,6 @@
 .titleForm{
     text-align: center;
     padding: 30px;
-}
-
-#register{
-    min-height: 30vh;
 }
 
 .helper-text{
