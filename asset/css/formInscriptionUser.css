@@ -18,16 +18,15 @@
 }
 
 #myFormInscription{
-    width : 60vh;
+    width : 99vh;
     height: 80vh;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 2px 2px 12px #aaa;
-
 }
 
 .titleForm{
     text-align: center;
+    padding: 30px;
 }
 
 #register{
@@ -36,4 +35,24 @@
 
 .helper-text{
     color: #bc121e;
+}
+
+
+.champsOptionnels{
+    border-left: 3px solid #4A77BF;
+    padding-left: 3%;
+}
+
+.champsOptionnels > h5{
+    color: #4A77BF;
+}
+
+
+.champsObligatoires{
+    border-left: 3px solid #F2A562;
+    padding-left: 3%;
+}
+
+.champsObligatoires > h5{
+    color: #F2A562;
 }

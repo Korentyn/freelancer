@@ -15,46 +15,71 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/menu.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/maTable.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/formInscriptionUser.css'); ?>">
 </head>
 <body id="bodyForm">
-
-
-
-
-
 <div id="myForm-wrapper" class="row">
+
     <form id="myFormInscription" class="col s12">
-        <h2 class="titleForm">Inscription</h2>
+        <h3 class="titleForm">Mon inscription en quelques étapes</h3>
+
+        <div class="champsObligatoires">
+            <h5>Champs Obligatoires</h5>
         <div class="row">
             <div class="input-field col s6">
-                <input id="pseudo" type="text" class="validate">
-                <label for="pseudo">Pseudo</label>
+                <input placeholder="" id="nom" type="text" class="validate">
+                <label for="nom">Nom</label>
             </div>
+        <div class="input-field col s6">
+            <input placeholder="" id="prenom" type="text" class="validate">
+            <label for="prenom">Prénom</label>
         </div>
+        </div>
+
         <div class="row">
             <div class="input-field col s6">
-                <input id="password1" type="password" class="validate">
-                <label for="password1">Mot de passe</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="password2" type="password" class="validate" oninput="verifPassword()">
-                <label for="password2">Vérification mot de passe</label>
-                <span class="helper-text" data-error="wrong" data-success="right">On dirait que tu ne sais pas recopier un mot de passe</span>
+                <input placeholder="" id="login" type="text" class="validate">
+                <label for="login">Votre pseudo</label>
             </div>
         </div>
-        <div class="row">
-            <div id="register" class="flex">
-                <a href="#" id="sign" class="bttn">Enregistrer</a>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Mot de passe</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="password2" type="password" class="validate" oninput="verifPassword()">
+                        <label for="password2">Vérification du mot de passe</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
+                <div class="input-field col s6">
+                    <input id="email" type="email" class="validate">
+                        <label for="email">Vérification du mail</label>
+                    <span class="helper-text" data-error="wrong" data-success="right"></span>
+                </div>
             </div>
         </div>
+
+        <div class="champsOptionnels">
+                <h5>Champs facultatifs</h5>
+            <div class="row">
+
+                <div id="register" class="flex">
+                    <a href="#" id="sign" class="bttn">Enregistrer</a>
+                </div>
+            </div>
+        </div>
+
     </form>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+
 <script>
 
     $(document).ready(function () {

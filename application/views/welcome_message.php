@@ -27,7 +27,7 @@ $json = json_decode($file);
     <link rel="stylesheet" type="text/css"
           href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.18/b-1.5.2/b-colvis-1.5.2/b-html5-1.5.2/datatables.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/menu.css'); ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/maTable.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/formInscriptionUser.css'); ?>">
 </head>
 <body>
 

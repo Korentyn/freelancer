@@ -16,8 +16,6 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/formCreationProjet.css'); ?>">
 </head>
 <body id="bodyForm">
-<?php //echo validation_errors(); ?>
-<?php //echo form_open('index.php/Inscription/projet'); ?>
 <form method="post" action="http://localhost/freelancer/index.php/Projet/enregistrer" <!--enctype="multipart/form-data"-->>
 
 
@@ -53,8 +51,9 @@
             </div>
         </div>
     </div>
-    <h5>Champs facultatifs</h5>
+
     <div class="champsOptionnels">
+        <h5>Champs facultatifs</h5>
         <div class="row">
             <div class="input-field col s12">
                 <select name="competence" id="catTechnologie">

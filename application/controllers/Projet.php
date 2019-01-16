@@ -57,7 +57,7 @@ class Projet extends CI_Controller
 
             $this->load->model('Projetbdd');
 
-            if( $this->Projetbdd->creerProjet($titre, $description, $budget, $motcle, $porteur_projet_id)!=1){
+            if( $this->Projetbdd->creerProjet($titre, $description, $budget, $motcle, $porteur_projet_id, $competence)!=1){
                 $this->load->helper('url');
                 $this->load->view('layout/layout');
                 $this->load->view('pages/formCreationProjetFail');
@@ -69,9 +69,7 @@ class Projet extends CI_Controller
                 $this->load->view('pages/formCreationProjetSuccess');
             }
         }
-        $this->load->helper('url');
-        $this->load->view('layout/layout');
-        $this->load->view('pages/formCreationProjetFail');
+
     }
 
     public function listeComp(){

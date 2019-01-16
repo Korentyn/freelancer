@@ -45,7 +45,7 @@ FROM `projet`
     }
 
     //Insérer projet en bdd
-    public function creerProjet($titre, $description, $budget, $motcle, $porteur_projet_id)
+    public function creerProjet($titre, $description, $budget, $motcle, $porteur_projet_id, $competence)
     {
         $this->load->database();
         $sql = "INSERT INTO `projet` SET `titre`=?, `presentation`=?, `budget`=?, `mot_cle`=?,
@@ -55,9 +55,9 @@ FROM `projet`
         if ($query !=1){
             return 0;
         }else{
-            $sql = "INSERT INTO `projet` SET `titre`=?, `presentation`=?, `budget`=?, `mot_cle`=?,
-                  `porteur_projet_id`=?";
-
+           $last_insert = $this->db->insert_id();
+           $sql = "INSERT INTO `caracteriser` SET `technologies_id`=?, `projet_id`=?";
+          return $query = $this->db->query($sql, array($competence, $last_insert));
         }
     }
 
