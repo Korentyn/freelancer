@@ -20,7 +20,7 @@
 <body id="bodyForm">
 <div id="myForm-wrapper" class="row">
 
-    <form id="myFormInscription" method="post" action="http://localhost/freelancer/index.php/Utilisateur/enregistrer">
+    <form id="myFormInscription" method="post" action="http://localhost/freelancer/index.php/Utilisateur/enregistrer?role=2">
         <h3 class="titleForm">Mon inscription en quelques étapes</h3>
 
         <div class="champsObligatoires">

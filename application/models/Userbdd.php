@@ -8,7 +8,7 @@ class Userbdd extends CI_Model {
 
         $this->load->database();
 
-        $query = $this->db->query('SELECT * FROM `name`');
+        $query = $this->db->query('SELECT * FROM `utilisateur`');
 
         return $query->result_object();
 
@@ -17,17 +17,32 @@ class Userbdd extends CI_Model {
 
 
 
-    public function creerUser($nom, $prenom, $note)
+    public function creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role)
     {
         $this->load->database();
 
-        $query = $this->db->query("INSERT INTO `name` (`nom`, `prenom`, `note`) 
-        VALUES ('$nom','$prenom','$note')");
+        $query = $this->db->query("INSERT INTO `utilisateur` (`login`,`civilite`,`nom`, `prenom`, `mail`, `password`, `telephone`, `presentation`, `role_id`) 
+        VALUES ('$login', '$civilite', '$nom', '$prenom', '$email', '$password', '$telephone', '$presentation', '$role')");
 
         return $query;
     }
 
+    public function verifCreationUtilisateur($login, $mail){
+        $this->load->database();
 
+        $sql = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`login`=?';
+        $query = $this->db->query($sql, $login);
+
+        $sql2 = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`mail`=?';
+        $query2 = $this->db->query($sql2, $mail);
+
+        //Si mail ou login existe en base de données, on renvoie 1, sinon 0
+        if($query != true || $query2 != true){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
 
 
     public function modifierUser($id_user, $nom, $prenom, $note) {

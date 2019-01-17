@@ -5,14 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="673de53c-e446-4e3d-853e-b40ebafe1b2c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/application/views/pages/formCreationUserFail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/codropsicons/codropsicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/codropsicons/codropsicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/codropsicons/codropsicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/codropsicons/codropsicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/codropsicons/license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/feathericons/feathericons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/feathericons/feathericons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/feathericons/feathericons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/feathericons/feathericons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/font-awesome-4.2.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/font-awesome-4.2.0/fonts/fontawesome-webfont.woff" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Utilisateur.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layout/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Userbdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Userbdd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/pages/formCreationFreelance.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/pages/formCreationFreelance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/pages/formCreationProjet.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/pages/formCreationProjet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/css/formInscriptionUser.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/formInscriptionUser.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asset/css/menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/css/menu.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/menu.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/asset/css/menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/menu.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,56 +40,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="liste_freelancer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/pages/liste_freelancer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="accueil.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/pages/accueil.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Projet.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formCreationProjet.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="93" column="127" selection-start-line="93" selection-start-column="100" selection-end-line="93" selection-end-column="127" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formCreationFreelance.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="formCreationFreelance.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationFreelance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2178">
-              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="336">
+              <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utilisateur.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
+      <file leaf-file-name="Projet.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="519">
-              <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+            <state relative-caret-position="528">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Projetbdd.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Projetbdd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="59" column="55" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -84,35 +70,62 @@
       <file leaf-file-name="formInscriptionUser.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/asset/css/formInscriptionUser.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="696">
+              <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/css/menu.scss">
+      <file leaf-file-name="Inscription.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/Inscription.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="35" column="15" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
+            <state relative-caret-position="408">
+              <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="menu.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/css/menu.css">
+      <file leaf-file-name="Utilisateur.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="496">
+              <caret line="65" column="55" lean-forward="true" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/layout/layout.php">
+      <file leaf-file-name="formCreationUserFail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationUserFail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Userbdd.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Userbdd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InscriptionEffect1.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/css/InscriptionEffect1.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="822">
+              <caret line="210" column="1" lean-forward="true" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formCreationProjet.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjet.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
-              <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="75" />
+              <caret line="46" column="67" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -142,14 +155,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../webservice/ws_user.php" />
         <option value="$PROJECT_DIR$/application/models/Groupebdd.php" />
         <option value="$PROJECT_DIR$/application/controllers/Service.php" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/models/commentaire.php" />
         <option value="$PROJECT_DIR$/application/models/Evenementbdd.php" />
         <option value="$PROJECT_DIR$/application/controllers/user.php" />
-        <option value="$PROJECT_DIR$/application/models/Userbdd.php" />
         <option value="$PROJECT_DIR$/application/controllers/Signalement.php" />
         <option value="$PROJECT_DIR$/application/models/Commentairebdd.php" />
         <option value="$PROJECT_DIR$/application/models/Signalementbdd.php" />
@@ -185,14 +196,16 @@
         <option value="$PROJECT_DIR$/asset/css/InscriptionEffect1.css" />
         <option value="$PROJECT_DIR$/application/controllers/Inscription.php" />
         <option value="$PROJECT_DIR$/asset/css/maTable.css" />
-        <option value="$PROJECT_DIR$/application/views/pages/Inscription.php" />
         <option value="$PROJECT_DIR$/application/views/layout/layout.php" />
         <option value="$PROJECT_DIR$/application/views/pages/formCreationProjet.php" />
         <option value="$PROJECT_DIR$/asset/css/formInscriptionUser.css" />
-        <option value="$PROJECT_DIR$/asset/css/menu.scss" />
         <option value="$PROJECT_DIR$/asset/css/menu.css" />
-        <option value="$PROJECT_DIR$/application/controllers/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/asset/css/menu.scss" />
+        <option value="$PROJECT_DIR$/application/views/pages/Inscription.php" />
         <option value="$PROJECT_DIR$/application/views/pages/formCreationFreelance.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/application/models/Userbdd.php" />
+        <option value="$PROJECT_DIR$/application/views/pages/formCreationUserFail.php" />
       </list>
     </option>
   </component>
@@ -206,10 +219,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="487" />
-    <option name="y" value="-24" />
+    <option name="x" value="1007" />
     <option name="width" value="922" />
-    <option name="height" value="1047" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -222,67 +234,61 @@
           <expand>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="layout" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="asset" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="asset" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="asset" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="asset" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
-              <item name="asset" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="asset" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="menu.scss" type="620a8d5e:NestingTreeNode" />
             </path>
           </expand>
@@ -439,29 +445,29 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329431000" />
+    <option name="totallyTimeSpent" value="345172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.029166667" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32943678" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32837406" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16770834" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.3278867" />
+      <window_info anchor="bottom" id="Run" order="7" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1546875" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1546875" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -475,7 +481,7 @@
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32897604" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32897604" />
       <window_info id="Favorites" order="0" side_tool="true" />
     </layout>
   </component>
@@ -501,15 +507,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/Signalementbdd.php" />
-    <entry file="file://$PROJECT_DIR$/application/models/Commentairebdd.php" />
-    <entry file="file://$PROJECT_DIR$/application/models/Userbdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="25" column="29" lean-forward="true" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Preferencebdd.php" />
     <entry file="file://$PROJECT_DIR$/application/controllers/Service.php" />
     <entry file="file://$PROJECT_DIR$/application/controllers/Preferences.php" />
@@ -591,13 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjetFail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -609,13 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1826">
           <caret line="83" column="24" selection-start-line="83" selection-start-column="24" selection-end-line="83" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Projetbdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -635,22 +618,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Inscription.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
+        <state relative-caret-position="840">
           <caret line="35" column="54" selection-start-line="35" selection-start-column="54" selection-end-line="35" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/Inscription.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="80" lean-forward="true" selection-start-line="17" selection-start-column="80" selection-end-line="17" selection-end-column="99" />
         </state>
       </provider>
     </entry>
@@ -658,13 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/InscriptionEffect1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4009">
-          <caret line="210" column="1" lean-forward="true" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -682,13 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/formCreationProjet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="761">
-          <caret line="46" column="1" selection-start-line="46" selection-end-line="46" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/liste_freelancer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -696,19 +651,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/formInscriptionUser.css">
+    <entry file="file://$PROJECT_DIR$/asset/css/menu.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="456">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/asset/css/menu.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="35" column="15" lean-forward="true" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/asset/css/menu.css.map">
+      <provider editor-type-id="sourcemapFileViewerProvider" />
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/asset/css/menu.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -717,24 +669,87 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjet.php">
+    <entry file="file://$PROJECT_DIR$/asset/css/formCreationProjet.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="93" column="127" selection-start-line="93" selection-start-column="100" selection-end-line="93" selection-end-column="127" />
+        <state relative-caret-position="726">
+          <caret line="46" column="1" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
+    <entry file="file://$PROJECT_DIR$/asset/css/InscriptionEffect1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="36" column="34" lean-forward="true" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        <state relative-caret-position="822">
+          <caret line="210" column="1" lean-forward="true" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationFreelance.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2178">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="336">
+          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/Inscription.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="22" column="34" lean-forward="true" selection-start-line="22" selection-start-column="34" selection-end-line="22" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjetFail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/css/formInscriptionUser.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="48" column="1" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="46" column="67" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Userbdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationUserFail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="65" column="55" lean-forward="true" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Projetbdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="59" column="55" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
         </state>
       </provider>
     </entry>

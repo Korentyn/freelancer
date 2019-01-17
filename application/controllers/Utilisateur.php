@@ -17,7 +17,6 @@ class Utilisateur extends CI_Controller
     }
 
 
-
     public function freelance()
     {
         $this->load->helper('url');
@@ -26,43 +25,70 @@ class Utilisateur extends CI_Controller
     }
 
 
-
-
     //--------------------------------------------------------------------------------
     public function enregistrer()
     {
         // je récupère des data dans le body de la requete HTTP
-        $login = $this->post('login');
-        $civilite = $this->post('civilite');
-        $nom = $this->post('nom');
-        $prenom = $this->post('prenom');
-        $password = $this->post('password');
-        $passwordVerif = $this->post('passwordVerif');
-        $email = $this->post('email');
-        $emailVerif = $this->post('emailVerif');
-        $telephone = $this->post('telephone');
-        $presentation = $this->post('presentation');
+        $role = $this->input->get('role');
+        $login = $this->input->post('login');
+        $civilite = $this->input->post('civilite');
+        $nom = $this->input->post('nom');
+        $prenom = $this->input->post('prenom');
+        $password = $this->input->post('password');
+        $passwordVerif = $this->input->post('passwordVerif');
+        $email = $this->input->post('email');
+        $emailVerif = $this->input->post('emailVerif');
+        $telephone = $this->input->post('telephone');
+        $presentation = $this->input->post('presentation');
 
 
-        echo $login." ".$civilite." ".$nom." ".$prenom." ".$password." ".$passwordVerif." ".$email." ".$emailVerif." ".$telephone." ".$presentation;
+        //echo $login." ".$civilite." ".$nom." ".$prenom." ".$password." ".$passwordVerif." ".$email." ".$emailVerif." ".$telephone." ".$presentation;
 
-//        if ($nom != "" && $prenom != "") {
-//            $this->load->model('Userbdd');
-//            $this->Userbdd->creerUser($nom, $prenom, $note);
-//
-//            $donnees_reponse = array("message" => "creation " . $nom . " et " . $prenom . " ok !");
-//            $status = 201;
-//        } else {
-//            $donnees_reponse = array("message" => "erreur creation manque prenom");
-//            $status = 408;
-//        }
-//
-//        $this->response($donnees_reponse, $status);
+        // Verification similitude entre les champs mail + mot de passe
+        if ($password != $passwordVerif || $email != $emailVerif || $password == "" || $email == "") {
+            $this->load->helper('url');
+            $this->load->view('layout/layout');
+            $this->load->view('pages/formCreationUserFail');
+            $this->load->view('layout/footer');
+        } else {
+
+            //Verification complétude des champs obligatoires
+            if ($login != "" && $civilite != "" && $nom != "" && $prenom != "" && $role != "") {
+
+                $this->load->model('Userbdd');
+
+                // Vérification existance du login + mail
+                if ($this->Userbdd->verifCreationUtilisateur($login, $email) == 1) {
+                    $this->load->helper('url');
+                    $this->load->view('layout/layout');
+                    $data['erreur'] = "email ou login déjà utilisé";
+                    $this->load->view('pages/formCreationUserFail', $data);
+                    $this->load->view('layout/footer');
+                } else {
+
+
+                    //Cryptage du mot de passe
+                    $options = array('cost' => 11);
+                    $password = password_hash($password, PASSWORD_BCRYPT, $options) . "\n";
+
+                    //Verification si enregistrement en base est un succès
+                    if ($this->Userbdd->creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role) != 1) {
+                        $this->load->helper('url');
+                        $this->load->view('layout/layout');
+                        $this->load->view('pages/formCreationUserFail');
+                        $this->load->view('layout/footer');
+                    } else {
+                        $this->load->helper('url');
+                        $this->load->view('layout/layout');
+                        $this->load->view('pages/formCreationUserSuccess');
+                        $this->load->view('layout/footer');
+                    }
+                }
+            }
+
+
+        }
 
 
     }
-
-
-
-
 }
