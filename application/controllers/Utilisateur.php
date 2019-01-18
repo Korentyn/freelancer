@@ -24,6 +24,13 @@ class Utilisateur extends CI_Controller
         $this->load->view('pages/liste_freelancer');
     }
 
+    public function selectionTechno(){
+        $this->load->helper('url');
+        $this->load->view('layout/layout');
+        $this->load->view('pages/formSelectionTechnologies');
+    }
+
+
 
     //--------------------------------------------------------------------------------
     public function enregistrer()
