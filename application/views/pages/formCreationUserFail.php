@@ -9,8 +9,8 @@
 </head>
 <body>
 Erreur dans le formulaire.
-<?php if (!empty($data['erreur'])) {
-    echo $data['erreur'];
+<?php if (!empty($erreur)) {
+    echo $erreur;
 }else{
 
     }

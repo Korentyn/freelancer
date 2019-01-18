@@ -36,12 +36,13 @@ class Userbdd extends CI_Model {
         $sql2 = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`mail`=?';
         $query2 = $this->db->query($sql2, $mail);
 
+        var_dump($query);
         //Si mail ou login existe en base de données, on renvoie 1, sinon 0
-        if($query != true || $query2 != true){
-            return 0;
-        }else{
-            return 1;
-        }
+//        if($query != 1 || $query2 != 1){
+//            return 0;
+//        }else{
+//            return 1;
+//        }
     }
 
 
