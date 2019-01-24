@@ -6,6 +6,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Utilisateur extends CI_Controller
 {
 
+
+
+
     public function creer()
     {
         $this->load->model('Userbdd');
@@ -30,7 +33,31 @@ class Utilisateur extends CI_Controller
         $this->load->view('pages/formSelectionTechnologies');
     }
 
+    public function connexion(){
+        $login = $this->input->post('login');
+        $password = $this->input->post('password');
 
+        //Vérification password ou login vide
+        if ($password != "" && $login != "") {
+            $this->load->model('Userbdd');
+
+            //Vérification login existe + récupération
+            if($result = $this->Userbdd->verifUtilisateur($login)){
+                //var_dump($result);
+                $passBDD = $result[0]->password;
+
+                //echo password_hash($password,PASSWORD_DEFAULT)." ".$passBDD;
+
+                if(password_verify($this->input->post('password'),$passBDD)){
+                    echo "Welcome";
+                }else
+                    echo "Wrong password";
+
+            }
+
+        }
+
+    }
 
     //--------------------------------------------------------------------------------
     public function enregistrer()
@@ -73,10 +100,8 @@ class Utilisateur extends CI_Controller
                     $this->load->view('layout/footer');
                 } else {
 
-
                     //Cryptage du mot de passe
-                    $options = array('cost' => 11);
-                    $password = password_hash($password, PASSWORD_BCRYPT, $options) . "\n";
+                    $password = password_hash($password,PASSWORD_DEFAULT);
 
                     //Verification si enregistrement en base est un succès
                     if ($this->Userbdd->creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role) != 1) {

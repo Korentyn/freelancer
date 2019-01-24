@@ -13,22 +13,37 @@
     <form id="myFormInscription" method="post" action="http://localhost/freelancer/index.php/Utilisateur/enregistrer?role=2">
         <h3 class="titleForm">Je sélectionne mes compétences</h3>
 
-        <div class="chips chips-initial"></div>
+
+            <div class="chips chips-initial input-field">
+                <div class="chip" tabindex="0">Apple</div>
+                <div class="chip" tabindex="0">Microsoft</div>
+                <div class="chip" tabindex="0">Google</div>
+            </div>
+
 
     </form>
 </div>
 <script>
     $(document).ready(function () {
+
         $('.chips-initial').chips({
-            data: [{
-                tag: 'Apple',
-            }, {
-                tag: 'Microsoft',
-            }, {
-                tag: 'Google',
-            }],
+            autocompleteOptions: {
+                onChipAdd: () => {
+                    //console.log("Chip Added");
+                    // $tag = $(".chip").text().slice(0, -5);
+                    // document.getElementById("motcle").value = $tag;
+                },
+                onChipSelect: () => {
+                    console.log("Chip Selected");
+                },
+                onChipDelete: () => {
+                    //console.log("Chip Deleted");
+                    document.getElementById("motcle").value = "";
+                }
+            }
         });
     });
+
 </script>
 </body>
 </html>

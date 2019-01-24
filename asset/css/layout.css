@@ -1,0 +1,10 @@
+.connexion-alert-wrong, .connexion-alert-empty{
+    text-align: center;
+    margin: 2px;
+    color: red;
+    background-color: #ffe7ef;
+    box-sizing: border-box;
+    border: 1px solid red;
+    border-radius: 2px;
+    display : none;
+}

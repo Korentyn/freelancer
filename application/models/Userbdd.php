@@ -27,6 +27,16 @@ class Userbdd extends CI_Model {
         return $query;
     }
 
+
+    public function verifUtilisateur($login){
+        $this->load->database();
+        $sql = "SELECT * FROM `utilisateur` WHERE `login`=?";
+        $query = $this->db->query($sql, array($login));
+
+        return $query->result_object();
+    }
+
+
     public function verifCreationUtilisateur($login, $mail){
         $this->load->database();
 

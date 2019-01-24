@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/layout.css'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 </head>
@@ -47,10 +48,12 @@
                     </div>
                     <div class="input-field col s6">
                         <input id="password1" type="password" class="validate">
-                        <label for="password1">Password</label>
+                        <label for="password1">Mot de passe</label>
                     </div>
                 </div>
 
+                <div id="empty" class="connexion-alert-empty">Champ Login ou Mot de passe vide</div>
+                <div id="wrong" class="connexion-alert-wrong">Mot de passe incorrect ou compte inexistant</div>
                 <a id="connexion" class="waves-effect waves-light btn">Valider</a>
 
             </form>
@@ -77,14 +80,44 @@
 
 
         $('#connexion').click(function () {
-
+            $empty = document.getElementById("empty");
+            $wrong = document.getElementById("wrong");
             $login = $("#login1").val();
             $password = $("#password1").val();
 
+            if($login == "" || $password == ""){
+                $empty.style.display ="block";
+            }else{
+                connexion_event($login, $password);
+            }
 
-            connexion_event($login, $password);
+
         });
 
+        function connexion_event($login, $psw) {
+            $.ajax(
+                {
+                    type: 'POST',
+                    url: 'http://localhost/freelancer/index.php/Utilisateur/connexion',
+                    header: "Accept : application/json",
+                    data: {
+                        login: $login,
+                        password: $psw,
+
+
+                    },
+                    datatype: 'json', // ou json .. ou etc.  = le type de données que l'on attend en retour, si le retour est différent il lance callback erreur, si c'est ok il parse direvtement le JSON
+                    success: function (data) {
+                        console.log(data);
+
+
+                    },
+                    error: function (errorThrown) {
+                        // Une erreur s'est produite lors de la requete
+                        console.log(errorThrown);
+                    }
+                });
+        }
     });
 </script>
 </body>
