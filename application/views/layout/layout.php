@@ -33,12 +33,9 @@
 
                 <!-- Dropdown Structure -->
                 <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
+                    <li><a href="#!">Mon profil</a></li>
                     <li class="divider" tabindex="-1"></li>
-                    <li><a href="#!">three</a></li>
-                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-                    <li><a href="<?php echo site_url('index.php/Utilisateur/deconnexion'); ?>"><i class="material-icons">cloud</i>deco</a></li>
+                    <li><a href="<?php echo site_url('index.php/Utilisateur/deconnexion'); ?>"><img src="<?php echo base_url('asset/images/onOff.png'); ?>" alt="Deconnexion"></a></li>
                 </ul>
             <?php }else{ ?>
                 <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
@@ -100,11 +97,15 @@
         $elemConnexion = $('#modalConnexion').modal();
         $instanceConnexion = M.Modal.getInstance($elemConnexion);
 
+        //Dropdown du profil
+        $dropdown = $(".dropdown-trigger").dropdown();
 
+        //$dropdown = document.querySelectorAll('.dropdown-trigger');
+        //var instanceDropdown = M.Dropdown.init($dropdown, alignment);
 
         //Initialisation navbar gauche responsive
         $('.sidenav').sidenav();
-        $(".dropdown-trigger").dropdown();
+
 
         $('#connexion').click(function () {
 
