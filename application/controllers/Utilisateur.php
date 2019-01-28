@@ -43,22 +43,34 @@ class Utilisateur extends CI_Controller
 
             //Vérification login existe + récupération
             if($result = $this->Userbdd->verifUtilisateur($login)){
-                //var_dump($result);
                 $passBDD = $result[0]->password;
-
-                //echo password_hash($password,PASSWORD_DEFAULT)." ".$passBDD;
-
                 if(password_verify($this->input->post('password'),$passBDD)){
-                    echo "Welcome";
-                }else
-                    echo "Wrong password";
+                    $this->session->set_userdata('pseudo', $login);
+                    $data=0;
+                }else{
+                    $data = 2;
+                }
+
 
             }
 
-        }
+        }else {
+            $data = 1;
 
+        }
+        echo $data;
     }
 
+    public function deconnexion(){
+        //	Détruit la session
+        $this->session->sess_destroy();
+
+        //	Redirige vers la page d'accueil
+        $this->load->helper('url');
+        $this->load->view('layout/layout');
+        $this->load->view('pages/accueil');
+        $this->load->view('layout/footer');
+    }
     //--------------------------------------------------------------------------------
     public function enregistrer()
     {

@@ -21,7 +21,29 @@
             <li><a class="gwhite-text " href="#">Comment ça marche ?</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
+            <?php
+            //Si le membre est connecté on affiche le menu-connection
+            $login = $this->session->userdata('pseudo');
+            if(isset($login)) { ?>
+
+            <li><a class="white-text " href="index.php/Projet/dashboard">Dashboard</a></li>
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><div class="chip"><img src="<?php echo base_url('asset/images/gup.png'); ?>" alt="Contact Person">
+                           <?php echo $this->session->userdata('pseudo'); ?>
+                        </div></a></li>
+
+                <!-- Dropdown Structure -->
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                    <li class="divider" tabindex="-1"></li>
+                    <li><a href="#!">three</a></li>
+                    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+                    <li><a href="<?php echo site_url('index.php/Utilisateur/deconnexion'); ?>"><i class="material-icons">cloud</i>deco</a></li>
+                </ul>
+            <?php }else{ ?>
+                <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
+            <?php }?>
+
         </ul>
     </div>
 </nav>
@@ -69,24 +91,29 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script>
+    $empty = document.getElementById("empty");
+    $wrong = document.getElementById("wrong");
+
 
 
     $(document).ready(function () {
         $elemConnexion = $('#modalConnexion').modal();
         $instanceConnexion = M.Modal.getInstance($elemConnexion);
 
+
+
         //Initialisation navbar gauche responsive
         $('.sidenav').sidenav();
-
+        $(".dropdown-trigger").dropdown();
 
         $('#connexion').click(function () {
-            $empty = document.getElementById("empty");
-            $wrong = document.getElementById("wrong");
+
             $login = $("#login1").val();
             $password = $("#password1").val();
 
             if($login == "" || $password == ""){
                 $empty.style.display ="block";
+                $wrong.style.display ="none";
             }else{
                 connexion_event($login, $password);
             }
@@ -109,6 +136,24 @@
                     datatype: 'json', // ou json .. ou etc.  = le type de données que l'on attend en retour, si le retour est différent il lance callback erreur, si c'est ok il parse direvtement le JSON
                     success: function (data) {
                         console.log(data);
+
+                        switch(data){
+                            case '0' :
+                                //connexion réussi
+                                $instanceConnexion.close();
+                                location.reload();
+                                break;
+                            case '1':
+                                //login ou pass vide
+                                $empty.style.display ="block";
+                                $wrong.style.display ="none";
+                                break;
+                            case '2':
+                                //login ou mdp faux
+                                $empty.style.display ="none";
+                                $wrong.style.display ="block";
+                                break;
+                        }
 
 
                     },
