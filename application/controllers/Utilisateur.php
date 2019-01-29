@@ -20,11 +20,15 @@ class Utilisateur extends CI_Controller
     }
 
 
-    public function freelance()
+
+
+    public function lister()
     {
         $this->load->helper('url');
+        $this->load->model('Userbdd');
+        $data['news'] = $this->Userbdd->listerUserTous();
         $this->load->view('layout/layout');
-        $this->load->view('pages/liste_freelancer');
+        $this->load->view('pages/liste_freelancer', $data);
     }
 
     public function selectionTechno(){
@@ -47,6 +51,7 @@ class Utilisateur extends CI_Controller
                 if(password_verify($this->input->post('password'),$passBDD)){
                     $this->session->set_userdata('pseudo', $login);
                     $data=0;
+                    header("Refresh:0");
                 }else{
                     $data = 2;
                 }

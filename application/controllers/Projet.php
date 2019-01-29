@@ -32,7 +32,6 @@ class Projet extends CI_Controller
         $this->load->helper('url');
         $this->load->model('Projetbdd');
         $data['news'] = $this->Projetbdd->listerProjetTous();
-
         $this->load->view('layout/layout');
         $this->load->view('pages/liste_projets', $data);
     }

@@ -16,7 +16,7 @@
 
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a class="orange-text text-darken-1" href="<?php echo site_url('index.php/Projet/creer'); ?>">Poster un projet</a></li>
-            <li><a class="white-text " href="<?php echo site_url('index.php/Utilisateur/freelance'); ?>">Recruter</a></li>
+            <li><a class="white-text " href="<?php echo site_url('index.php/Utilisateur/lister'); ?>">Recruter</a></li>
             <li><a class="white-text " href="<?php echo site_url('index.php/Projet/lister'); ?>">Travailler</a></li>
             <li><a class="gwhite-text " href="#">Comment ça marche ?</a></li>
         </ul>
@@ -121,6 +121,11 @@
 
 
         });
+
+        function refresh(){
+            location.reload();
+            console.log("refresh done");
+        }
 
         function connexion_event($login, $psw) {
             $.ajax(

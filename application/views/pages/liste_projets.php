@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="<?php echo base_url()?>asset/css/style.css" />
     <link rel="stylesheet" href="<?php echo base_url()?>asset/css/nouislider.min.css" />
 
-    <title>Document</title>
+    <title>Projets disponibles</title>
 </head>
 <body>
 <div class="header">
@@ -54,25 +54,6 @@
         <div class="nb-resultats">XX Résultats</div>
         <div class="filtre-resultats">Trier par :</div>
     </div>
-<!--    <div class="elem">-->
-<!--        <div class="header-elem">-->
-<!--            <div class="prix-elem">500 - 750 € fixe</div>-->
-<!--            <div class="titre-elem">Créer logo + application</div>-->
-<!--            <div class="createur-elem">DavidCoj</div>-->
-<!--        </div>-->
-<!--        <div class="body-elem">-->
-<!--            <div class="description-elem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque malesuada leo,-->
-<!--                nec scelerisque ligula mollis ullamcorper. Nunc condimentum erat mi, ut sollicitudin diam-->
-<!--                hendrerit ac.</div>-->
-<!--        </div>-->
-<!--        <div class="footer-elem">-->
-<!--            <div class="comp-elem">Compétences : Java</div>-->
-<!--            <div class="postuler-elem"><button class="btn waves-effect waves-light orange accent-4" type="submit" name="action">Postuler-->
-<!--                    <i class="material-icons left">send</i>-->
-<!--                </button></div>-->
-<!--        </div>-->
-<!---->
-<!--    </div>-->
     <?php foreach($news as $news) { ?>
     <div class="elem">
 
