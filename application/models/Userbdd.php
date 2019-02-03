@@ -48,9 +48,11 @@ FROM `utilisateur`
     public function verifCreationUtilisateur($login, $mail){
         $this->load->database();
 
+        //Verification login existe
         $sql = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`login`=?';
         $query = $this->db->query($sql, $login);
 
+        //Verification mail existe TODO
         $sql2 = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`mail`=?';
         $query2 = $this->db->query($sql2, $mail);
 

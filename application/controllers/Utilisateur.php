@@ -8,7 +8,7 @@ class Utilisateur extends CI_Controller
 
 
 
-
+    // Affichage formulaire inscription utilisateurs
     public function creer()
     {
         $this->load->model('Userbdd');
@@ -21,7 +21,7 @@ class Utilisateur extends CI_Controller
 
 
 
-
+    //Affichage de tous les utilisateurs
     public function lister()
     {
         $this->load->helper('url');
@@ -31,13 +31,17 @@ class Utilisateur extends CI_Controller
         $this->load->view('pages/liste_freelancer', $data);
     }
 
-    public function selectionTechno(){
+    //Formulaire sélection des techno
+    public function selectionTechno()
+    {
         $this->load->helper('url');
         $this->load->view('layout/layout');
         $this->load->view('pages/formSelectionTechnologies');
     }
 
-    public function connexion(){
+    //Vérification connexion
+    public function connexion()
+    {
         $login = $this->input->post('login');
         $password = $this->input->post('password');
 
@@ -48,8 +52,13 @@ class Utilisateur extends CI_Controller
             //Vérification login existe + récupération
             if($result = $this->Userbdd->verifUtilisateur($login)){
                 $passBDD = $result[0]->password;
+
                 if(password_verify($this->input->post('password'),$passBDD)){
+                    $role_id = $result[0]->role_id;
+
                     $this->session->set_userdata('pseudo', $login);
+                    $this->session->set_userdata('role_id', $role_id);
+
                     $data=0;
                     header("Refresh:0");
                 }else{
@@ -66,17 +75,23 @@ class Utilisateur extends CI_Controller
         echo $data;
     }
 
-    public function deconnexion(){
+    //Déconnexion de l'utilisateur
+    public function deconnexion()
+    {
         //	Détruit la session
+        $this->load->helper('url');
         $this->session->sess_destroy();
 
         //	Redirige vers la page d'accueil
-        $this->load->helper('url');
-        $this->load->view('layout/layout');
-        $this->load->view('pages/accueil');
-        $this->load->view('layout/footer');
+        redirect('', 'refresh');
+
+//        $this->load->view('layout/layout');
+//        $this->load->view('pages/accueil');
+//        $this->load->view('layout/footer');
+
     }
-    //--------------------------------------------------------------------------------
+
+    //Enregistrement d'un utilisateur
     public function enregistrer()
     {
         // je récupère des data dans le body de la requete HTTP
@@ -138,6 +153,16 @@ class Utilisateur extends CI_Controller
 
         }
 
+
+    }
+
+    public function tableauAdmin()
+    {
+        $this->load->view('admin/index');
+    }
+
+    public function tableau()
+    {
 
     }
 }

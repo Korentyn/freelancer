@@ -22,11 +22,21 @@
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <?php
-            //Si le membre est connecté on affiche le menu-connection
+            //Si le membre est connecté on affiche le tableau de bord + profil
             $login = $this->session->userdata('pseudo');
-            if(isset($login)) { ?>
+            $role_id = $this->session->userdata('role_id');
+            if(isset($role_id)) {
 
-            <li><a class="white-text " href="index.php/Projet/dashboard">Dashboard</a></li>
+                // tableau de bord administrateur
+             if($role_id=='1') {?>
+                 <li><a class="white-text " href="index.php/Utilisateur/tableauAdmin">Tableau de bord</a></li>
+
+
+<!--                 Tableau de bord utilisateur-->
+             <?php }else{ ?>
+                 <li><a class="white-text " href="index.php/Utilisateur/tableau">Tableau de bord</a></li>
+             <?php }?>
+
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><div class="chip"><img src="<?php echo base_url('asset/images/gup.png'); ?>" alt="Contact Person">
                            <?php echo $this->session->userdata('pseudo'); ?>
                         </div></a></li>
@@ -37,6 +47,7 @@
                     <li class="divider" tabindex="-1"></li>
                     <li><a href="<?php echo site_url('index.php/Utilisateur/deconnexion'); ?>"><img src="<?php echo base_url('asset/images/onOff.png'); ?>" alt="Deconnexion"></a></li>
                 </ul>
+
             <?php }else{ ?>
                 <li><a class="waves-effect waves-light btn modal-trigger" href="#modalConnexion">Connexion</a></li>
             <?php }?>

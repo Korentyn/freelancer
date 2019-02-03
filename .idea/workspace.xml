@@ -4,13 +4,50 @@
     <bookmark url="file://$PROJECT_DIR$/application/views/pages/formCreationProjet.php" line="72" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="673de53c-e446-4e3d-853e-b40ebafe1b2c" name="Default" comment="">
+    <list default="true" id="673de53c-e446-4e3d-853e-b40ebafe1b2c" name="Default" comment="Dashboard Admin">
+      <change afterPath="$PROJECT_DIR$/application/views/admin/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/cs-skin-elastic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/lib/chosen/chosen-sprite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/lib/chosen/chosen-sprite@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/lib/chosen/chosen.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/lib/chosen/chosen.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/lib/datatable/buttons.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/lib/datatable/buttons.dataTables.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/lib/datatable/dataTables.bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/lib/vector-map/jqvmap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/styleAdminDashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/css/styleAdminDashboard.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/icomoon/icomoon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/icomoon/icomoon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/icomoon/icomoon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/icomoon/icomoon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/fonts/icomoon/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/admin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/avatar/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/avatar/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/avatar/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/avatar/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/avatar/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/avatar/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/avatar/64-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/avatar/64-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/guplittle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/gupmid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/logo.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/images/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/js/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/scss/styleAdminDashboard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/scss/styleAdminDashboard.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Utilisateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Userbdd.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Userbdd.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/layout/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layout/layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/css/layout.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/layout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset/js/nouislider.min.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,83 +58,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="formCreationFreelance.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationFreelance.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.php" pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/layout/layout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+            <state relative-caret-position="2134">
+              <caret line="97" column="41" selection-start-line="94" selection-end-line="97" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/asset/css/layout.css">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationFreelance.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+            <state relative-caret-position="220">
+              <caret line="15" column="94" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="94" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Utilisateur.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="47" column="57" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="57" />
+            <state relative-caret-position="14806">
+              <caret line="673" column="22" selection-start-line="673" selection-start-column="22" selection-end-line="673" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="autoload.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/asset/fonts/icomoon/icomoon.svg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="formSelectionTechnologies.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/pages/formSelectionTechnologies.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/asset/scss/styleAdminDashboard.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formCreationUserFail.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationUserFail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Userbdd.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Userbdd.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="formCreationProjet.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationProjet.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="110" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="110" />
+            <state relative-caret-position="545">
+              <caret line="1694" lean-forward="true" selection-start-line="1694" selection-end-line="1695" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -119,6 +116,7 @@
       <find>pop</find>
       <find>container</find>
       <find>recup_competences</find>
+      <find>weath</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -127,10 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/config/database.php" />
-        <option value="$PROJECT_DIR$/application/models/commentaire.php" />
-        <option value="$PROJECT_DIR$/application/models/Evenementbdd.php" />
-        <option value="$PROJECT_DIR$/application/controllers/user.php" />
         <option value="$PROJECT_DIR$/application/controllers/Signalement.php" />
         <option value="$PROJECT_DIR$/application/models/Commentairebdd.php" />
         <option value="$PROJECT_DIR$/application/models/Signalementbdd.php" />
@@ -174,21 +168,16 @@
         <option value="$PROJECT_DIR$/application/views/pages/formCreationFreelance.php" />
         <option value="$PROJECT_DIR$/application/views/pages/formCreationProjet.php" />
         <option value="$PROJECT_DIR$/application/views/pages/formSelectionTechnologies.php" />
-        <option value="$PROJECT_DIR$/application/models/Userbdd.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Utilisateur.php" />
         <option value="$PROJECT_DIR$/asset/css/layout.css" />
+        <option value="$PROJECT_DIR$/application/models/Userbdd.php" />
         <option value="$PROJECT_DIR$/application/views/layout/layout.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/ui-buttons.html" />
+        <option value="$PROJECT_DIR$/application/controllers/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/asset/css/cs-skin-elastic.css" />
+        <option value="$PROJECT_DIR$/asset/css/styleAdminDashboard.css" />
+        <option value="$PROJECT_DIR$/application/views/admin/index.php" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="146" />
@@ -208,68 +197,60 @@
           <expand>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="models" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layout" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="asset" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="asset" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="asset" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="asset" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="freelancer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="freelancer" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="asset" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="menu.scss" type="620a8d5e:NestingTreeNode" />
+              <item name="freelancer" type="462c0819:PsiDirectoryNode" />
+              <item name="asset" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,7 +268,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\ISTEF\PHP_mvc\my-app\application\libraries" />
+      <recent name="C:\wamp64\www\freelancer\asset\images" />
+      <recent name="C:\wamp64\www\freelancer\asset" />
+      <recent name="C:\wamp64\www\freelancer\asset\css" />
+      <recent name="C:\wamp64\www\freelancer\asset\js" />
+      <recent name="C:\wamp64\www\freelancer\asset\fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -369,6 +354,11 @@
       <workItem from="1548243135659" duration="5914000" />
       <workItem from="1548332272702" duration="9080000" />
       <workItem from="1548666867084" duration="11758000" />
+      <workItem from="1548794657181" duration="1723000" />
+      <workItem from="1548872397787" duration="308000" />
+      <workItem from="1549209368409" duration="109000" />
+      <workItem from="1549209614065" duration="24000" />
+      <workItem from="1549209657155" duration="13267000" />
     </task>
     <task id="LOCAL-00001" summary="Test github">
       <created>1531130734270</created>
@@ -451,39 +441,36 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="385978000" />
+    <option name="totallyTimeSpent" value="401510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.14635417" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32837406" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
       <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15085287" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32827735" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="7" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32827735" />
+      <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32897604" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="6" weight="0.32897604" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test github" />
@@ -495,27 +482,10 @@
     <MESSAGE value="formulaire creation projet Back END" />
     <MESSAGE value="paramétrage connexion + cryptage MDP" />
     <MESSAGE value="Connexion fonctionnelle + debut navbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connexion fonctionnelle + debut navbar" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="3" />
-    </breakpoint-manager>
+    <MESSAGE value="Dashboard Admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dashboard Admin" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/controllers/Preferences.php" />
-    <entry file="file://$PROJECT_DIR$/application/controllers/Commentaire.php" />
-    <entry file="file://$PROJECT_DIR$/../../Gmap/Exemples/4-suivigeoloc.html" />
-    <entry file="file://$PROJECT_DIR$/../../Gmap/Exemples/2-asynchrone.html" />
-    <entry file="file://$PROJECT_DIR$/../../Gmap/Exemples/5-geocode.html" />
-    <entry file="file://$PROJECT_DIR$/../../Gmap/Exemples/0-affichergmap.html" />
-    <entry file="file://$PROJECT_DIR$/../../Gmap/Exemples/TP-3/TP3_v1.html" />
-    <entry file="file://$PROJECT_DIR$/../../Gmap/Exemples/1-geoloc.html" />
-    <entry file="file://$PROJECT_DIR$/index.html" />
-    <entry file="file://$PROJECT_DIR$/menu.scss" />
-    <entry file="file://$PROJECT_DIR$/perso.css" />
-    <entry file="file://$PROJECT_DIR$/../../Gmap/Exemples/3-geoloc.html" />
-    <entry file="file://$PROJECT_DIR$/../../tp/ajax/TP-4.html" />
     <entry file="file://$PROJECT_DIR$/../../tp/ajax/TP-5.html" />
     <entry file="file://$PROJECT_DIR$/index2.html" />
     <entry file="file://$PROJECT_DIR$/application/controllers/Signalement.php" />
@@ -617,13 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/liste_freelancer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/css/formCreationProjet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="726">
@@ -680,13 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/accueil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -701,38 +657,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationUserFail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/pages/formSelectionTechnologies.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Userbdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="35" column="39" lean-forward="true" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationFreelance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Projetbdd.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -743,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="47" column="57" lean-forward="true" selection-start-line="47" selection-start-column="20" selection-end-line="47" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/asset/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -757,10 +678,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/liste_freelancer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2464">
+          <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MyTab.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Projetbdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1364">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationUserFail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Userbdd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="43" column="36" selection-start-line="43" selection-start-column="36" selection-end-line="43" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Projet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="831">
+          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/ui-buttons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="48" column="30" selection-start-line="48" selection-start-column="30" selection-end-line="48" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1389">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/images/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/vmap.sampledata.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/widgets.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/main.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/js/dashboard.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/css/styleAdminDashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="1654" lean-forward="true" selection-start-line="1654" selection-end-line="1654" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/css/cs-skin-elastic.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="134" column="1" lean-forward="true" selection-start-line="134" selection-start-column="1" selection-end-line="134" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/ui-typgraphy.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pages/formCreationFreelance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="15" column="94" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layout/layout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+        <state relative-caret-position="484">
+          <caret line="97" column="41" lean-forward="true" selection-start-line="94" selection-end-line="97" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="673" column="22" lean-forward="true" selection-start-line="673" selection-start-column="22" selection-end-line="673" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/fonts/icomoon/icomoon.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/asset/scss/styleAdminDashboard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2640">
+          <caret line="1707" column="14" selection-start-line="1707" selection-start-column="14" selection-end-line="1707" selection-end-column="14" />
         </state>
       </provider>
     </entry>
