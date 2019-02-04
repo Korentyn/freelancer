@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/layout.css'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -25,16 +26,16 @@
             //Si le membre est connecté on affiche le tableau de bord + profil
             $login = $this->session->userdata('pseudo');
             $role_id = $this->session->userdata('role_id');
-            if(isset($role_id)) {
+            if(isset($role_id)) { ?>
 
-                // tableau de bord administrateur
-             if($role_id=='1') {?>
-                 <li><a class="white-text " href="index.php/Utilisateur/tableauAdmin">Tableau de bord</a></li>
+<!--                 tableau de bord administrateur-->
+	<?php  if($role_id=='1') {?>
+                 <li><a class="white-text " href="<?php echo site_url('index.php/Utilisateur/tableauAdmin'); ?>">Tableau de bord</a></li>
 
 
 <!--                 Tableau de bord utilisateur-->
              <?php }else{ ?>
-                 <li><a class="white-text " href="index.php/Utilisateur/tableau">Tableau de bord</a></li>
+                 <li><a class="white-text " href="<?php echo site_url('index.php/Utilisateur/tableau'); ?>">Tableau de bord</a></li>
              <?php }?>
 
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><div class="chip"><img src="<?php echo base_url('asset/images/gup.png'); ?>" alt="Contact Person">
@@ -55,6 +56,8 @@
         </ul>
     </div>
 </nav>
+
+<!-------------------------------NAVBAR MOBILE ------------------------------>
 <ul class="sidenav" id="mobile-demo">
     <li><a class="orange-text text-darken-1" href="#">Recruter</a></li>
     <li><a class="grey-text text-darken-4" href="#">Travailler</a></li>
@@ -96,6 +99,7 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 <script>

@@ -10,7 +10,7 @@ class Userbdd extends CI_Model {
 
 
         // Sélectionne login, presentation, image, techno, moyenne
-        $query = $this->db->query('SELECT `utilisateur`.`login`, `utilisateur`.`presentation`,`utilisateur`.`image`, GROUP_CONCAT(`technologies`.`titre`) AS techno, AVG(`evaluer`.`note`) AS moyenne
+        $query = $this->db->query('SELECT `utilisateur`.`login`,`utilisateur`.`id`, `utilisateur`.`presentation`,`utilisateur`.`image`, GROUP_CONCAT(`technologies`.`titre`) AS techno, AVG(`evaluer`.`note`) AS moyenne
 FROM `utilisateur` 
 
 	LEFT JOIN `evaluer` ON `utilisateur`.`id` = `evaluer`.`utilisateur_id_target`

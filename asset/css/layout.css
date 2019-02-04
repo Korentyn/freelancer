@@ -12,3 +12,7 @@
 .dropdown-trigger{
     display: inherit;
 }
+
+body{
+	font-family: "Open Sans", sans-serif;
+}

@@ -158,11 +158,20 @@ class Utilisateur extends CI_Controller
 
     public function tableauAdmin()
     {
+		$this->load->helper('url');
+		$this->load->view('layout/layout');
         $this->load->view('admin/index');
     }
 
     public function tableau()
     {
-
+		$this->load->helper('url');
+		$this->load->view('layout/layout');
+		$this->load->view('admin/index');
     }
+
+    public function detail(){
+
+		$this->load->helper('url');
+	}
 }

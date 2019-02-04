@@ -20,18 +20,18 @@
 <div class="header">
     <div class="row">
 
-        <form class="col s12">
+        <div class="col s12">
             <label style="color:black;font-size: 1em;">Pour filtrer une compétence en particulier, écrivez la puis appuyez sur entrer</label>
             <div class="row">
                 <div class="input-field col s10">
                     <div class="chips chips-autocomplete"></div>
                 </div>
             </div>
-        </form>
+        </div>
 
     </div>
     <div id="" class="row">
-        <form class="col s12" action="#">
+        <div class="col s12" action="#">
             <div class="input-field col s5">
                 <select>
                     <option value="" disabled selected>> 0 €</option>
@@ -45,7 +45,7 @@
 
 
 
-        </form>
+        </div>
     </div>
 </div>
 
@@ -73,7 +73,7 @@
                         echo ("Non défini");
                     } ?></div>
                 <div class="postuler-elem">
-                    <button class="btn waves-effect waves-light orange accent-4" type="submit" name="action">Voir profil
+                    <button value="<?php echo $news['id']; ?>" class="btn waves-effect waves-light orange accent-4" type="submit" name="freelanceId">Voir profil
                         <i class="material-icons left">send</i>
                     </button>
                 </div>

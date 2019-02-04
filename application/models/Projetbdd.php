@@ -8,7 +8,7 @@ class Projetbdd extends CI_Model {
 
         $this->load->database();
 
-        $query = $this->db->query('SELECT `projet`.`titre`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`, `budget`.`description`
+        $query = $this->db->query('SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`, `budget`.`description`
 FROM `projet`
 
     LEFT JOIN `utilisateur` ON `projet`.`porteur_projet_id` = `utilisateur`.`id`

@@ -73,7 +73,7 @@
                     echo ("Libre");
                 } ?></div>
             <div class="postuler-elem">
-                <button class="btn waves-effect waves-light orange accent-4" type="submit" name="action">Postuler
+                <button value="<?php echo $news['id']; ?>" class="btn waves-effect waves-light orange accent-4" type="submit" name="projetId">Postuler
                     <i class="material-icons left">send</i>
                 </button>
             </div>
