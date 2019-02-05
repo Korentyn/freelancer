@@ -15,26 +15,26 @@ class Inscription extends CI_Controller {
     {
         $this->load->helper('url_helper');
         $this->load->helper('url');
-        $this->load->view('layout/layout');
+        $this->load->view('layout/header');
         $this->load->view('pages/Inscription');
-        $this->load->view('layout/footer');
+
     }
 
     public function recruter(){
 
         $this->load->helper('url_helper');
         $this->load->helper('url');
-        $this->load->view('layout/layout');
+        $this->load->view('layout/header');
         $this->load->view('pages/formCreationPP');
-        $this->load->view('layout/footer');
+
     }
 
     public function travailler(){
         $this->load->helper('url_helper');
         $this->load->helper('url');
-        $this->load->view('layout/layout');
+        $this->load->view('layout/header');
         $this->load->view('pages/formCreationFreelance');
-        $this->load->view('layout/footer');
+
     }
 
     function check_default($post_string)

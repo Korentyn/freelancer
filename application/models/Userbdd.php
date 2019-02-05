@@ -36,25 +36,22 @@ FROM `utilisateur`
     }
 
 
-    public function verifUtilisateur($login){
+    public function verifUtilisateur($mail){
         $this->load->database();
-        $sql = "SELECT * FROM `utilisateur` WHERE `login`=?";
-        $query = $this->db->query($sql, array($login));
+        $sql = "SELECT * FROM `utilisateur` WHERE `mail`=?";
+        $query = $this->db->query($sql, $mail);
 
         return $query->result_object();
     }
 
 
-    public function verifCreationUtilisateur($login, $mail){
+    public function verifCreationUtilisateur($mail){
         $this->load->database();
 
-        //Verification login existe
-        $sql = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`login`=?';
-        $query = $this->db->query($sql, $login);
+        //Verification email existe
+        $sql = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`mail`=?';
+        $query = $this->db->query($sql, $mail);
 
-        //Verification mail existe TODO
-        $sql2 = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`mail`=?';
-        $query2 = $this->db->query($sql2, $mail);
 
         var_dump($query);
         //Si mail ou login existe en base de données, on renvoie 1, sinon 0

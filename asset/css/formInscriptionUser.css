@@ -3,7 +3,7 @@
  }
 
 #bodyForm:not(div) {
-    background-color: #f6fffb;
+    background-color: #ffffff;
 }
 
 .wrapper{
@@ -50,4 +50,10 @@
 
 .champsObligatoires > h5{
     color: #F2A562;
+}
+
+.right-panel {
+	background: #ffffff;
+	margin-left: 280px;
+	margin-top: 55px;
 }

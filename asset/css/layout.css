@@ -6,13 +6,6 @@
     box-sizing: border-box;
     border: 1px solid red;
     border-radius: 2px;
-    display : none;
 }
 
-.dropdown-trigger{
-    display: inherit;
-}
 
-body{
-	font-family: "Open Sans", sans-serif;
-}

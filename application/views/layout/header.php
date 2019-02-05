@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<link rel="apple-touch-icon" href="">
@@ -16,11 +16,8 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
 	<link rel="stylesheet" href="<?php echo base_url('asset/css/cs-skin-elastic.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('asset/css/styleAdminDashboard.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('asset/css/styleTemplate.css'); ?>">
 
-	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
-	<link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/jqvmap@1.5.1/dist/jqvmap.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -30,37 +27,20 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="<?php echo site_url(''); ?>"><i class="menu-icon fa fa-laptop"></i>Accueil</a>
                     </li>
-                    <li class="menu-title">UI elements</li><!-- /.menu-title -->
+                    <li class="menu-title">Premiers pas</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Components</a>
-                        <ul class="sub-menu children dropdown-menu">                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
+                        <a href="#" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Poster un projet</a>
 
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Basic Table</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">Data Table</a></li>
-                        </ul>
+                        <a href="#" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Travailler</a>
+
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
+                        <a href="#" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Recruter</a>
+
                     </li>
 
                     <li class="menu-title">Icons</li><!-- /.menu-title -->
@@ -116,67 +96,77 @@
 			<div class="navbar-header">
 
 
-				<a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo base_url('asset/images/guplittle.png'); ?>" alt="Logo"></a>
+				<a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo base_url('asset/images/logo-2.png'); ?>" alt="Logo"></a>
 
 				<a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
 
 
 			</div>
 		</div>
+
 		<div class="top-right">
 			<div class="header-menu">
 				<div class="header-left">
-					<button class="search-trigger"><i class="fa fa-search"></i></button>
-					<div class="form-inline">
-						<form class="search-form">
-							<input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
-							<button class="search-close" type="submit"><i class="fa fa-close"></i></button>
-						</form>
-					</div>
+				<?php
+				//Si le membre est connecté on affiche le tableau de bord + profil
+				$login = $this->session->userdata('pseudo');
+				$role_id = $this->session->userdata('role_id');
+				if(isset($role_id)) { ?>
 
-					<!------------------------- NOTIFICATIONS ----------------->
-					<div class="dropdown for-notification">
-						<button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-bell"></i>
-							<span class="count bg-danger">3</span>
-						</button>
-						<div class="dropdown-menu" aria-labelledby="notification">
-							<p class="red">You have 3 Notification</p>
-							<a class="dropdown-item media" href="#">
-								<i class="fa fa-check"></i>
-								<p>Server #1 overloaded.</p>
-							</a>
-							<a class="dropdown-item media" href="#">
-								<i class="fa fa-info"></i>
-								<p>Server #2 overloaded.</p>
-							</a>
-							<a class="dropdown-item media" href="#">
-								<i class="fa fa-warning"></i>
-								<p>Server #3 overloaded.</p>
-							</a>
-						</div>
-					</div>
 
-					<!------------------------- MESSAGES     ----------------->
-					<div class="dropdown for-message">
-						<button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<i class="fa fa-envelope"></i>
-							<span class="count bg-primary">1</span>
-						</button>
-						<div class="dropdown-menu" aria-labelledby="message">
-							<p class="red">Vous avez 1 message(s)</p>
-							<a class="dropdown-item media" href="#">
-								<span class="photo media-left"><img alt="avatar" src="<?php echo base_url('asset/images/avatar/2.jpg'); ?>"></span>
-								<div class="message media-body">
-									<span class="name float-left">Jonathan Smith</span>
-									<span class="time float-right">Just now</span>
-									<p>Hello, this is an example msg</p>
-								</div>
-							</a>
 
-						</div>
+				<!------------------------- NOTIFICATIONS ----------------->
+				<div class="dropdown for-notification">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-bell"></i>
+						<span class="count bg-danger">3</span>
+					</button>
+					<div class="dropdown-menu" aria-labelledby="notification">
+						<p class="red">You have 3 Notification</p>
+						<a class="dropdown-item media" href="#">
+							<i class="fa fa-check"></i>
+							<p>Server #1 overloaded.</p>
+						</a>
+						<a class="dropdown-item media" href="#">
+							<i class="fa fa-info"></i>
+							<p>Server #2 overloaded.</p>
+						</a>
+						<a class="dropdown-item media" href="#">
+							<i class="fa fa-warning"></i>
+							<p>Server #3 overloaded.</p>
+						</a>
 					</div>
 				</div>
+
+				<!------------------------- MESSAGES     ----------------->
+				<div class="dropdown for-message">
+					<button class="btn btn-secondary dropdown-toggle" type="button" id="message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-envelope"></i>
+						<span class="count bg-primary">1</span>
+					</button>
+					<div class="dropdown-menu" aria-labelledby="message">
+						<p class="red">Vous avez 1 message(s)</p>
+						<a class="dropdown-item media" href="#">
+							<span class="photo media-left"><img alt="avatar" src="<?php echo base_url('asset/images/avatar/2.jpg'); ?>"></span>
+							<div class="message media-body">
+								<span class="name float-left">Jonathan Smith</span>
+								<span class="time float-right">Just now</span>
+								<p>Hello, this is an example msg</p>
+							</div>
+						</a>
+
+					</div>
+				</div>
+			</div>
+
+
+				<?php }?>
+
+				<div class="header-left">
+
+
+				<?php if(isset($role_id)) { ?>
+
 
 				<div class="user-area dropdown float-right">
 					<a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -190,18 +180,34 @@
 
 						<a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
 
-						<a class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>
+						<a class="nav-link" href="<?php echo site_url('index.php/Utilisateur/deconnexion'); ?>"><i class="fa fa-power -off"></i>Logout</a>
 					</div>
 				</div>
-
+				<?php }else{?>
+					<form action="<?php echo site_url('index.php/Utilisateur/formConnexion'); ?>" method="post">
+					<button class="btn btn-primary">Connexion</button>
+					</form>
+					<?php } ?>
 			</div>
 		</div>
 	</header>
 	<!-- /#header -->
+	<script
+		src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+
+	<script src="<?php echo base_url('asset/js/main.js'); ?>" ></script>
+<!--	<script src="--><?php //echo base_url('asset/js/dashboard.js'); ?><!--" ></script>-->
+	<script src="https://cdn.jsdelivr.net/npm/jquery.flot@0.8.3/jquery.flot.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
+
+
 </body>
 </html>

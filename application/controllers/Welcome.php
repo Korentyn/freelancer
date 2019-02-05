@@ -22,7 +22,7 @@ class Welcome extends CI_Controller
     public function index()
     {
         $this->load->helper('url');
-        $this->load->view('layout/layout');
+        $this->load->view('layout/header');
         $this->load->view('pages/accueil');
     }
     public function projets()

@@ -20,7 +20,9 @@
 </head>
 <body id="bodyForm">
 <div id="profil-wrapper" class="row">
-<h2>Quel est votre objectif ?</h2>
+	<div class="col-12"><h2>Quel est votre objectif ?</h2></div>
+
+</div>
     <div class="grid">
         <figure class="effect-zoe">
             <a href="<?php echo site_url('index.php/Inscription/travailler'); ?>">
@@ -43,6 +45,6 @@
         </figure>
     </div>
 
-</div>
+
 </body>
 </html>

@@ -16,10 +16,7 @@
 	<title>Grow Up</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/accueil.css'); ?>">
 </head>
-<body>
-
-<a class="waves-effect waves-light btn-large blue accent-1 black-text border-btn border-color-btn1">PROPOSER MES SERVICES</a>
-<a class="waves-effect waves-light btn-large orange lighten-4 black-text border-btn border-color-btn">PUBLIER UN PROJET</a>
+<body >
 
 </body>
 </html>

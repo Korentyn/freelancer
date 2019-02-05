@@ -20,6 +20,11 @@ class Utilisateur extends CI_Controller
     }
 
 
+    public function formConnexion(){
+		$this->load->helper('url');
+		$this->load->view('pages/connexion');
+
+	}
 
     //Affichage de tous les utilisateurs
     public function lister()
@@ -42,16 +47,18 @@ class Utilisateur extends CI_Controller
     //Vérification connexion
     public function connexion()
     {
-        $login = $this->input->post('login');
-        $password = $this->input->post('password');
+        $mail = $this->input->post('mail');
+		$password = $this->input->post('password');
+
 
         //Vérification password ou login vide
-        if ($password != "" && $login != "") {
+        if (isset($password) && isset($mail)) {
             $this->load->model('Userbdd');
 
             //Vérification login existe + récupération
-            if($result = $this->Userbdd->verifUtilisateur($login)){
+            if($result = $this->Userbdd->verifUtilisateur($mail)){
                 $passBDD = $result[0]->password;
+                $login = $result[0]->login;
 
                 if(password_verify($this->input->post('password'),$passBDD)){
                     $role_id = $result[0]->role_id;
@@ -60,19 +67,28 @@ class Utilisateur extends CI_Controller
                     $this->session->set_userdata('role_id', $role_id);
 
                     $data=0;
-                    header("Refresh:0");
+					redirect('', 'refresh');
                 }else{
                     $data = 2;
+					//redirect('index.php/Utilisateur/formConnexion', 'refresh');
+					$data2['erreur'] ='wrong';
+					$this->load->view('pages/connexion', $data2);
                 }
 
 
-            }
+            }else{
+				//redirect('index.php/Utilisateur/formConnexion', 'refresh');
+				$data2['erreur']='wrong';
+				$this->load->view('pages/connexion', $data2);
+			}
 
         }else {
             $data = 1;
-
+			//redirect('index.php/Utilisateur/formConnexion', 'refresh');
+			$data2['erreur']='empty';
+			$this->load->view('pages/connexion', $data2);
         }
-        echo $data;
+
     }
 
     //Déconnexion de l'utilisateur
