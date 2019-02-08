@@ -2,58 +2,35 @@
 
  }
 
-#bodyForm:not(div) {
-    background-color: #ffffff;
+.form-wrapper{
+	padding: 10%;
 }
 
-.wrapper{
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    width: 80%;
+.needs-validation{
+	border: 2px solid #ff9b38;
+	background-color: #fff5df;
+	border-radius: 5px;
 }
 
-#myForm-wrapper{
-    display: flex;
+h2{
+	text-align: center;
+	padding-bottom: 5%;
 }
 
-#myFormInscription{
-    width : 99vh;
-    margin-left: auto;
-    margin-right: auto;
+#bouton-form{
+	width: 32%;
+	box-shadow: 9px 8px 15px -3px rgba(0,0,0,0.75);
+	padding: 10px;
+	margin-top: 30px;
 }
 
-.titleForm{
-    text-align: center;
-    padding: 30px;
-}
-
-.helper-text{
-    color: #bc121e;
-}
-
-
-.champsOptionnels{
-    border-left: 3px solid #4A77BF;
-    padding-left: 3%;
-}
-
-.champsOptionnels > h5{
-    color: #4A77BF;
-}
-
-
-.champsObligatoires{
-    border-left: 3px solid #F2A562;
-    padding-left: 3%;
-}
-
-.champsObligatoires > h5{
-    color: #F2A562;
-}
-
-.right-panel {
-	background: #ffffff;
-	margin-left: 280px;
-	margin-top: 55px;
+.erreur{
+	text-align: center;
+	margin: 2px;
+	color: red;
+	background-color: #ffe7ef;
+	box-sizing: border-box;
+	border: 1px solid red;
+	border-radius: 2px;
+	display : none;
 }

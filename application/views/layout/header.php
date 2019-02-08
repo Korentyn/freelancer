@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="<?php echo base_url('asset/css/cs-skin-elastic.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('asset/css/styleTemplate.css'); ?>">
 
@@ -31,54 +32,31 @@
                     </li>
                     <li class="menu-title">Premiers pas</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Poster un projet</a>
 
+                        <a href="<?php echo site_url('index.php/Projet/creer'); ?>" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-play"></i>Poster un projet</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Travailler</a>
-
+                        <a href="<?php echo site_url('index.php/Projet/lister'); ?>" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-cogs"></i>Projets disponibles</a>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false">Recruter</a>
-
+                        <a href="<?php echo site_url('index.php/Utilisateur/lister'); ?>" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-users"></i>Freelances inscrits</a>
                     </li>
 
-                    <li class="menu-title">Icons</li><!-- /.menu-title -->
+                    <li class="menu-title">Tableau de bord</li><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-tasks"></i> Projet en cours</a>
                     </li>
                     <li>
                         <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                        </ul>
-                    </li>
 
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-title">Extras</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                        </ul>
+                    <li class="menu-title">Mon profil</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children">
+                        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Mes informations</a>
+						<br>
+						<br>
+						<a  href="#" class="menu-icon" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-power-off"></i>Deconnexion</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

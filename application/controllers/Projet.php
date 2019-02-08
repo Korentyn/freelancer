@@ -17,8 +17,8 @@ class Projet extends CI_Controller
         $this->load->model('Projetbdd');
         $data['budget'] = $this->Projetbdd->listerBudget();
         $data['competence'] = $this->Projetbdd->listerTechnologies();
-        $this->load->view('layout/layout');
-        $this->load->view('pages/formCreationProjet', $data);
+        $this->load->view('layout/header');
+        $this->load->view('pages/formCreationProjet2', $data);
         $this->load->view('layout/footer');
 
 
@@ -32,23 +32,22 @@ class Projet extends CI_Controller
         $this->load->helper('url');
         $this->load->model('Projetbdd');
         $data['news'] = $this->Projetbdd->listerProjetTous();
-        $this->load->view('layout/layout');
+        $this->load->view('layout/header');
         $this->load->view('pages/liste_projets', $data);
     }
 
 
-    //----------------------------------------------------
+
     public function enregistrer()
     {
-
         $titre = $this->input->post('titre');
-        $description = $this->input->post('description');
+        $description = $this->input->post('presentation');
         $budget = $this->input->post('categorie');
         $competence = $this->input->post('competence');
         $motcle = $this->input->post('motcle');
-        $porteur_projet_id = 1;
+        $porteur_projet_id = $this->session->userdata('id');
 
-        //echo $titre.' '.$description.' '.$budget.' '.$competence.' '.$motcle;
+        echo $titre.' '.$description.' '.$budget.' '.$competence;
 
 
 
@@ -58,13 +57,13 @@ class Projet extends CI_Controller
 
             if( $this->Projetbdd->creerProjet($titre, $description, $budget, $motcle, $porteur_projet_id, $competence)!=1){
                 $this->load->helper('url');
-                $this->load->view('layout/layout');
+                $this->load->view('layout/header');
                 $this->load->view('pages/formCreationProjetFail');
 
             }else{
 
                 $this->load->helper('url');
-                $this->load->view('layout/layout');
+                $this->load->view('layout/header');
                 $this->load->view('pages/formCreationProjetSuccess');
             }
         }

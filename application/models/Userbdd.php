@@ -29,38 +29,45 @@ FROM `utilisateur`
     {
         $this->load->database();
 
-        $query = $this->db->query("INSERT INTO `utilisateur` (`login`,`civilite`,`nom`, `prenom`, `mail`, `password`, `telephone`, `presentation`, `role_id`) 
-        VALUES ('$login', '$civilite', '$nom', '$prenom', '$email', '$password', '$telephone', '$presentation', '$role')");
-
+        $sql = "INSERT INTO `utilisateur` (`login`,`civilite`,`nom`, `prenom`, `mail`, `password`, `telephone`, `presentation`, `role_id`)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		$query = $this->db->query($sql, array($login,$civilite,$nom,$prenom,$email,$password,$telephone,$presentation,$role));
         return $query;
     }
 
 
-    public function verifUtilisateur($mail){
+    public function verifUtilisateur($mail)
+	{
         $this->load->database();
         $sql = "SELECT * FROM `utilisateur` WHERE `mail`=?";
         $query = $this->db->query($sql, $mail);
-
         return $query->result_object();
     }
 
 
-    public function verifCreationUtilisateur($mail){
-        $this->load->database();
+    public function verifMail($mail)
+	{
+	$this->load->database();
 
-        //Verification email existe
-        $sql = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`mail`=?';
-        $query = $this->db->query($sql, $mail);
+	//Verification email existe
+	$sql = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`mail`=?';
+	$query = $this->db->query($sql, $mail);
 
 
-        var_dump($query);
-        //Si mail ou login existe en base de données, on renvoie 1, sinon 0
-//        if($query != 1 || $query2 != 1){
-//            return 0;
-//        }else{
-//            return 1;
-//        }
-    }
+		return $query->result_array();
+}
+
+	public function verifLogin($login)
+	{
+		$this->load->database();
+
+		//Verification email existe
+		$sql = 'SELECT * FROM `utilisateur` WHERE `utilisateur`.`login`=?';
+		$query = $this->db->query($sql, $login);
+
+
+		return $query->result_array();
+	}
 
 
     public function modifierUser($id_user, $nom, $prenom, $note) {

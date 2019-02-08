@@ -35,14 +35,14 @@
         </div>
         <div class="row">
             <div class="input-field col s12">
-                <textarea id="description" name="description" class="materialize-textarea" size="1200" data-length="1200"></textarea>
-                <label for="description">Description</label>
+				<div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Présentation du projet</label></div>
+				<div class="col-12 col-md-9"><textarea name="presentation" id="textarea-input" rows="9" placeholder="Votre contenu..." class="form-control"></textarea></div>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <select name="categorie" >
-                    <option value="" disabled selected>Choisissez votre catégorie</option>
+                    <option value="" disabled selected>Choisissez votre budget</option>
                     <?php foreach($budget as $budget) { ?>
                         <option value="<?php echo $budget['id']; ?>"><?php echo $budget['description']; ?></option>
                     <?php } ?>
@@ -54,6 +54,17 @@
 
     <div class="champsOptionnels">
         <h5>Champs facultatifs</h5>
+		<div class="row">
+			<div class="input-field col s12">
+				<select name="categorie" >
+					<option value="" disabled selected>Choisissez votre catégorie</option>
+					<?php foreach($budget as $budget) { ?>
+						<option value="<?php echo $budget['id']; ?>"><?php echo $budget['description']; ?></option>
+					<?php } ?>
+				</select>
+				<label>Coût du projet</label>
+			</div>
+		</div>
         <div class="row">
             <div class="input-field col s12">
                 <select name="competence" id="catTechnologie">

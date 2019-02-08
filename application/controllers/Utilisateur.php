@@ -32,7 +32,7 @@ class Utilisateur extends CI_Controller
         $this->load->helper('url');
         $this->load->model('Userbdd');
         $data['news'] = $this->Userbdd->listerUserTous();
-        $this->load->view('layout/layout');
+        $this->load->view('layout/header');
         $this->load->view('pages/liste_freelancer', $data);
     }
 
@@ -62,14 +62,16 @@ class Utilisateur extends CI_Controller
 
                 if(password_verify($this->input->post('password'),$passBDD)){
                     $role_id = $result[0]->role_id;
+                    $id = $result[0]->id;
 
                     $this->session->set_userdata('pseudo', $login);
                     $this->session->set_userdata('role_id', $role_id);
+					$this->session->set_userdata('id', $id);
 
-                    $data=0;
+
 					redirect('', 'refresh');
                 }else{
-                    $data = 2;
+
 					//redirect('index.php/Utilisateur/formConnexion', 'refresh');
 					$data2['erreur'] ='wrong';
 					$this->load->view('pages/connexion', $data2);
@@ -83,7 +85,7 @@ class Utilisateur extends CI_Controller
 			}
 
         }else {
-            $data = 1;
+
 			//redirect('index.php/Utilisateur/formConnexion', 'refresh');
 			$data2['erreur']='empty';
 			$this->load->view('pages/connexion', $data2);
@@ -110,66 +112,129 @@ class Utilisateur extends CI_Controller
     //Enregistrement d'un utilisateur
     public function enregistrer()
     {
-        // je récupère des data dans le body de la requete HTTP
-        $role = $this->input->get('role');
-        $login = $this->input->post('login');
-        $civilite = $this->input->post('civilite');
-        $nom = $this->input->post('nom');
-        $prenom = $this->input->post('prenom');
-        $password = $this->input->post('password');
-        $passwordVerif = $this->input->post('passwordVerif');
-        $email = $this->input->post('email');
-        $emailVerif = $this->input->post('emailVerif');
-        $telephone = $this->input->post('telephone');
-        $presentation = $this->input->post('presentation');
+    	try {
 
 
-        //echo $login." ".$civilite." ".$nom." ".$prenom." ".$password." ".$passwordVerif." ".$email." ".$emailVerif." ".$telephone." ".$presentation;
+			// je récupère des data dans le body de la requete HTTP
+			$role = $this->input->get('role');
+			$login = $this->input->post('pseudo');
+			$civilite = $this->input->post('civilite');
+			$nom = $this->input->post('nom');
+			$prenom = $this->input->post('prenom');
+			$password = $this->input->post('password');
+			$passwordVerif = $this->input->post('password2');
+			$email = $this->input->post('email');
+			$emailVerif = $this->input->post('email2');
+			$telephone = $this->input->post('telephone');
+			$presentation = $this->input->post('presentation');
 
-        // Verification similitude entre les champs mail + mot de passe
-        if ($password != $passwordVerif || $email != $emailVerif || $password == "" || $email == "") {
-            $this->load->helper('url');
-            $this->load->view('layout/layout');
-            $this->load->view('pages/formCreationUserFail');
-            $this->load->view('layout/footer');
-        } else {
 
-            //Verification complétude des champs obligatoires
-            if ($login != "" && $civilite != "" && $nom != "" && $prenom != "" && $role != "") {
+			//echo $role." ".$login." ".$civilite." ".$nom." ".$prenom." ".$password." ".$passwordVerif." ".$email." ".$emailVerif." ".$telephone." ".$presentation;
 
-                $this->load->model('Userbdd');
+			// Verification similitude entre les champs mail + mot de passe
+			if ($password != $passwordVerif || $email != $emailVerif || $password == "" || $email == "") {
+				$this->load->helper('url');
+				redirect('Inscription', 'refresh');
+			} else {
 
-                // Vérification existance du login + mail
-                if ($this->Userbdd->verifCreationUtilisateur($login, $email) == 1) {
-                    $this->load->helper('url');
-                    $this->load->view('layout/layout');
-                    $data['erreur'] = "email ou login déjà utilisé";
-                    $this->load->view('pages/formCreationUserFail', $data);
-                    $this->load->view('layout/footer');
-                } else {
+				//Verification complétude des champs obligatoires
+				if ($login != "" && $civilite != "" && $nom != "" && $prenom != "" && $role != "") {
 
-                    //Cryptage du mot de passe
+					$this->load->model('Userbdd');
+
+
+					//var_dump($this->Userbdd->verifMail($email));
+					// Vérification existance du mail
+                if (!$this->Userbdd->verifMail($email)) {
+					echo('existe pas');
+
+					if (!$this->Userbdd->verifLogin($login)) {
+
+						//Cryptage du mot de passe
                     $password = password_hash($password,PASSWORD_DEFAULT);
 
                     //Verification si enregistrement en base est un succès
-                    if ($this->Userbdd->creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role) != 1) {
-                        $this->load->helper('url');
-                        $this->load->view('layout/layout');
-                        $this->load->view('pages/formCreationUserFail');
-                        $this->load->view('layout/footer');
-                    } else {
-                        $this->load->helper('url');
-                        $this->load->view('layout/layout');
-                        $this->load->view('pages/formCreationUserSuccess');
-                        $this->load->view('layout/footer');
-                    }
-                }
-            }
+						if ($this->Userbdd->creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role) != 1)
+						{
+							$this->load->helper('url');
+							$this->load->view('layout/header');
+							$this->load->view('pages/formCreationUserFail');
+
+						} else {
+							$this->load->helper('url');
+							$this->load->view('layout/header');
+							$this->load->view('pages/formCreationUserSuccess');
+						}
+
+					}else {
+						$data['erreur']='pseudo';
+						$this->load->helper('url');
+						$this->load->view('layout/header');
+
+						if($role=='2')
+						{
+							$this->load->view('pages/formCreationPP', $data);
+						}else {
+							$this->load->view('pages/formCreationFreelance', $data);
+							}
+					}
+
+//                	if($role==2){
+//						$this->load->helper('url');
+//						$this->load->view('layout/header');
+//						$data['erreur'] = "email ou login déjà utilisé";
+//						$this->load->view('pages/formCreationPP', $data);
+//
+//
+//					}elseif($role==3){
+//						$this->load->helper('url');
+//						$this->load->view('layout/header');
+//						$data['erreur'] = "email ou login déjà utilisé";
+//						$this->load->view('pages/formCreationFreelance', $data);
+//
+//					}
+//                } else {
+//
+//                    //Cryptage du mot de passe
+//                    $password = password_hash($password,PASSWORD_DEFAULT);
+//
+//                    //Verification si enregistrement en base est un succès
+//                    if ($this->Userbdd->creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role) != 1) {
+//                        $this->load->helper('url');
+//                        $this->load->view('layout/header');
+//                        $this->load->view('pages/formCreationUserFail');
+//
+//                    } else {
+//                        $this->load->helper('url');
+//                        $this->load->view('layout/header');
+//                        $this->load->view('pages/formCreationUserSuccess');
+//
+//                    }
+                }else{
+					$data['erreur']='mail';
+					$this->load->helper('url');
+					$this->load->view('layout/header');
+
+                	if($role=='2'){
+						$this->load->view('pages/formCreationPP', $data);
+					}else{
+						$this->load->view('pages/formCreationFreelance', $data);
+					}
 
 
-        }
+				}
+				}else{
+
+					$this->load->helper('url');
+					redirect('Inscription', 'refresh');
+				}
 
 
+			}
+
+		}catch (\Exception $e){
+    		return $e;
+		}
     }
 
     public function tableauAdmin()

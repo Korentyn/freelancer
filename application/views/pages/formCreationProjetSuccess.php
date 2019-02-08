@@ -8,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-Formulaire créé avec succès !
+Projet créé avec succès !
 </body>
 </html>
