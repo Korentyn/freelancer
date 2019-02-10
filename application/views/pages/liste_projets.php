@@ -60,6 +60,7 @@
         <div class="header-elem">
             <div class="prix-elem"><?php echo $news['description']; ?></div>
             <div class="titre-elem"><?php echo $news['titre']; ?></div>
+            <div class="img-createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""></div>
             <div class="createur-elem"><?php echo $news['login']; ?></div>
         </div>
         <div class="body-elem">
@@ -73,9 +74,8 @@
                     echo ("Libre");
                 } ?></div>
             <div class="postuler-elem">
-                <button value="<?php echo $news['id']; ?>" class="btn waves-effect waves-light orange accent-4" type="submit" name="projetId">Postuler
-                    <i class="material-icons left">send</i>
-                </button>
+                <a href="<?php echo site_url('index.php/Projet/detailProjet'); ?>?id=<?php echo $news['id']?>"  class="btn waves-effect waves-light orange accent-4">Postuler
+                </a>
             </div>
         </div>
 

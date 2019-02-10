@@ -93,6 +93,22 @@ class Utilisateur extends CI_Controller
 
     }
 
+    public function monProfil(){
+        $this->load->helper('url');
+        $this->load->model('Userbdd');
+        $id = $this->session->userdata('id');
+        if(isset($id)){
+            $this->load->view('layout/header');
+            $data['news'] = $this->Userbdd->detailProfil($this->session->userdata('id'));
+            $this->load->view('pages/profilUtilisateur', $data);
+        }else{
+            $this->load->view('layout/header');
+            $this->load->view('pages/pageErreur');
+        }
+
+
+    }
+
     //Déconnexion de l'utilisateur
     public function deconnexion()
     {

@@ -42,22 +42,30 @@
                         <a href="<?php echo site_url('index.php/Utilisateur/lister'); ?>" class="dropdown-toggle"  aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-users"></i>Freelances inscrits</a>
                     </li>
 
-                    <li class="menu-title">Tableau de bord</li><!-- /.menu-title -->
+                    <?php
+                    //Si le membre est connecté on affiche le tableau de bord + profil
+                    $login = $this->session->userdata('pseudo');
+                    $role_id = $this->session->userdata('role_id');
+                    if(isset($role_id)) { ?>
 
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-tasks"></i> Projet en cours</a>
-                    </li>
-                    <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                    </li>
+                        <li class="menu-title">Tableau de bord</li><!-- /.menu-title -->
 
-                    <li class="menu-title">Mon profil</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children">
-                        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Mes informations</a>
-						<br>
-						<br>
-						<a  href="#" class="menu-icon" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-power-off"></i>Deconnexion</a>
-                    </li>
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-tasks"></i> Projet en cours</a>
+                        </li>
+                        <li>
+                            <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
+                        </li>
+
+                        <li class="menu-title">Mon profil</li><!-- /.menu-title -->
+                        <li class="menu-item-has-children">
+                            <a href="<?php echo site_url('index.php/Utilisateur/monProfil'); ?>" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Mes informations</a>
+                            <br>
+                            <br>
+                            <a  href="#" class="menu-icon" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-power-off"></i>Deconnexion</a>
+                        </li>
+                    <?php } ?>
+
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -86,9 +94,8 @@
 			<div class="header-menu">
 				<div class="header-left">
 				<?php
-				//Si le membre est connecté on affiche le tableau de bord + profil
-				$login = $this->session->userdata('pseudo');
-				$role_id = $this->session->userdata('role_id');
+
+
 				if(isset($role_id)) { ?>
 
 
@@ -152,7 +159,7 @@
 					</a>
 
 					<div class="user-menu dropdown-menu">
-						<a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
+						<a class="nav-link" href="<?php echo site_url('index.php/Utilisateur/monProfil'); ?>"><i class="fa fa- user"></i>My Profile</a>
 
 						<a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
@@ -163,7 +170,7 @@
 				</div>
 				<?php }else{?>
 					<form action="<?php echo site_url('index.php/Utilisateur/formConnexion'); ?>" method="post">
-					<button class="btn btn-primary">Connexion</button>
+					<button id="connexion-button" class="btn btn-primary">Connexion</button>
 					</form>
 					<?php } ?>
 			</div>

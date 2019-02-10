@@ -2,13 +2,27 @@
 class Projetbdd extends CI_Model {
 
 
+    public function detailProjet($id){
+        $this->load->database();
 
+        $sql = 'SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`,`utilisateur`.`image`, `budget`.`description`
+        FROM `projet`
+
+        LEFT JOIN `utilisateur` ON `projet`.`porteur_projet_id` = `utilisateur`.`id`
+        LEFT JOIN `budget` ON `projet`.`budget` = `budget`.`id`
+        where `projet`.`id`=?';
+
+        $query = $this->db->query($sql, $id);
+
+        return $query->result_array();
+
+    }
 
     public function listerProjetTous() {
 
         $this->load->database();
 
-        $query = $this->db->query('SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`, `budget`.`description`
+        $query = $this->db->query('SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`,`utilisateur`.`image`, `budget`.`description`
 FROM `projet`
 
     LEFT JOIN `utilisateur` ON `projet`.`porteur_projet_id` = `utilisateur`.`id`

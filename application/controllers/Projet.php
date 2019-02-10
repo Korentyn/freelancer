@@ -29,6 +29,7 @@ class Projet extends CI_Controller
     //----------------------------------------------------
     public function lister()
     {
+
         $this->load->helper('url');
         $this->load->model('Projetbdd');
         $data['news'] = $this->Projetbdd->listerProjetTous();
@@ -36,6 +37,15 @@ class Projet extends CI_Controller
         $this->load->view('pages/liste_projets', $data);
     }
 
+    public function detailProjet(){
+        $id = $this->input->get('id');
+        $this->load->helper('url');
+        $this->load->model('Projetbdd');
+        //var_dump ($this->Projetbdd->detailProjet($id));
+        $data['news'] = $this->Projetbdd->detailProjet($id);
+        $this->load->view('layout/header');
+        $this->load->view('pages/detailProjet', $data);
+    }
 
 
     public function enregistrer()
