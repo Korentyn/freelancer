@@ -12,7 +12,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo base_url()?>asset/css/style.css" />
-    <link rel="stylesheet" href="<?php echo base_url()?>asset/css/nouislider.min.css" />
+
 
     <title>Projets disponibles</title>
 </head>
@@ -60,8 +60,8 @@
         <div class="header-elem">
             <div class="prix-elem"><?php echo $news['description']; ?></div>
             <div class="titre-elem"><?php echo $news['titre']; ?></div>
-            <div class="img-createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""></div>
-            <div class="createur-elem"><?php echo $news['login']; ?></div>
+            <div class="img-createur-elem"></div>
+            <div class="createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div>
         </div>
         <div class="body-elem">
             <div class="description-elem"><?php echo $news['presentation']; ?></div>
@@ -83,7 +83,6 @@
     <?php } ?>
 </div>
 
-<script src="<?php echo base_url()?>asset/js/nouislider.min.js"></script>
 <script>
     $(document).ready(function () {
 

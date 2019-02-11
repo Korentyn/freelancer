@@ -12,6 +12,8 @@
     padding : 3vh;
 }
 
+
+
 .filtre-title{
     margin-bottom : 6px;
 }
@@ -62,6 +64,16 @@
 .header-elem{
     display: flex;
     justify-content: space-between;
+}
+
+.createur-elem{
+	display: flex;
+	flex-direction : column;
+}
+
+.createur-elem > img{
+	width: 60px;
+
 }
 
 .footer-elem{

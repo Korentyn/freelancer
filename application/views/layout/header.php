@@ -150,12 +150,12 @@
 				<div class="header-left">
 
 
-				<?php if(isset($role_id)) { ?>
-
-
+				<?php if(isset($role_id)) {
+					$image = $this->session->userdata('image');
+					?>
 				<div class="user-area dropdown float-right">
 					<a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<img class="user-avatar rounded-circle" src="<?php echo base_url('asset/images/avatar/1.jpg'); ?>" alt="User Avatar">
+						<img class="user-avatar rounded-circle" src="<?php echo base_url()?>asset/images/avatar/<?php echo $image; ?>" alt="User Avatar">
 					</a>
 
 					<div class="user-menu dropdown-menu">

@@ -63,10 +63,12 @@ class Utilisateur extends CI_Controller
                 if(password_verify($this->input->post('password'),$passBDD)){
                     $role_id = $result[0]->role_id;
                     $id = $result[0]->id;
+					$image = $result[0]->image;
 
                     $this->session->set_userdata('pseudo', $login);
                     $this->session->set_userdata('role_id', $role_id);
 					$this->session->set_userdata('id', $id);
+					$this->session->set_userdata('image', $image);
 
 
 					redirect('', 'refresh');
