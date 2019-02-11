@@ -86,33 +86,6 @@
 <script>
     $(document).ready(function () {
 
-        //Initialisation champ compétences
-        $('.chips').chips();
-        $('.chips-autocomplete').chips({
-            autocompleteOptions: {
-                data: {
-                    'PHP': null,
-                    'HTML': null,
-                    'Javascript': null,
-                    'Java/JEE': null,
-                    'C': null,
-                    'C++': null,
-                    'C#': null,
-                    'Unity': null,
-                    'Unreal engine': null,
-                    'NodeJS' : null,
-                    'Angular' : null
-
-                },
-                limit: Infinity,
-                minLength: 1
-            }
-        });
-
-        //Initialisation input prix tt + prix /h
-        $('select').formSelect();
-
-
     });
 </script>
 </body>
