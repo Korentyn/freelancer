@@ -1,11 +1,13 @@
-.border-btn {
-	border-radius: 50px;
+.body2 {
+	background-color: white;
 }
-
-.border-color-btn {
-	border: 2px solid #ffb74d;
+.margin {
+	margin-top: 45px;
 }
-
-.border-color-btn1 {
-	border: 2px solid #eeeeee;
+.carousel-caption {
+	background-color: rgba(17, 17, 17, 0.5);
+	left: 0.5%;
+	right: 0.5%;
+	text-align: left;
+	padding-left: 2%;
 }
