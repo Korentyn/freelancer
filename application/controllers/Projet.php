@@ -46,7 +46,7 @@ class Projet extends CI_Controller
         $this->load->view('pages/detailProjet', $data);
     }
 
-    public function postulerProjet(){
+    public function deviserProjet(){
 		$id = $this->input->get('id');
 		$this->load->helper('url');
 		$this->load->model('Projetbdd');

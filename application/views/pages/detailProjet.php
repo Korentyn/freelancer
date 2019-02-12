@@ -86,7 +86,7 @@
 
             </div>
 
-            <div class="text-center form-actions form-group"><a href="<?php echo site_url('index.php/Projet/detailProjet'); ?>?id=<?php echo $news['id']?>"  class="btn waves-effect waves-light orange accent-4">Proposer mes services
+            <div class="text-center form-actions form-group"><a href="<?php echo site_url('index.php/Projet/deviserProjet'); ?>?id=<?php echo $news['id']?>"  class="btn waves-effect waves-light orange accent-4">Deviser le projet
 				</a>
             </div>
     </div>

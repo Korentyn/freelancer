@@ -21,6 +21,16 @@ class Projetbdd extends CI_Model {
 
     }
 
+    public function deviserProjet($id) {
+        $this->load->database();
+
+        $sql = '';
+
+        $query = $this->db->query($sql, $id);
+
+        return $query->result_array();
+    }
+
     public function listerProjetTous() {
 
         $this->load->database();
