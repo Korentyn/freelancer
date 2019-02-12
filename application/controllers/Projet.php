@@ -41,11 +41,17 @@ class Projet extends CI_Controller
         $id = $this->input->get('id');
         $this->load->helper('url');
         $this->load->model('Projetbdd');
-        //var_dump ($this->Projetbdd->detailProjet($id));
         $data['news'] = $this->Projetbdd->detailProjet($id);
         $this->load->view('layout/header');
         $this->load->view('pages/detailProjet', $data);
     }
+
+    public function postulerProjet(){
+		$id = $this->input->get('id');
+		$this->load->helper('url');
+		$this->load->model('Projetbdd');
+
+	}
 
 
     public function enregistrer()

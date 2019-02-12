@@ -52,7 +52,7 @@
                     </div>
                 </div>
 
-                <div class="card-header"><strong>Champs facultatifs</strong></div>
+                <div class="card-header"><strong></strong></div>
                 <br>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Compétence demandé</label></div>
@@ -68,20 +68,26 @@
                             <?php } ?>
                     </div>
                 </div>
-                <div class="row form-group">
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Fichier à ajouter</span>
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Sélectionner...</label>
-                        </div>
-                    </div>
-                </div>
+
+				<div class="row form-group">
+					<div class="col col-md-3"><label for="select" class=" form-control-label">Mot clé</label></div>
+					<div class="col-12 col-md-9">
+
+
+						<?php
+						$mot_cle = $news['mot_cle'];
+						if(isset($mot_cle)) { ?>
+							<input type="text" id="budget" value="<?php echo $mot_cle; ?>" class="form-control" disabled>
+						<?php }else{ ?>
+							<input type="text" id="budget" value="Aucun" class="form-control" disabled>
+						<?php } ?>
+					</div>
+				</div>
+
             </div>
 
-            <div class="text-center form-actions form-group"><button id="bouton-form" type="submit" class="btn btn-success btn-lg">Envoyer</button>
+            <div class="text-center form-actions form-group"><a href="<?php echo site_url('index.php/Projet/detailProjet'); ?>?id=<?php echo $news['id']?>"  class="btn waves-effect waves-light orange accent-4">Proposer mes services
+				</a>
             </div>
     </div>
     </form>
