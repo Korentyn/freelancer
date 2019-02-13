@@ -21,12 +21,13 @@ class Projetbdd extends CI_Model {
 
     }
 
-    public function deviserProjet($id) {
+    public function deviserProjet($prix, $id, $nb_lot, $nb_heures, $date_lot1, $date_lot2, $date_lot3, $utilisateur_id, $projet_id) {
         $this->load->database();
 
-        $sql = '';
+        $sql = 'INSERT INTO `devis` ( `prix`, `nb_lot`, `heures`, `date_lot1`, `date_lot2`, `date_lot3`, `accepte`, `etat`, `utilisateur_id`, `id_projet`)
+ 		VALUES ( ?, ?, ?, ?, ?, ?, 0, 1, ?, ?);';
 
-        $query = $this->db->query($sql, $id);
+        $query = $this->db->query($sql, array($prix, $id, $nb_lot, $nb_heures, $date_lot1, $date_lot2, $date_lot3, $utilisateur_id, $projet_id));
 
         return $query->result_array();
     }

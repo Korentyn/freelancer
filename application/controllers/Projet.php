@@ -47,9 +47,11 @@ class Projet extends CI_Controller
     }
 
     public function deviserProjet(){
-		$id = $this->input->get('id');
+		$idProjet = $this->input->get('id');
+		$idUtilisateur = $this->session->userdata('id');
 		$this->load->helper('url');
 		$this->load->model('Projetbdd');
+
 
 	}
 
