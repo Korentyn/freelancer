@@ -25,7 +25,7 @@
 
     <div class="form-wrapper">
         <h2>Fiche du projet</h2>
-        <form class="needs-validation" action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" method="post">
+        <form class="ficheProjet" action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" method="post">
             <div class="card-header"><strong><div class="createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div></strong></div>
             <div class="card-body card-block">
 
@@ -38,15 +38,15 @@
                 <div class="form-group">
 
                     <div class="row form-group">
-                        <div class="col- col-md-3"><label for="textarea-input" class=" form-control-label">Votre réponse</label></div>
-                        <div class="col-12 col-md-9"><textarea type="text" id="texte-presentation" id="textarea-input" rows="9"  class="form-control" ><?php echo $news['titre']; ?></textarea></div>
+                        <div class="col- col-md-3"><label for="textarea-input" class=" form-control-label">Présentation du projet</label></div>
+                        <div class="col-12 col-md-9"><textarea type="text" id="texte-presentation" id="textarea-input" rows="9"  class="form-control" disabled><?php echo $news['presentation']; ?></textarea></div>
                     </div>
 
                 </div>
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Budget</label></div>
-                    <div class="col-12 col-md-9">
-                        <input type="text" name="budget" value="<?php echo $news['budget']; ?>" class="form-control">
+                    <div class="col-12 col-md-9" >
+                        <input type="text" name="budget" value="<?php echo $news['budget']; ?>" class="form-control" disabled>
                     </div>
                 </div>
 
@@ -94,39 +94,38 @@
 
 <!------------------------------------------------------------------------------------------------------------------------>
 	<h2>Votre devis</h2>
-	<form action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" method="post">
+	<form class="needs-validation" action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" method="post">
 		<div class="card-header"><strong><div class="createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div></strong></div>
 		<div class="card-body card-block">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="col col-md-2"><label for="select" class=" form-control-label">Votre estimation du prix global</label></div>
+                    <input type="text" name="prix" placeholder="en €" class="form-control" >
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3"><label for="select" class=" form-control-label">Votre estimation du nombre d'heures de développement</label></div>
+                <div class="col-12 col-md-9">
+                    <input type="text" name="heures" class="form-control">
 
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col col-md-3"><label for="select" class=" form-control-label">Votre tarif horaire</label></div>
+                <div class="col-12 col-md-9">
+                    <input type="text" name="tarif_hor" class="form-control" disabled>
+                </div>
+            </div>
 
 			<div class="form-group">
 
 				<div class="row form-group">
-					<div class="col- col-md-3"><label for="textarea-input" class=" form-control-label">Présentation du projet</label></div>
-					<div class="col-12 col-md-9"><textarea type="text" id="texte-presentation" value="" id="textarea-input" rows="9"  class="form-control" disabled><?php echo $news['presentation']; ?></textarea></div>
+					<div class="col- col-md-3"><label for="textarea-input" class=" form-control-label">Commentaire</label></div>
+					<div class="col-12 col-md-9"><textarea type="text" id="texte-presentation" value="" id="textarea-input" rows="9"  class="form-control" ></textarea></div>
 				</div>
 
 			</div>
-			<div class="form-group">
-				<div class="input-group">
-					<div class="col col-md-2"><label for="select" class=" form-control-label">Votre estimation du prix global</label></div>
-					<input type="text" name="prix" placeholder="en €" class="form-control" >
-				</div>
-			</div>
-			<div class="row form-group">
-				<div class="col col-md-3"><label for="select" class=" form-control-label">Votre estimation du nombre d'heures de développement</label></div>
-				<div class="col-12 col-md-9">
-					<input type="text" name="heures" class="form-control">
 
-				</div>
-			</div>
-			<div class="row form-group">
-				<div class="col col-md-3"><label for="select" class=" form-control-label">Votre tarif horaire</label></div>
-				<div class="col-12 col-md-9">
-					<input type="text" name="tarif_hor" class="form-control" disabled>
-
-				</div>
-			</div>
 			<div class="card-header"><strong></strong></div>
 			<br>
 			<div class="row form-group">
@@ -136,8 +135,37 @@
 				</div>
 			</div>
 
-		</div>
+            <div class="lot-container">
+                <div class="lot">
+                    <div class="row">
+                        <div class="col col-md-3"><label for="select" class=" form-control-label">Titre du lot</label></div>
+                            <div class="col-12 col-md-9">
+                                <input type="text" name="titre-lot" class="form-control">
+                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="row">
+                            <div class='col-sm-6'>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                                    </div>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
+                </div>
+
+		    </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <button class="btn btn-outline-info"><span class="ti-plus"></span> Ajouter un lot supplémentaire</button>
+                </div>
+            </div>
 		<div class="text-center form-actions form-group"><a href="<?php echo site_url('index.php/Projet/deviserProjet'); ?>?id=<?php echo $news['id']?>"  class="btn waves-effect waves-light orange accent-4">Deviser le projet
 			</a>
 		</div>
@@ -146,9 +174,14 @@
 	</form>
 	</form>
     </div>
-
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
 <script>
-
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
 </script>
 </body>
 </html>

@@ -5,7 +5,7 @@ class Projetbdd extends CI_Model {
     public function detailProjet($id){
         $this->load->database();
 
-        $sql = 'SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`,`utilisateur`.`image`, `budget`.`description`, `technologies`.`titre` AS techno, AVG(`evaluer`.`note`) AS moyenne
+        $sql = 'SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`,`utilisateur`.`image`, `budget`.`description` AS budget, `technologies`.`titre` AS techno, AVG(`evaluer`.`note`) AS moyenne
         FROM `projet`
 
         LEFT JOIN `utilisateur` ON `projet`.`porteur_projet_id` = `utilisateur`.`id`
