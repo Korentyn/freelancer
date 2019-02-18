@@ -46,11 +46,40 @@ class Projet extends CI_Controller
         $this->load->view('pages/detailProjet', $data);
     }
 
-    public function deviserProjet(){
+    public function deviser(){
 		$idProjet = $this->input->get('id');
 		$idUtilisateur = $this->session->userdata('id');
-		$this->load->helper('url');
-		$this->load->model('Projetbdd');
+        $prix = $this->input->post('prix');
+        $heures = $this->input->post('heures');
+        $commentaire = $this->input->post('commentaire');
+        $competence = $this->input->post('competence');
+
+        $i = 0;
+        foreach($titre = $this->input->post('titre-lot') as $key => $value) {
+            $titreTab[$i] = array("$value");
+            $i++;
+        }
+
+        $i = 0;
+        foreach($date = $this->input->post('date-lot') as $key => $value) {
+            $dateTab[$i] = array(date("Y-m-d", strtotime($value)));
+            //date("Y-m-d", strtotime("$value"));
+            $i++;
+        }
+        //echo ($titre.' '.$date.' '.$idProjet.' '.$idUtilisateur.' '.$prix.' '.$heures.' '.$commentaire.' '.$competence);
+        //var_dump($titreTab);
+        //var_dump($dateTab);
+
+        if ($idProjet!= "" && $idUtilisateur != "" && $prix != "" && $heures != "" && $commentaire != "" && $competence != ""
+            && isset($titreTab) && isset($dateTab)) {
+
+            var_dump ($idProjet.' '.$idUtilisateur.' '.$prix.' '.$heures.' '.$commentaire.' '.$competence);
+            var_dump($titreTab);
+            var_dump($dateTab);
+            $this->load->helper('url');
+            $this->load->model('Projetbdd');
+        }
+
 
 
 	}
@@ -65,7 +94,7 @@ class Projet extends CI_Controller
         $motcle = $this->input->post('motcle');
         $porteur_projet_id = $this->session->userdata('id');
 
-        echo $titre.' '.$description.' '.$budget.' '.$competence;
+//        echo $titre.' '.$description.' '.$budget.' '.$competence;
 
 
 

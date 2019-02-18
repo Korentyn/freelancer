@@ -25,7 +25,7 @@
 
     <div class="form-wrapper">
         <h2>Fiche du projet</h2>
-        <form class="ficheProjet" action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" method="post">
+        <form class="ficheProjet" action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" >
             <div class="card-header"><strong><div class="createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div></strong></div>
             <div class="card-body card-block">
 
@@ -87,30 +87,43 @@
             <div class="text-center form-actions form-group"><a href=""  class="btn waves-effect waves-light orange accent-4">Deviser le projet
 				</a>
             </div>
-			<?php } ?>
-    </div>
+
+
     </form>
 
 
 <!------------------------------------------------------------------------------------------------------------------------>
 	<h2>Votre devis</h2>
-	<form class="needs-validation" action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" method="post">
+	<form class="needs-validation" action="<?php echo site_url('index.php/Projet/deviser'); ?>?id=<?php echo $news['id']; ?>" method="post">
+        <?php } ?>
 		<div class="card-header"><strong><div class="createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div></strong></div>
 		<div class="card-body card-block">
             <div class="row form-group">
                 <div class="input-group">
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Estimation du prix</label></div>
                         <div class="col col-md">
-                            <input type="text" name="prix" placeholder="en €" class="form-control" >
-
+                            <input type="number" name="prix" placeholder="en €" class="form-control" required>
+                            <div class="valid-feedback">
+                                Ok !
+                            </div>
+                            <div class="invalid-feedback">
+                                Estimez le cout global du projet
+                            </div>
                         </div>
                 </div>
             </div>
             <div class="row form-group">
-                <div class="col col-md-3"><label for="select" class=" form-control-label">Votre estimation du nombre d'heures de développement</label></div>
-                <div class="col-12 col-md-9">
-                    <input type="text" name="heures" class="form-control">
-
+                <div class="input-group">
+                    <div class="col col-md-3"><label for="select" class=" form-control-label">Votre estimation du nombre d'heures de développement</label></div>
+                        <div class="col-12 col-md-9">
+                        <input type="number" name="heures" class="form-control" required>
+                            <div class="valid-feedback">
+                                Ok !
+                            </div>
+                            <div class="invalid-feedback">
+                                Obligatoire
+                            </div>
+                </div>
                 </div>
             </div>
             <div class="row form-group">
@@ -124,7 +137,13 @@
 
 				<div class="row form-group">
 					<div class="col- col-md-3"><label for="textarea-input" class=" form-control-label">Commentaire</label></div>
-					<div class="col-12 col-md-9"><textarea type="text" id="texte-presentation" value="" id="textarea-input" rows="9"  class="form-control" ></textarea></div>
+					<div class="col-12 col-md-9"><textarea type="text" name="commentaire" id="texte-presentation"  id="textarea-input" rows="9"  class="form-control" required></textarea>
+                        <div class="valid-feedback">
+                            Ok !
+                        </div>
+                        <div class="invalid-feedback">
+                            Obligatoire
+                        </div>
 				</div>
 
 			</div>
@@ -134,26 +153,46 @@
 			<div class="row form-group">
 				<div class="col col-md-3"><label for="select" class=" form-control-label">Compétence proposée</label></div>
 				<div class="col-12 col-md-9">
-					<input type="text" name="competence" value="" class="form-control" >
+					<input type="text" name="competence" class="form-control" required>
+                    <div class="valid-feedback">
+                        Ok !
+                    </div>
+                    <div class="invalid-feedback">
+                        Obligatoire
+                    </div>
 				</div>
 			</div>
+            <hr>
+<span>A présent, indiquez la date où vous pourrez envoyer le projet terminé au porteur de projet. Si besoin, vous pouvez diviser le projet en plusieurs
+lots. Le porteur de projet vous enverra alors une partie du montant du devis pour vous permettre de continuer le développement.</span>
 
-            <div class="lot-container" id="lot-container">
                 <div class="lot">
                     <div class="row">
                         <div class="col col-md-3"><label for="select" class=" form-control-label">Contenu du lot</label></div>
                             <div class="col-12 col-md-9">
-                                <input type="text" name="titre-lot" class="form-control">
+                                <input type="text" name="titre-lot[1]" class="form-control" required>
+                                <div class="valid-feedback">
+                                    Ok !
+                                </div>
+                                <div class="invalid-feedback">
+                                    Obligatoire
+                                </div>
                             </div>
                     </div>
                     <div class="row">
 						<div class="col col-md-3"><label for="select" class=" form-control-label">Date estimée</label></div>
 							<div class="col-12 col-md-9">
-								<input type="text" class="form-control datepicker" placeholder="Sélectionnez la date">
+								<input type="text" name="date-lot[1]" class="form-control datepicker" placeholder="Sélectionnez la date" required>
+                                <div class="valid-feedback">
+                                    Ok !
+                                </div>
+                                <div class="invalid-feedback">
+                                    Obligatoire
+                                </div>
 							</div>
                     </div>
                 </div>
-
+            <div class="lot-container" id="lot-container">
 
 
 		    </div>
@@ -162,16 +201,33 @@
                     <button type="button" id="boutton-lot"  class="boutton-lot btn btn-outline-info" ><span class="ti-plus"></span> Ajouter un lot supplémentaire</button>
                 </div>
             </div>
-		<div class="text-right form-actions form-group"><button id="boutton-envoyer" class="btn">Envoyer le devis
+		<div class="text-right form-actions form-group"><button id="boutton-envoyer" type="submit" class="btn">Envoyer le devis
 			</button>
 		</div>
 
 		</div>
 	</form>
-	</form>
     </div>
 
 <script type="text/javascript">
+
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
 
     jQuery(document).ready(function($){
 
@@ -202,7 +258,7 @@
     });
 
     $(document).ready(function() {
-        var max_fields      = 10; //maximum input boxes allowed
+        var max_fields      = 100; //maximum input boxes allowed
         var wrapper         = $(".lot-container"); //Fields wrapper
         var add_button      = $(".boutton-lot"); //Add button ID
 
@@ -215,16 +271,28 @@
 					'<div class="row">' +
 					'<div class="col col-md-3"><label for="select" class=" form-control-label">Contenu du lot</label></div>' +
 					'<div class="col-12 col-md-9">' +
-					'<input type="text" name="titre-lot" class="form-control">'+
+					'<input type="text" name="titre-lot['+x+']" class="form-control" required>' +
+                    '<div class="valid-feedback">' +
+                    'Ok !' +
+                    '</div>' +
+                    '<div class="invalid-feedback">' +
+                    'Obligatoire' +
+                    '</div>'+
 					'</div>'+
 					'</div>'+
 					'<div class="row">'+
 					'<div class="col col-md-3"><label for="select" class=" form-control-label">Date estimée</label></div>'+
 					'<div class="col-12 col-md-9">'+
-					'<input type="text" class="form-control datepicker" placeholder="Sélectionnez la date">'+
+					'<input type="text" name="date-lot['+x+']" class="form-control datepicker" placeholder="Sélectionnez la date" required>'+
+                    '<div class="valid-feedback">' +
+                    'Ok !' +
+                    '</div>' +
+                    '<div class="invalid-feedback">' +
+                    'Obligatoire' +
+                    '</div>'+
 					'</div>'+
-					'</div></div>'+
-					'<div class="text-right col col-md-3"><button id="remove" class="btn btn-danger remove"><i class="fa fa-remove"></i> Supprimer</button></div>'); //add input box
+					'</div>'+
+					'<div class="text-right col col-md-12"><button id="remove" class="btn btn-danger remove"><i class="fa fa-remove"></i> Supprimer</button></div></div>'); //add input box
             }
         });
 
