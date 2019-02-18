@@ -147,14 +147,10 @@
                             </div>
                     </div>
                     <div class="row">
-
-                                <div class="col col-md-3"><label for="select" class=" form-control-label">Date estimée</label></div>
-                                    <div class="col-12 col-md-9">
-<!--                                        <input class="datepicker" data-provide="datepicker" data-date-format="dd/mm/yyyy">-->
-
-                                        <input type="text" class="form-control datepicker" placeholder="Pick the date">
-                                    </div>
-
+						<div class="col col-md-3"><label for="select" class=" form-control-label">Date estimée</label></div>
+							<div class="col-12 col-md-9">
+								<input type="text" class="form-control datepicker" placeholder="Sélectionnez la date">
+							</div>
                     </div>
                 </div>
 
@@ -163,10 +159,10 @@
 		    </div>
             <div class="row">
                 <div class="input-field col s4">
-                    <button type="button" onclick="creerLot()" class="btn btn-outline-info" action="creerLot()"><span class="ti-plus"></span> Ajouter un lot supplémentaire</button>
+                    <button type="button" id="boutton-lot"  class="boutton-lot btn btn-outline-info" ><span class="ti-plus"></span> Ajouter un lot supplémentaire</button>
                 </div>
             </div>
-		<div class="text-center form-actions form-group"><button  class="btn waves-effect waves-light orange accent-4">Deviser le projet
+		<div class="text-right form-actions form-group"><button id="boutton-envoyer" class="btn">Envoyer le devis
 			</button>
 		</div>
 
@@ -174,67 +170,65 @@
 	</form>
 	</form>
     </div>
-<!--    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>-->
 
-<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.1/js/bootstrap-datepicker.js"></script>-->
 <script type="text/javascript">
-    // jQuery(document).ready(function ($){
-    //
-    //     $('#input').datetimepicker({
-    //         locale: 'fr-fr',
-    //         format: 'dd mmm yyyy'
-    //     });
-    //
-    //     // $(".datepicker").datepicker();
-    //
-    // });
-    //     function creerLot() {
-    //
-    //         document.getElementById('lot-container').innerHTML += '<div class="lot">\n' +
-    //             '                    <div class="row">\n' +
-    //             '                        <div class="col col-md-3"><label for="select" class=" form-control-label">Contenu du lot</label></div>\n' +
-    //             '                        <div class="col-12 col-md-9">\n' +
-    //             '                            <input type="text" name="titre-lot" class="form-control">\n' +
-    //             '                        </div>\n' +
-    //             '                    </div>\n' +
-    //             '                    <div class="row">\n' +
-    //             '\n' +
-    //             '                        <div class="col col-md-3"><label for="select" class=" form-control-label">Date estimée</label></div>\n' +
-    //             '                        <div class="col-12 col-md-9">\n' +
-    //             '                            <input class="datepicker" id="datepicker"  />\n' +
-    //             '                        </div>\n' +
-    //             '\n' +
-    //             '                    </div>\n' +
-    //             '                </div>';
-    //
-    //
-    //     }
-
-
 
     jQuery(document).ready(function($){
 
+		$.datepicker.regional['fr'] = {clearText: 'Effacer', clearStatus: '',
+			closeText: 'Fermer', closeStatus: 'Fermer sans modifier',
+			prevText: '<Préc', prevStatus: 'Voir le mois précédent',
+			nextText: 'Suiv>', nextStatus: 'Voir le mois suivant',
+			currentText: 'Courant', currentStatus: 'Voir le mois courant',
+			monthNames: ['Janvier','Février','Mars','Avril','Mai','Juin',
+				'Juillet','Août','Septembre','Octobre','Novembre','Décembre'],
+			monthNamesShort: ['Jan','Fév','Mar','Avr','Mai','Jun',
+				'Jul','Aoû','Sep','Oct','Nov','Déc'],
+			monthStatus: 'Voir un autre mois', yearStatus: 'Voir un autre année',
+			weekHeader: 'Sm', weekStatus: '',
+			dayNames: ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'],
+			dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
+			dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
+			dayStatus: 'Utiliser DD comme premier jour de la semaine', dateStatus: 'Choisir le DD, MM d',
+			dateFormat: 'dd/mm/yy', firstDay: 0,
+			initStatus: 'Choisir la date', isRTL: false};
 
+		$.datepicker.setDefaults($.datepicker.regional['fr']);
 
     $('body').on('focus',".datepicker", function(){
-        $(this).datepicker();
+        $(this).datepicker({
+			dateFormat: "dd/mm/yy"
+		});
     });
 
     $(document).ready(function() {
         var max_fields      = 10; //maximum input boxes allowed
-        var wrapper         = $(".input_fields_wrap"); //Fields wrapper
-        var add_button      = $(".add_field_button"); //Add button ID
+        var wrapper         = $(".lot-container"); //Fields wrapper
+        var add_button      = $(".boutton-lot"); //Add button ID
 
         var x = 1; //initlal text box count
         $(add_button).click(function(e){ //on add input button click
             e.preventDefault();
             if(x < max_fields){ //max input box allowed
                 x++; //text box increment
-                $(wrapper).append('<div class="input-line-control removeMe"><div class="col-md-8"><div class="form-group"><input type="text" class="form-control datepicker" placeholder="Pick the date"></div></div><div class="col-md-4"><button class="btn btn-danger remove-date"><i class="fa fa-remove"></i>Remove</button></div></div>'); //add input box
+                $(wrapper).append('<div class="removeMe lot">' +
+					'<div class="row">' +
+					'<div class="col col-md-3"><label for="select" class=" form-control-label">Contenu du lot</label></div>' +
+					'<div class="col-12 col-md-9">' +
+					'<input type="text" name="titre-lot" class="form-control">'+
+					'</div>'+
+					'</div>'+
+					'<div class="row">'+
+					'<div class="col col-md-3"><label for="select" class=" form-control-label">Date estimée</label></div>'+
+					'<div class="col-12 col-md-9">'+
+					'<input type="text" class="form-control datepicker" placeholder="Sélectionnez la date">'+
+					'</div>'+
+					'</div></div>'+
+					'<div class="text-right col col-md-3"><button id="remove" class="btn btn-danger remove"><i class="fa fa-remove"></i> Supprimer</button></div>'); //add input box
             }
         });
 
-        $(wrapper).on("click",".remove-date", function(e){ //user click on remove text
+        $(wrapper).on("click",".remove", function(e){ //user click on remove text
             e.preventDefault(); $(this).closest('div.removeMe').remove(); x--;
         })
     });
