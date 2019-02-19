@@ -62,8 +62,8 @@ class Projet extends CI_Controller
 
         $i = 0;
         foreach($date = $this->input->post('date-lot') as $key => $value) {
+        	$value = strtr($value,'/', '-');
             $dateTab[$i] = array(date("Y-m-d", strtotime($value)));
-            //date("Y-m-d", strtotime("$value"));
             $i++;
         }
         //echo ($titre.' '.$date.' '.$idProjet.' '.$idUtilisateur.' '.$prix.' '.$heures.' '.$commentaire.' '.$competence);
