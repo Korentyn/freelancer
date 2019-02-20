@@ -26,7 +26,7 @@
     <div class="form-wrapper">
         <h2>Fiche du projet</h2>
         <form class="ficheProjet" action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" >
-            <div class="card-header"><strong><div class="createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div></strong></div>
+            <div class="card-header"><strong><div class="createur-elem"><img class="rounded-circle" src="<?php echo base_url()?><?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div></strong></div>
             <div class="card-body card-block">
 
                 <div class="form-group">
@@ -96,7 +96,7 @@
 	<h2>Votre devis</h2>
 	<form class="needs-validation" action="<?php echo site_url('index.php/Projet/deviser'); ?>?id=<?php echo $news['id']; ?>" method="post">
         <?php } ?>
-		<div class="card-header"><strong><div class="createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div></strong></div>
+		<div class="card-header"><strong><div class="createur-elem"><img class="rounded-circle" src="<?php echo base_url()?><?php echo $image = $this->session->userdata('image'); ?>" alt=""><?php echo $pseudo = $this->session->userdata('pseudo'); ?></div></strong></div>
 		<div class="card-body card-block">
             <div class="row form-group">
                 <div class="input-group">
@@ -164,7 +164,7 @@
 			</div>
             <hr>
 <span>A présent, indiquez la date où vous pourrez envoyer le projet terminé au porteur de projet. Si besoin, vous pouvez diviser le projet en plusieurs
-lots. Le porteur de projet vous enverra alors une partie du montant du devis pour vous permettre de continuer le développement.</span>
+lots. Le porteur de projet vous enverra alors une partie du montant du devis à chaque lots pour vous permettre de continuer le développement.</span>
 
                 <div class="lot">
                     <div class="row">

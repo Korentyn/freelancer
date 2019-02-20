@@ -61,7 +61,7 @@
             <div class="prix-elem"><?php echo $news['description']; ?></div>
             <div class="titre-elem"><?php echo $news['titre']; ?></div>
             <div class="img-createur-elem"></div>
-            <div class="createur-elem"><img src="<?php echo base_url()?>asset/images/avatar/<?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div>
+            <div class="createur-elem"><img class="rounded-circle" src="<?php echo base_url()?><?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div>
         </div>
         <div class="body-elem">
             <div class="description-elem"><?php echo $news['presentation']; ?></div>

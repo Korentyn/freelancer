@@ -73,11 +73,15 @@ class Projet extends CI_Controller
         if ($idProjet!= "" && $idUtilisateur != "" && $prix != "" && $heures != "" && $commentaire != "" && $competence != ""
             && isset($titreTab) && isset($dateTab)) {
 
-            var_dump ($idProjet.' '.$idUtilisateur.' '.$prix.' '.$heures.' '.$commentaire.' '.$competence);
-            var_dump($titreTab);
-            var_dump($dateTab);
+//            var_dump ($idProjet.' '.$idUtilisateur.' '.$prix.' '.$heures.' '.$commentaire.' '.$competence);
+//            var_dump($titreTab);
+//            var_dump($dateTab);
             $this->load->helper('url');
             $this->load->model('Projetbdd');
+            if( $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $accepte, $etat, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot)!=1){
+
+            }
+
         }
 
 

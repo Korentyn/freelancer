@@ -21,15 +21,22 @@ class Projetbdd extends CI_Model {
 
     }
 
-    public function deviserProjet($prix, $id, $nb_lot, $nb_heures, $date_lot1, $date_lot2, $date_lot3, $utilisateur_id, $projet_id) {
+    public function deviserProjet($tarif_hor, $heures, $prix_devis, $accepte, $etat, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot) {
         $this->load->database();
 
-        $sql = 'INSERT INTO `devis` ( `prix`, `nb_lot`, `heures`, `date_lot1`, `date_lot2`, `date_lot3`, `accepte`, `etat`, `utilisateur_id`, `id_projet`)
- 		VALUES ( ?, ?, ?, ?, ?, ?, 0, 1, ?, ?);';
+        $sql = 'INSERT INTO `devis` ( `tarif_hor2`, `prix`, `heures`, `accepte`, `etat`, `utilisateur_id`, `id_projet`) 
+                VALUES ( ?, ?, ?, ?, ?, ?, ?);';
 
-        $query = $this->db->query($sql, array($prix, $id, $nb_lot, $nb_heures, $date_lot1, $date_lot2, $date_lot3, $utilisateur_id, $projet_id));
+        $query = $this->db->query($sql, array($tarif_hor, $prix_devis, $heures, $accepte, $etat, $utilisateur_id, $projet_id));
 
-        return $query->result_array();
+        if ($query !=1){
+            return 0;
+        }else{
+            $last_insert = $this->db->insert_id();
+            $sql = "INSERT INTO `lot` (`date_deploiement`, `etat`, `prix`, `devis_id`, `titre`) 
+                    VALUES ( ?, '1', ?, ?, ?)";
+            return $query = $this->db->query($sql, array($date_deploiement, $prix_lot, $last_insert, $titre_lot));
+        }
     }
 
     public function listerProjetTous() {

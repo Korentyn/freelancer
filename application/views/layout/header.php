@@ -52,17 +52,18 @@
 
                         <li class="menu-item-has-children dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-tasks"></i> Projet en cours</a>
-                        </li>
-                        <li>
-                            <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
+
+                            <a href=""> <i class="menu-icon ti-email"></i>Messagerie </a>
                         </li>
 
                         <li class="menu-title">Mon profil</li><!-- /.menu-title -->
                         <li class="menu-item-has-children">
                             <a href="<?php echo site_url('index.php/Utilisateur/monProfil'); ?>" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Mes informations</a>
                             <br>
+                        </li>
+                        <li>
                             <br>
-                            <a  href="#" class="menu-icon" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-power-off"></i>Deconnexion</a>
+                            <a  href="<?php echo site_url('index.php/Utilisateur/deconnexion'); ?>" ><i class="menu-icon fa fa-power-off"></i>Deconnexion </a>
                         </li>
                     <?php } ?>
 
@@ -155,7 +156,7 @@
 					?>
 				<div class="user-area dropdown float-right">
 					<a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<img class="user-avatar rounded-circle" src="<?php echo base_url()?>asset/images/avatar/<?php echo $image; ?>" alt="User Avatar">
+						<img class="user-avatar rounded-circle" src="<?php echo base_url()?><?php echo $image; ?>" alt="User Avatar">
 					</a>
 
 					<div class="user-menu dropdown-menu">
