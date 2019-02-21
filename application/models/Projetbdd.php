@@ -21,8 +21,10 @@ class Projetbdd extends CI_Model {
 
     }
 
-    public function deviserProjet($tarif_hor, $heures, $prix_devis, $accepte, $etat, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot) {
+    public function deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot) {
         $this->load->database();
+        $accepte = 0;
+        $etat = 1;
 
         $sql = 'INSERT INTO `devis` ( `tarif_hor2`, `prix`, `heures`, `accepte`, `etat`, `utilisateur_id`, `id_projet`) 
                 VALUES ( ?, ?, ?, ?, ?, ?, ?);';

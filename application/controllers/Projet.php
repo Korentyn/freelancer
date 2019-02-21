@@ -47,10 +47,11 @@ class Projet extends CI_Controller
     }
 
     public function deviser(){
-		$idProjet = $this->input->get('id');
-		$idUtilisateur = $this->session->userdata('id');
-        $prix = $this->input->post('prix');
+		$projet_id = $this->input->get('id');
+		$utilisateur_id = $this->session->userdata('id');
+        $prix_devis = $this->input->post('prix');
         $heures = $this->input->post('heures');
+		$tarif_hor = $this->input->post('tarif_hor');
         $commentaire = $this->input->post('commentaire');
         $competence = $this->input->post('competence');
 
@@ -70,7 +71,7 @@ class Projet extends CI_Controller
         //var_dump($titreTab);
         //var_dump($dateTab);
 
-        if ($idProjet!= "" && $idUtilisateur != "" && $prix != "" && $heures != "" && $commentaire != "" && $competence != ""
+        if ($projet_id!= "" && $utilisateur_id != "" && $prix_devis != "" && $heures != "" && $commentaire != "" && $competence != ""
             && isset($titreTab) && isset($dateTab)) {
 
 //            var_dump ($idProjet.' '.$idUtilisateur.' '.$prix.' '.$heures.' '.$commentaire.' '.$competence);
@@ -78,7 +79,7 @@ class Projet extends CI_Controller
 //            var_dump($dateTab);
             $this->load->helper('url');
             $this->load->model('Projetbdd');
-            if( $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $accepte, $etat, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot)!=1){
+            if( $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot)!=1){
 
             }
 

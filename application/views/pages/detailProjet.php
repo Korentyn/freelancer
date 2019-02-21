@@ -102,7 +102,7 @@
                 <div class="input-group">
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Estimation du prix</label></div>
                         <div class="col col-md">
-                            <input type="number" name="prix" placeholder="en €" class="form-control" required>
+                            <input type="number" id="prix" name="prix" placeholder="en €" class="form-control" required>
                             <div class="valid-feedback">
                                 Ok !
                             </div>
@@ -116,7 +116,7 @@
                 <div class="input-group">
                     <div class="col col-md-3"><label for="select" class=" form-control-label">Votre estimation du nombre d'heures de développement</label></div>
                         <div class="col-12 col-md-9">
-                        <input type="number" name="heures" class="form-control" required>
+                        <input type="number" id="heures" name="heures" class="form-control" required>
                             <div class="valid-feedback">
                                 Ok !
                             </div>
@@ -129,7 +129,7 @@
             <div class="row form-group">
                 <div class="col col-md-3"><label for="select" class=" form-control-label">Votre tarif horaire</label></div>
                 <div class="col-12 col-md-9">
-                    <input type="text" name="tarif_hor" class="form-control" disabled>
+                    <input type="text" id="tarif_hor" name="tarif_hor" class="form-control" disabled>
                 </div>
             </div>
 
@@ -210,6 +210,26 @@ lots. Le porteur de projet vous enverra alors une partie du montant du devis à 
     </div>
 
 <script type="text/javascript">
+
+	var first = document.getElementById('prix');
+	var second = document.getElementById('heures');
+	var result = document.getElementById('tarif_hor');
+
+	first.addEventListener("input", sum);
+	second.addEventListener("input", sum);
+
+	function sum() {
+
+		var one = parseFloat(first.value) || 0;
+		var two = parseFloat(second.value) || 0;
+
+		var add = one/two;
+
+		result.value = Math.round(add*100)/100;
+
+	}
+
+
 
     (function() {
         'use strict';
