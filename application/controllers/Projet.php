@@ -81,6 +81,7 @@ class Projet extends CI_Controller
             $this->load->model('Projetbdd');
             if( $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot)!=1){
 
+            	
             }
 
         }

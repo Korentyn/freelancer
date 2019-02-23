@@ -211,6 +211,7 @@ lots. Le porteur de projet vous enverra alors une partie du montant du devis à 
 
 <script type="text/javascript">
 
+
 	var first = document.getElementById('prix');
 	var second = document.getElementById('heures');
 	var result = document.getElementById('tarif_hor');
