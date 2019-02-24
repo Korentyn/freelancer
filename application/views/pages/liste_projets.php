@@ -73,12 +73,17 @@
                 }else{
                     echo ("Libre");
                 } ?></div>
+            <?php
+            //Si le membre est freelance il voit le lien du projet
+
+            $role_id = $this->session->userdata('role_id');
+            if($role_id==3) { ?>
             <div class="postuler-elem">
                 <a href="<?php echo site_url('index.php/Projet/detailProjet'); ?>?id=<?php echo $news['id']?>"  class="btn waves-effect waves-light orange accent-4">Postuler
                 </a>
             </div>
         </div>
-
+        <?php } ?>
     </div>
     <?php } ?>
 </div>

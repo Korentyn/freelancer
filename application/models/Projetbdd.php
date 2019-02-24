@@ -21,7 +21,8 @@ class Projetbdd extends CI_Model {
 
     }
 
-    public function deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot) {
+    public function deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot)
+    {
         $this->load->database();
         $accepte = 0;
         $etat = 1;
@@ -33,12 +34,24 @@ class Projetbdd extends CI_Model {
 
         if ($query !=1){
             return 0;
-        }else{
+        }else {
             $last_insert = $this->db->insert_id();
-            $sql = "INSERT INTO `lot` (`date_deploiement`, `etat`, `prix`, `devis_id`, `titre`) 
+            $queryArr = array();
+            $arr_count = sizeof($date_deploiement);
+
+                    for ($i=0; $i<$arr_count; $i++) {
+
+                            $date = $date_deploiement[$i];
+                            $titre = $titre_lot[$i];
+
+                            $sql = "INSERT INTO `lot` (`date_deploiement`, `etat`, `prix`, `devis_id`, `titre`) 
                     VALUES ( ?, '1', ?, ?, ?)";
-            return $query = $this->db->query($sql, array($date_deploiement, $prix_lot, $last_insert, $titre_lot));
-        }
+                            $queryArr[$i] = $this->db->query($sql, array($date, $prix_lot, $last_insert, $titre));
+
+                    }
+
+                return $queryArr;
+            }
     }
 
     public function listerProjetTous() {

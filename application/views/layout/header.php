@@ -49,10 +49,16 @@
                     if(isset($role_id)) { ?>
 
                         <li class="menu-title">Tableau de bord</li><!-- /.menu-title -->
-
+                    <?php if($role_id== 2) { ?>
                         <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="menu-icon fa fa-tasks"></i> Projet en cours</a>
-
+                            <a href="#" ><i class="menu-icon fa fa-tasks"></i> Projet créé</a>
+                        </li>
+                        <?php }else if ($role_id== 3) {?>
+                            <li class="menu-item-has-children dropdown">
+                                <a href="#" ><i class="menu-icon fa fa-tasks"></i> Mes devis envoyés</a>
+                            </li>
+                        <?php } ?>
+                        <li class="menu-item-has-children dropdown">
                             <a href=""> <i class="menu-icon ti-email"></i>Messagerie </a>
                         </li>
 
