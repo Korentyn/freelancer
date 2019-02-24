@@ -27,28 +27,32 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img class="d-block w-100" src="<?php echo base_url('asset/images/imgCarousel0.jpeg'); ?>" alt="First slide">
+				<img class="d-block w-100" src="<?php echo base_url('asset/images/imgCarousel0.jpeg'); ?>"
+					 alt="First slide">
 				<div class="carousel-caption d-none d-md-block">
 					<h3>Application mobile</h3>
 					<h1>A partir de 500€</h1>
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="<?php echo base_url('asset/images/imgCarousel1.jpeg'); ?>" alt="Second slide">
+				<img class="d-block w-100" src="<?php echo base_url('asset/images/imgCarousel1.jpeg'); ?>"
+					 alt="Second slide">
 				<div class="carousel-caption d-none d-md-block">
 					<h3>Web-marketing</h3>
 					<h1>A partir de 250€</h1>
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="<?php echo base_url('asset/images/imgCarousel2.jpeg'); ?>" alt="Third slide">
+				<img class="d-block w-100" src="<?php echo base_url('asset/images/imgCarousel2.jpeg'); ?>"
+					 alt="Third slide">
 				<div class="carousel-caption d-none d-md-block">
 					<h3>Design graphique</h3>
 					<h1>A partir de 150€</h1>
 				</div>
 			</div>
 			<div class="carousel-item">
-				<img class="d-block w-100" src="<?php echo base_url('asset/images/imgCarousel3.jpeg'); ?>" alt="Fourth slide">
+				<img class="d-block w-100" src="<?php echo base_url('asset/images/imgCarousel3.jpeg'); ?>"
+					 alt="Fourth slide">
 				<div class="carousel-caption d-none d-md-block">
 					<h3>Big data</h3>
 					<h1>A partir de 400€</h1>
@@ -65,8 +69,59 @@
 		</a>
 	</div>
 	<h1 class="text-center margin">Quel projet vous intéresse ?</h1>
-	<div>
-		<!--TODO : implement icons-->
+	<div class="flex">
+		<i class="material-icons icon">
+			devices
+		</i>
+		<i class="material-icons icon">
+			highlight
+		</i>
+		<i class="material-icons icon">
+			trending_up
+		</i>
+	</div>
+	<div class="flex">
+		<span class="txt">
+			Développement de site Web
+		</span>
+		<span class="txt">
+			Conception graphique
+		</span>
+		<span class="txt">
+			Web marketing
+		</span>
+	</div>
+	<div class="coloredDiv">
+		<h1 class="text-center margins">Une équipe dédiée pour vous accompagner au quotidien</h1>
+
+		<div class="flexDiv1">
+			<div class="imgDiv">
+				<img class="img-fluid img-thumbnail" src="<?php echo base_url('asset/images/team.jpeg'); ?>" alt="img">
+			</div>
+			<div class="flexDiv">
+				<i class="material-icons icons">
+					forum
+				</i>
+				<i class="material-icons icons">
+					phone_in_talk
+				</i>
+				<i class="material-icons icons">
+					info
+				</i>
+			</div>
+			<div class="flexDiv">
+				<span class="txts">
+					Une messagerie en direct pour discuter avec un de nos conseiller.
+				</span>
+				<span class="txts">
+					Un service téléphonique pour vous accompagner dans vos démarches.
+				</span>
+				<span class="txts">
+					Une FAQ accessible à tout moment.
+				</span>
+			</div>
+		</div>
+
 	</div>
 </div>
 </body>
