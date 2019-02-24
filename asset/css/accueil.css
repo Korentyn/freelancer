@@ -1,13 +1,137 @@
 .body2 {
 	background-color: white;
 }
+
 .margin {
-	margin-top: 45px;
+	margin-top: 60px;
+	margin-bottom: 50px;
 }
+
 .carousel-caption {
 	background-color: rgba(17, 17, 17, 0.5);
 	left: 0.5%;
 	right: 0.5%;
 	text-align: left;
 	padding-left: 2%;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 20px;
+}
+
+.icon {
+	color: #4B77BE;
+	font-size: 600%;
+	border: 1px solid lightsteelblue;
+	border-radius: 50%;
+	padding: 4%;
+}
+
+.txt {
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	width: 13vw;
+}
+
+.coloredDiv {
+	background-color: #4B77BE;
+	color: white;
+}
+
+.margins {
+	margin-top: 70px;
+	padding-top: 50px;
+}
+
+.flexDiv1 {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.imgDiv {
+	width: 50%;
+	padding: 5% 0 3% 7%;
+}
+
+.flexDiv {
+	display: flex;
+	flex-direction: column;
+	padding: 70px 0 50px 50px;
+	justify-content: space-around;
+}
+
+.icons {
+	color: #F2A562;
+	font-size: 450%;
+}
+
+.txts {
+	font-size: 20px;
+	width: 30vw;
+}
+
+@media (max-width: 576px) {
+	.icon {
+		font-size: 400%;
+	}
+
+	.txt {
+		font-size: 15px;
+		width: 30vw;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.imgDiv {
+		width: 100%;
+		padding: 5% 3%;
+	}
+	.flexDiv1 {
+		display: block;
+	}
+
+	.txts {
+		font-size: 15px;
+		width: 70vw;
+	}
+	.flexDiv {
+		padding: 5% 3%;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+	.icons {
+		font-size: 300%;
+	}
+
+	.txts {
+		font-size: 15px;
+		width: 25vw;
+	}
+
+	.flexDiv {
+		padding: 30px 0 10px 50px;
+	}
+
+	h1 {
+		font-size: 28px;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1300px) {
+	.icons {
+		font-size: 300%;
+	}
+
+	.txts {
+		font-size: 15px;
+		width: 25vw;
+	}
 }
