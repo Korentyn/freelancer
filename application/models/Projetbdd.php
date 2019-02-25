@@ -11,7 +11,7 @@ class Projetbdd extends CI_Model {
         LEFT JOIN `utilisateur` ON `projet`.`porteur_projet_id` = `utilisateur`.`id`
         LEFT JOIN `evaluer` ON `utilisateur`.`id` = `evaluer`.`utilisateur_id_target`
         LEFT JOIN `budget` ON `projet`.`budget` = `budget`.`id`
-         LEFT JOIN `caracteriser` ON `projet`.`id` = `caracteriser`.`projet_id`
+        LEFT JOIN `caracteriser` ON `projet`.`id` = `caracteriser`.`projet_id`
         LEFT JOIN `technologies` ON  `technologies`.`id` = `caracteriser`.`technologies_id`
         where `projet`.`id`=?';
 
@@ -20,6 +20,20 @@ class Projetbdd extends CI_Model {
         return $query->result_array();
 
     }
+
+    public function listerMesProjets($utilisateur_id){
+		$this->load->database();
+		$sql = 'SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`,`utilisateur`.`image`, `budget`.`description`, COUNT(`devis`.`id`) AS reponse
+FROM `projet`
+
+	LEFT JOIN `devis` ON `devis`.`id_projet` = `projet`.`id`
+    LEFT JOIN `utilisateur` ON `projet`.`porteur_projet_id` = `utilisateur`.`id`
+    LEFT JOIN `budget` ON `projet`.`budget` = `budget`.`id`
+    where `projet`.`porteur_projet_id`=?';
+
+		$query = $this->db->query($sql, $utilisateur_id);
+		return $query->result_array();
+	}
 
     public function deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot)
     {

@@ -84,14 +84,14 @@ class Projet extends CI_Controller
             $this->load->model('Projetbdd');
              $result = $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $dateTab, $prix_lot, $titreTab);
 
-            if (in_array(true, $result)) {
-                $data['news'] = $this->Projetbdd->listerProjetTous();
-                $this->load->view('layout/header');
-                $this->load->view('pages/liste_projets', $data);
+            if (in_array(false, $result)) {
+				$data['news'] = $this->Projetbdd->detailProjet($projet_id);
+				$this->load->view('layout/header');
+				$this->load->view('pages/detailProjet', $data);
             }else{
-                $data['news'] = $this->Projetbdd->detailProjet($projet_id);
-                $this->load->view('layout/header');
-                $this->load->view('pages/detailProjet', $data);
+				$data['news'] = $this->Projetbdd->listerProjetTous();
+				$this->load->view('layout/header');
+				$this->load->view('pages/liste_projets', $data);
             }
 
 
@@ -146,9 +146,9 @@ class Projet extends CI_Controller
         $utilisateur_id = $this->session->userdata('id');
         $this->load->helper('url');
         $this->load->model('Projetbdd');
-        $data['news'] = $this->Projetbdd->listerProjet();
+        $data['news'] = $this->Projetbdd->listerMesProjets($utilisateur_id);
         $this->load->view('layout/header');
-        $this->load->view('pages/liste_projets', $data);
+        $this->load->view('pages/detailProjetCree', $data);
     }
 
     public function mesDevis(){
@@ -156,7 +156,7 @@ class Projet extends CI_Controller
         $this->load->helper('url');
         $this->load->model('Projetbdd');
         $data['news'] = $this->Projetbdd->listerProjetTous();
-        $this->load->view('layout/header');
-        $this->load->view('pages/liste_projets', $data);
+        //$this->load->view('layout/header');
+        //$this->load->view('pages/liste_projets', $data);
     }
 }

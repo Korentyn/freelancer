@@ -51,11 +51,11 @@
                         <li class="menu-title">Tableau de bord</li><!-- /.menu-title -->
                     <?php if($role_id== 2) { ?>
                         <li class="menu-item-has-children dropdown">
-                            <a href="#" ><i class="menu-icon fa fa-tasks"></i> Projet créé</a>
+                            <a href="<?php echo site_url('index.php/Projet/mesProjets'); ?>" ><i class="menu-icon fa fa-tasks"></i> Projet créé</a>
                         </li>
                         <?php }else if ($role_id== 3) {?>
                             <li class="menu-item-has-children dropdown">
-                                <a href="#" ><i class="menu-icon fa fa-tasks"></i> Mes devis envoyés</a>
+                                <a href="<?php echo site_url('index.php/Projet/mesDevis'); ?>" ><i class="menu-icon fa fa-tasks"></i> Mes devis envoyés</a>
                             </li>
                         <?php } ?>
                         <li class="menu-item-has-children dropdown">
