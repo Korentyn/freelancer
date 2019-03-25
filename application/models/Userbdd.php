@@ -19,8 +19,6 @@ FROM `utilisateur`
     where `utilisateur`.`banni`=0 AND `utilisateur`.`role_id`=3');
 
         return $query->result_array();
-
-
     }
 
     public function detailProfil($id){

@@ -82,12 +82,12 @@
                 <a href="<?php echo site_url('index.php/Projet/detailProjet'); ?>?id=<?php echo $news['id']?>"  class="btn waves-effect waves-light orange accent-4">Postuler
                 </a>
             </div>
+			<?php } ?>
         </div>
-        <?php } ?>
     </div>
 
     <?php } ?>
 </div>
-</div>
+
 </body>
 </html>

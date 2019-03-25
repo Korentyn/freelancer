@@ -22,11 +22,11 @@ class Projetbdd extends CI_Model {
     }
 
     public function listerMesProjets($utilisateur_id){
+//    	TODO Requete sql qui nique pas ma boucle
 		$this->load->database();
-		$sql = 'SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`,`utilisateur`.`image`, `budget`.`description`, COUNT(`devis`.`id`) AS reponse
+		$sql = 'SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`,`utilisateur`.`image`, `budget`.`description`, (SELECT COUNT(*) FROM `devis` WHERE `devis`.`id_projet`=`projet`.`id`) AS reponse
 FROM `projet`
 
-	LEFT JOIN `devis` ON `devis`.`id_projet` = `projet`.`id`
     LEFT JOIN `utilisateur` ON `projet`.`porteur_projet_id` = `utilisateur`.`id`
     LEFT JOIN `budget` ON `projet`.`budget` = `budget`.`id`
     where `projet`.`porteur_projet_id`=?';
