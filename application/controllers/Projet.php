@@ -82,7 +82,7 @@ class Projet extends CI_Controller
             //var_dump($prix_lot);
             $this->load->helper('url');
             $this->load->model('Projetbdd');
-             $result = $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $dateTab, $prix_lot, $titreTab);
+             $result = $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $dateTab, $prix_lot, $titreTab, $competence);
 
             if (in_array(false, $result)) {
 				$data['news'] = $this->Projetbdd->detailProjet($projet_id);
@@ -142,11 +142,45 @@ class Projet extends CI_Controller
 
     }
 
+    public function check($array, $key)
+    {
+        if(array_key_exists($key, $array)) {
+            if ($array[$key]===null) {
+                return null;
+            } else {
+                return $array;
+            }
+        }
+    }
+
     public function mesProjets(){
         $utilisateur_id = $this->session->userdata('id');
         $this->load->helper('url');
         $this->load->model('Projetbdd');
         $data['news'] = $this->Projetbdd->listerMesProjets($utilisateur_id);
+        //var_dump($data['news']);
+        $key = "id";
+        if(array_key_exists($key, $data['news'])) {
+            if ($data['news'][$key]===null) {
+                $data['news']= null;
+            } else {
+
+            }
+        }
+
+        $this->load->view('layout/header');
+        $this->load->view('pages/listProjetCree', $data);
+    }
+
+    public function monProjetDetail(){
+        $id_projet = $this->input->get('id');
+
+        $this->load->helper('url');
+        $this->load->model('Projetbdd');
+        $data['projet'] = $this->Projetbdd->detailProjetCree($id_projet);
+        $data['devis'] = $this->Projetbdd->devisProjetCree($id_projet);
+        $data['nbresult'] = sizeof($data['projet']);
+        var_dump($data['nbresult']);
         $this->load->view('layout/header');
         $this->load->view('pages/detailProjetCree', $data);
     }
@@ -159,4 +193,7 @@ class Projet extends CI_Controller
         //$this->load->view('layout/header');
         //$this->load->view('pages/liste_projets', $data);
     }
+
+
+
 }

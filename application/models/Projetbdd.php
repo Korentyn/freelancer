@@ -21,12 +21,41 @@ class Projetbdd extends CI_Model {
 
     }
 
+    public function detailProjetCree($id_projet){
+        $this->load->database();
+        $sql = 'SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `budget`.`description` AS budget, `technologies`.`titre` AS techno
+        FROM `projet`
+
+        LEFT JOIN `budget` ON `projet`.`budget` = `budget`.`id`
+        LEFT JOIN `caracteriser` ON `projet`.`id` = `caracteriser`.`projet_id`
+        LEFT JOIN `technologies` ON  `technologies`.`id` = `caracteriser`.`technologies_id`
+        where `projet`.`id`=?';
+        $query = $this->db->query($sql, $id_projet);
+
+        return $query->result_array();
+}
+
+    public function devisProjetCree($id_projet){
+        $this->load->database();
+        $sql = 'SELECT `devis`.`id`, `devis`.`date_creation`, `devis`.`tarif_hor2`,`devis`.`competence`, `devis`.`prix`, `utilisateur`.`login`,`utilisateur`.`image`, `lot`.`date_deploiement`, `lot`.`url_lot`, `lot`.`commentaire`, `lot`.`titre` AS contenu_lot, `lot`.`etat`, `lot`.`prix` AS prixlot
+        FROM `devis` 
+
+        LEFT JOIN `utilisateur` ON `devis`.`utilisateur_id` = `utilisateur`.`id`
+        LEFT JOIN `lot` ON `devis`.`id`= `lot`.`devis_id`
+
+
+        WHERE `devis`.`id_projet`=?';
+        $query = $this->db->query($sql, $id_projet);
+        $rowcount = $query->num_rows();
+
+        return $query->result_array();
+    }
+
     public function listerMesProjets($utilisateur_id){
-//    	TODO Requete sql qui nique pas ma boucle
 		$this->load->database();
 		$sql = 'SELECT `projet`.`titre`,`projet`.`id`, `projet`.`presentation`, `projet`.`mot_cle`, `utilisateur`.`login`,`utilisateur`.`image`, `budget`.`description`, 
 				(SELECT COUNT(*) FROM `devis` WHERE `devis`.`id_projet`=`projet`.`id`) AS totalrep, (SELECT COUNT(*) FROM `devis` WHERE `devis`.`id_projet`=`projet`.`id`and `devis`.`etat`=1) AS nouvrep
-FROM `projet`
+    FROM `projet`
 
     LEFT JOIN `utilisateur` ON `projet`.`porteur_projet_id` = `utilisateur`.`id`
     LEFT JOIN `budget` ON `projet`.`budget` = `budget`.`id`
@@ -36,16 +65,16 @@ FROM `projet`
 		return $query->result_array();
 	}
 
-    public function deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot)
+    public function deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot, $competence)
     {
         $this->load->database();
         $accepte = 0;
         $etat = 1;
 
-        $sql = 'INSERT INTO `devis` ( `tarif_hor2`, `prix`, `heures`, `accepte`, `etat`, `utilisateur_id`, `id_projet`) 
-                VALUES ( ?, ?, ?, ?, ?, ?, ?);';
+        $sql = 'INSERT INTO `devis` ( `tarif_hor2`, `prix`, `heures`, `accepte`, `etat`, `utilisateur_id`, `id_projet`, `competence`) 
+                VALUES ( ?, ?, ?, ?, ?, ?, ?, ?);';
 
-        $query = $this->db->query($sql, array($tarif_hor, $prix_devis, $heures, $accepte, $etat, $utilisateur_id, $projet_id));
+        $query = $this->db->query($sql, array($tarif_hor, $prix_devis, $heures, $accepte, $etat, $utilisateur_id, $projet_id, $competence));
 
         if ($query !=1){
             return 0;

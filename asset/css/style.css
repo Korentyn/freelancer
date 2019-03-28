@@ -59,7 +59,8 @@
 
 .body-elem {
     margin: 2px;
-
+    display: flex;
+    justify-content: space-around;
 }
 
 .header-elem{
@@ -88,11 +89,20 @@
 	top:-10px;
 	right:-10px;
 	font-size:.7em;
-	background:green;
+	background: #f2a562;
 	color:white;
 	width:22px;height:22px;
 	text-align:center;
 	line-height:22px;
 	border-radius:50%;
 	box-shadow:0 0 1px #333;
+    font-weight: bold;
+}
+
+.postuler-elem > a{
+    cursor: pointer;
+    background-color: #4b77be;
+    padding: 5px 10px 5px 10px;
+    color: #ffffff;
+    border-radius: 2px;
 }

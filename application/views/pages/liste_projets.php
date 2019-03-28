@@ -58,16 +58,16 @@
     <div class="elem">
 
         <div class="header-elem">
-            <div class="prix-elem"><?php echo $news['description']; ?></div>
-            <div class="titre-elem"><?php echo $news['titre']; ?></div>
+            <div class="prix-elem"><strong>Prix :</strong><?php echo $news['description']; ?></div>
+            <div class="titre-elem"><strong>Titre :</strong><?php echo $news['titre']; ?></div>
             <div class="img-createur-elem"></div>
             <div class="createur-elem"><img class="rounded-circle" src="<?php echo base_url()?><?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div>
         </div>
         <div class="body-elem">
-            <div class="description-elem"><?php echo $news['presentation']; ?></div>
+            <div class="description-elem"><strong>Description :</strong><?php echo $news['presentation']; ?></div>
         </div>
         <div class="footer-elem">
-            <div class="comp-elem"><?php
+            <div class="comp-elem"><strong>Technologies :</strong><?php
                 if(($news['mot_cle'])!="") {
                     echo $news['mot_cle'];
                 }else{
