@@ -194,6 +194,15 @@ class Projet extends CI_Controller
         //$this->load->view('pages/liste_projets', $data);
     }
 
-
+	public function detailDevis(){
+		$id_devis = $this->input->get('id');
+		$this->load->helper('url');
+		$this->load->model('Projetbdd');
+		//var_dump($id_devis);
+		$data['news'] = $this->Projetbdd->detailDevis($id_devis);
+		$this->Projetbdd->lectureDevis($id_devis);
+		$this->load->view('layout/header');
+		$this->load->view('pages/detailDevis', $data);
+	}
 
 }

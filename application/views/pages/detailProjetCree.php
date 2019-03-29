@@ -93,7 +93,7 @@
                         <div class="comp-elem"><strong>Technologie :</strong><?php echo $devis['competence']; ?></div>
 
                         <div class="postuler-elem">
-                            <a href="<?php echo site_url('index.php/Projet/monProjetDetail'); ?>?id=<?php echo $devis['id']?>" >Détails
+                            <a href="<?php echo site_url('index.php/Projet/detailDevis'); ?>?id=<?php echo $devis['id']?>" >Détails
                             </a>
                         </div>
                     </div>

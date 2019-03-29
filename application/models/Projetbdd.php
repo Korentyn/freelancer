@@ -2,6 +2,28 @@
 class Projetbdd extends CI_Model {
 
 
+	public function detailDevis($id){
+		$this->load->database();
+		$sql = 'SELECT `devis`.`tarif_hor2`, `devis`.`prix`, `devis`.`heures`, `devis`.`etat`, `devis`.`competence`, `lot`.`date_deploiement` AS datelot, `lot`.`titre` AS titrelot, `lot`.`prix` AS prixlot, `utilisateur`.`login`, `utilisateur`.`image`, AVG(`evaluer`.`note`) AS note
+		FROM `devis` 
+		
+		LEFT JOIN `utilisateur` ON `utilisateur`.`id` = `devis`.`utilisateur_id`
+		LEFT JOIN `lot` ON `lot`.`devis_id`= `devis`.`id`
+		LEFT JOIN `evaluer` ON `evaluer`.`utilisateur_id_target` = `utilisateur`.`id`
+		
+		WHERE `devis`.`id`=?';
+		$query = $this->db->query($sql, $id);
+		return $query->result_array();
+	}
+
+	public function lectureDevis($id){
+		$this->load->database();
+		$sql = 'UPDATE `devis` SET `etat`=2
+		WHERE `devis`.`id`=?';
+		$query = $this->db->query($sql, $id);
+		return $query->result_array();
+	}
+
     public function detailProjet($id){
         $this->load->database();
 
@@ -39,15 +61,11 @@ class Projetbdd extends CI_Model {
         $this->load->database();
         $sql = 'SELECT `devis`.`id`, `devis`.`date_creation`, `devis`.`tarif_hor2`,`devis`.`competence`, `devis`.`prix`, `utilisateur`.`login`,`utilisateur`.`image`, `lot`.`date_deploiement`, `lot`.`url_lot`, `lot`.`commentaire`, `lot`.`titre` AS contenu_lot, `lot`.`etat`, `lot`.`prix` AS prixlot
         FROM `devis` 
-
         LEFT JOIN `utilisateur` ON `devis`.`utilisateur_id` = `utilisateur`.`id`
         LEFT JOIN `lot` ON `devis`.`id`= `lot`.`devis_id`
-
-
         WHERE `devis`.`id_projet`=?';
         $query = $this->db->query($sql, $id_projet);
         $rowcount = $query->num_rows();
-
         return $query->result_array();
     }
 
