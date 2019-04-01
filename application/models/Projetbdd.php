@@ -2,13 +2,13 @@
 class Projetbdd extends CI_Model {
 
 
+    // Affiche les détails d'un devis reçu (vision PP)
 	public function detailDevis($id){
 		$this->load->database();
-		$sql = 'SELECT `devis`.`tarif_hor2`, `devis`.`prix`, `devis`.`heures`, `devis`.`etat`, `devis`.`competence`, `lot`.`date_deploiement` AS datelot, `lot`.`titre` AS titrelot, `lot`.`prix` AS prixlot, `utilisateur`.`login`, `utilisateur`.`image`, AVG(`evaluer`.`note`) AS note
+		$sql = 'SELECT `devis`.`tarif_hor2`, `devis`.`id`, `devis`.`prix`, `devis`.`heures`, `devis`.`etat`, `devis`.`commentaire`, `devis`.`competence`, `utilisateur`.`login`, `utilisateur`.`image`, AVG(`evaluer`.`note`) AS note
 		FROM `devis` 
 		
 		LEFT JOIN `utilisateur` ON `utilisateur`.`id` = `devis`.`utilisateur_id`
-		LEFT JOIN `lot` ON `lot`.`devis_id`= `devis`.`id`
 		LEFT JOIN `evaluer` ON `evaluer`.`utilisateur_id_target` = `utilisateur`.`id`
 		
 		WHERE `devis`.`id`=?';
@@ -16,12 +16,23 @@ class Projetbdd extends CI_Model {
 		return $query->result_array();
 	}
 
+	public function detailLotsDevis($id){
+        $this->load->database();
+        $sql = 'SELECT `lot`.`date_deploiement`, `lot`.`url_lot`, `lot`.`commentaire`, `lot`.`etat`, `lot`.`titre`, `lot`.`prix`
+		FROM `lot` 
+		
+		WHERE `lot`.`devis_id`=?';
+        $query = $this->db->query($sql, $id);
+        return $query->result_array();
+    }
+
+	// Met à jour un devis comme étant lu
 	public function lectureDevis($id){
 		$this->load->database();
 		$sql = 'UPDATE `devis` SET `etat`=2
 		WHERE `devis`.`id`=?';
 		$query = $this->db->query($sql, $id);
-		return $query->result_array();
+		return $query;
 	}
 
     public function detailProjet($id){
@@ -59,10 +70,9 @@ class Projetbdd extends CI_Model {
 
     public function devisProjetCree($id_projet){
         $this->load->database();
-        $sql = 'SELECT `devis`.`id`, `devis`.`date_creation`, `devis`.`tarif_hor2`,`devis`.`competence`, `devis`.`prix`, `utilisateur`.`login`,`utilisateur`.`image`, `lot`.`date_deploiement`, `lot`.`url_lot`, `lot`.`commentaire`, `lot`.`titre` AS contenu_lot, `lot`.`etat`, `lot`.`prix` AS prixlot
+        $sql = 'SELECT `devis`.`id`, `devis`.`date_creation`, `devis`.`tarif_hor2`,`devis`.`competence`, `devis`.`prix`, `utilisateur`.`login`,`utilisateur`.`image`, `devis`.`date_deploiement`, `devis`.`etat`
         FROM `devis` 
         LEFT JOIN `utilisateur` ON `devis`.`utilisateur_id` = `utilisateur`.`id`
-        LEFT JOIN `lot` ON `devis`.`id`= `lot`.`devis_id`
         WHERE `devis`.`id_projet`=?';
         $query = $this->db->query($sql, $id_projet);
         $rowcount = $query->num_rows();
@@ -83,16 +93,16 @@ class Projetbdd extends CI_Model {
 		return $query->result_array();
 	}
 
-    public function deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot, $competence)
+    public function deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $date_deploiement, $prix_lot, $titre_lot, $competence, $oldDate, $commentaire)
     {
         $this->load->database();
         $accepte = 0;
         $etat = 1;
 
-        $sql = 'INSERT INTO `devis` ( `tarif_hor2`, `prix`, `heures`, `accepte`, `etat`, `utilisateur_id`, `id_projet`, `competence`) 
-                VALUES ( ?, ?, ?, ?, ?, ?, ?, ?);';
+        $sql = 'INSERT INTO `devis` ( `tarif_hor2`, `prix`, `heures`, `accepte`, `etat`, `utilisateur_id`, `id_projet`, `competence`, `date_deploiement`, `commentaire`) 
+                VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
 
-        $query = $this->db->query($sql, array($tarif_hor, $prix_devis, $heures, $accepte, $etat, $utilisateur_id, $projet_id, $competence));
+        $query = $this->db->query($sql, array($tarif_hor, $prix_devis, $heures, $accepte, $etat, $utilisateur_id, $projet_id, $competence, $oldDate, $commentaire));
 
         if ($query !=1){
             return 0;

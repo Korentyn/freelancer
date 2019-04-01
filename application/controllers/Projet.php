@@ -9,7 +9,7 @@ class Projet extends CI_Controller
 
 
 
-
+// Formulaire de création de projet
     public function creer()
     {
         $this->load->helper('url_helper');
@@ -26,7 +26,7 @@ class Projet extends CI_Controller
     }
 
 
-    //----------------------------------------------------
+    //Affichage de tous les projets
     public function lister()
     {
 
@@ -37,6 +37,7 @@ class Projet extends CI_Controller
         $this->load->view('pages/liste_projets', $data);
     }
 
+    //Affichage de la page d'un projet
     public function detailProjet(){
         $id = $this->input->get('id');
         $this->load->helper('url');
@@ -46,6 +47,7 @@ class Projet extends CI_Controller
         $this->load->view('pages/detailProjet', $data);
     }
 
+    //Enregistrement d'un devis (Free)
     public function deviser(){
 		$projet_id = $this->input->get('id');
 		$utilisateur_id = $this->session->userdata('id');
@@ -67,22 +69,17 @@ class Projet extends CI_Controller
             $dateTab[$i] = array(date("Y-m-d", strtotime($value)));
             $i++;
         }
-        //echo ($titre.' '.$date.' '.$idProjet.' '.$idUtilisateur.' '.$prix.' '.$heures.' '.$commentaire.' '.$competence);
-        //var_dump($titreTab);
-        //var_dump($dateTab);
+
 
         if ($projet_id!= "" && $utilisateur_id != "" && $prix_devis != "" && $heures != "" && $commentaire != "" && $competence != ""
             && isset($titreTab) && isset($dateTab)) {
 
-//            var_dump ($idProjet.' '.$idUtilisateur.' '.$prix.' '.$heures.' '.$commentaire.' '.$competence);
-//            var_dump($titreTab);
-//            var_dump($dateTab);
-            $prix_lot= round($prix_devis/sizeof($titreTab), 2);
+            $oldDate = max($dateTab);
 
-            //var_dump($prix_lot);
+            $prix_lot= round($prix_devis/sizeof($titreTab), 2);
             $this->load->helper('url');
             $this->load->model('Projetbdd');
-             $result = $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $dateTab, $prix_lot, $titreTab, $competence);
+             $result = $this->Projetbdd->deviserProjet($tarif_hor, $heures, $prix_devis, $utilisateur_id, $projet_id, $dateTab, $prix_lot, $titreTab, $competence, $oldDate, $commentaire);
 
             if (in_array(false, $result)) {
 				$data['news'] = $this->Projetbdd->detailProjet($projet_id);
@@ -102,6 +99,7 @@ class Projet extends CI_Controller
 	}
 
 
+	// Enregistrement d'un projet (PP)
     public function enregistrer()
     {
         $titre = $this->input->post('titre');
@@ -134,6 +132,7 @@ class Projet extends CI_Controller
 
     }
 
+    //Renvoi les compétences format JSON
     public function listeComp(){
         $this->load->model('Projetbdd');
         $competences = $this->Projetbdd->listerTechnologies();
@@ -142,17 +141,7 @@ class Projet extends CI_Controller
 
     }
 
-    public function check($array, $key)
-    {
-        if(array_key_exists($key, $array)) {
-            if ($array[$key]===null) {
-                return null;
-            } else {
-                return $array;
-            }
-        }
-    }
-
+    //Affichage des projets créés de l'utilisateur (PP)
     public function mesProjets(){
         $utilisateur_id = $this->session->userdata('id');
         $this->load->helper('url');
@@ -172,6 +161,7 @@ class Projet extends CI_Controller
         $this->load->view('pages/listProjetCree', $data);
     }
 
+    //Affichage des devis reçu d'un projet (PP)
     public function monProjetDetail(){
         $id_projet = $this->input->get('id');
 
@@ -179,12 +169,13 @@ class Projet extends CI_Controller
         $this->load->model('Projetbdd');
         $data['projet'] = $this->Projetbdd->detailProjetCree($id_projet);
         $data['devis'] = $this->Projetbdd->devisProjetCree($id_projet);
-        $data['nbresult'] = sizeof($data['projet']);
-        var_dump($data['nbresult']);
+
+        //var_dump($data['nbresult']);
         $this->load->view('layout/header');
         $this->load->view('pages/detailProjetCree', $data);
     }
 
+    //Affichage des devis créés de l'utilisateur (Free)
     public function mesDevis(){
         $utilisateur_id = $this->session->userdata('id');
         $this->load->helper('url');
@@ -194,15 +185,42 @@ class Projet extends CI_Controller
         //$this->load->view('pages/liste_projets', $data);
     }
 
+    //Affichage des détails d'un devis reçu (vision PP)
 	public function detailDevis(){
 		$id_devis = $this->input->get('id');
 		$this->load->helper('url');
 		$this->load->model('Projetbdd');
 		//var_dump($id_devis);
-		$data['news'] = $this->Projetbdd->detailDevis($id_devis);
+		$data['devis'] = $this->Projetbdd->detailDevis($id_devis);
+        $data['lots'] = $this->Projetbdd->detailLotsDevis($id_devis);
 		$this->Projetbdd->lectureDevis($id_devis);
 		$this->load->view('layout/header');
 		$this->load->view('pages/detailDevis', $data);
 	}
 
+	public function accepterDevis(){
+        $utilisateur_id = $this->session->userdata('id');
+        $id_devis = $this->input->get('id');
+        $this->load->library('email');
+        //TODO envoyer email
+        $this->email->set_newline("\r\n");
+        $this->email->from('frantzcorentin@gmail.com', 'Votre équipe Grow Up');
+        $this->email->to('corentin.tek@hotmail.fr');
+        $this->email->subject("Vous avez accepté un devis");
+        $this->email->message('Bonjour, vous avez acceptez votre devis.');
+        if($this->email->send())
+        {
+            echo 'Email sent.';
+        }
+        else
+        {
+            show_error($this->email->print_debugger());
+        }
+    }
+
+    public function refuserDevis(){
+        $utilisateur_id = $this->session->userdata('id');
+        $id_devis = $this->input->get('id');
+
+    }
 }

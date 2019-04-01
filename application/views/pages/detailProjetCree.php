@@ -100,7 +100,7 @@
                 </div>
             <?php }else{ ?>
                 <div class="elem">
-                    <span>Vous n'avez pas encore de proposition, revenez plus tard :)</span>
+                    <span>Vous n'avez pas encore de proposition, revenez plus tard</span>
                 </div>
             <?php } ?>
         <?php	} ?>
