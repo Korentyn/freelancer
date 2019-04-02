@@ -19,6 +19,17 @@ class Utilisateur extends CI_Controller
         $this->load->view('layout/footer');
     }
 
+    public function activationUtilisateur(){
+        $idUtilisateur = $this->input->get('id');
+        $this->load->model('Userbdd');
+        $this->load->view('layout/header');
+        if($data = $this->Userbdd->activerUser($idUtilisateur)){
+            $this->load->view('pages/userActivationSuccess');
+        }else{
+            $this->load->view('pages/userActivationFail');
+        }
+        $this->load->view('layout/footer');
+    }
 
     public function formConnexion(){
 		$this->load->helper('url');
@@ -131,8 +142,6 @@ class Utilisateur extends CI_Controller
     public function enregistrer()
     {
     	try {
-
-
 			// je récupère des data dans le body de la requete HTTP
 			$role = $this->input->get('role');
 			$login = $this->input->post('pseudo');
@@ -164,7 +173,7 @@ class Utilisateur extends CI_Controller
 					//var_dump($this->Userbdd->verifMail($email));
 					// Vérification existance du mail
                 if (!$this->Userbdd->verifMail($email)) {
-					echo('existe pas');
+
 
 					if (!$this->Userbdd->verifLogin($login)) {
 
@@ -172,7 +181,8 @@ class Utilisateur extends CI_Controller
                     $password = password_hash($password,PASSWORD_DEFAULT);
 
                     //Verification si enregistrement en base est un succès
-						if ($this->Userbdd->creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role) != 1)
+                        $utilisateur_id =$this->Userbdd->creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role);
+						if ($utilisateur_id < 1)
 						{
 							$this->load->helper('url');
 							$this->load->view('layout/header');
@@ -182,6 +192,16 @@ class Utilisateur extends CI_Controller
 							$this->load->helper('url');
 							$this->load->view('layout/header');
 							$this->load->view('pages/formCreationUserSuccess');
+                            $this->load->library('email');
+                            $mail['template']='activationCompte';
+                            $mail['utilisateur_id']=$utilisateur_id;
+                            $this->email->set_newline("\r\n");
+                            $this->email->from('frantzcorentin@gmail.com', 'Votre équipe Grow Up');
+                            $this->email->to('frantzcorentin@gmail.com');
+                            $this->email->subject("Validation du compte");
+                            $message=$this->load->view('email/activationCompte', $mail,true);
+                            $this->email->message($message);
+                            $this->email->send();
 						}
 
 					}else {
@@ -197,37 +217,6 @@ class Utilisateur extends CI_Controller
 							}
 					}
 
-//                	if($role==2){
-//						$this->load->helper('url');
-//						$this->load->view('layout/header');
-//						$data['erreur'] = "email ou login déjà utilisé";
-//						$this->load->view('pages/formCreationPP', $data);
-//
-//
-//					}elseif($role==3){
-//						$this->load->helper('url');
-//						$this->load->view('layout/header');
-//						$data['erreur'] = "email ou login déjà utilisé";
-//						$this->load->view('pages/formCreationFreelance', $data);
-//
-//					}
-//                } else {
-//
-//                    //Cryptage du mot de passe
-//                    $password = password_hash($password,PASSWORD_DEFAULT);
-//
-//                    //Verification si enregistrement en base est un succès
-//                    if ($this->Userbdd->creerUtilisateur($login, $civilite, $nom, $prenom, $email, $password, $telephone, $presentation, $role) != 1) {
-//                        $this->load->helper('url');
-//                        $this->load->view('layout/header');
-//                        $this->load->view('pages/formCreationUserFail');
-//
-//                    } else {
-//                        $this->load->helper('url');
-//                        $this->load->view('layout/header');
-//                        $this->load->view('pages/formCreationUserSuccess');
-//
-//                    }
                 }else{
 					$data['erreur']='mail';
 					$this->load->helper('url');

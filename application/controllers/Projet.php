@@ -202,11 +202,14 @@ class Projet extends CI_Controller
         $utilisateur_id = $this->session->userdata('id');
         $id_devis = $this->input->get('id');
 		$this->load->library('email');
+		$mail['template']='activationCompte';
+        $mail['utilisateur_id']=$utilisateur_id;
         $this->email->set_newline("\r\n");
         $this->email->from('frantzcorentin@gmail.com', 'Votre équipe Grow Up');
         $this->email->to('frantzcorentin@gmail.com');
-        $this->email->subject("Vous avez accepté un devis");
-        $this->email->message('Bonjour, vous avez acceptez votre devis.');
+        $this->email->subject("Validation du compte");
+        $message=$this->load->view('email/activationCompte', $mail,true);
+        $this->email->message($message);
         if($this->email->send())
         {
             echo 'Email sent.';

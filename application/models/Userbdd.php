@@ -45,7 +45,8 @@ FROM `utilisateur`
         $sql = "INSERT INTO `utilisateur` (`login`,`civilite`,`nom`, `prenom`, `mail`, `password`, `telephone`, `presentation`, `role_id`)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		$query = $this->db->query($sql, array($login,$civilite,$nom,$prenom,$email,$password,$telephone,$presentation,$role));
-        return $query;
+        $last_insert = $this->db->insert_id();
+        return $last_insert;
     }
 
 
@@ -87,13 +88,19 @@ FROM `utilisateur`
 
         $this->load->database();
 
-        $sql = "UPDATE `name` SET `nom`=?, `prenom`=?, `note`=? WHERE id=".$id_user;
+        $sql = "UPDATE `utilisateur` SET `nom`=?, `prenom`=?, `note`=? WHERE id=".$id_user;
         $query = $this->db->query($sql, array($nom, $prenom, $note));
 
         return $query;
     }
 
 
+    public function activerUser($id_user){
+        $this->load->database();
+        $sql = 'UPDATE `utilisateur` SET `utilisateur`.`mail_activation`=1 WHERE `utilisateur`.`id`=?';
+        $query = $this->db->query($sql, $id_user);
+        return $query;
+    }
 
 
 }
