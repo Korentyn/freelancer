@@ -201,11 +201,10 @@ class Projet extends CI_Controller
 	public function accepterDevis(){
         $utilisateur_id = $this->session->userdata('id');
         $id_devis = $this->input->get('id');
-        $this->load->library('email');
-        //TODO envoyer email
+		$this->load->library('email');
         $this->email->set_newline("\r\n");
         $this->email->from('frantzcorentin@gmail.com', 'Votre équipe Grow Up');
-        $this->email->to('corentin.tek@hotmail.fr');
+        $this->email->to('frantzcorentin@gmail.com');
         $this->email->subject("Vous avez accepté un devis");
         $this->email->message('Bonjour, vous avez acceptez votre devis.');
         if($this->email->send())
