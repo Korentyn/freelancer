@@ -21,7 +21,7 @@
                 <tr class="box" style="background-color:#f8f8f8;">
                     <td align="center" class="titleblock" style="padding:7px 0">
                         <font size="2" face="Arial, sans-serif" color="#555454">
-                            <span class="title" style="font-weight:500;font-size:28px;text-transform:uppercase;line-height:33px">Bonjour</span>
+                            <span class="title" style="font-weight:500;font-size:28px;text-transform:uppercase;line-height:33px">Bravo</span>
                         </font>
                     </td>
                 </tr>
@@ -39,15 +39,15 @@
 
                                         </p>
                                         <span style="color:#000000">
-												<strong>Pour finaliser l'activation de votre compte, nous avons besoin que vous validiez votre adresse mail</strong> <br/><br/><br/>
-												<a style="text-decoration:none ;color: #ffffff;padding: 15px;background-color:#4b77be;font-size: 16px; " alt="lien vers activation du compte" href="http://localhost/freelancer/index.php/Utilisateur/activationUtilisateur?id=<?= $utilisateur_id?>">
-													Valider
+												<strong><?= $login_pp?> a accepté votre devis pour le projet [nom projet]</strong> <br/><br/><br/>
+												<a style="text-decoration:none ;color: #ffffff;padding: 15px;background-color:#4b77be;font-size: 16px; " alt="lien vers activation du compte" href="http://localhost/freelancer/">
+													Me connecter
 												</a>
 											</span><br/><br/><br/>
 
-                                        <span>Sans cela vous ne pourrez pas postuler ou créer des projets. Si vous rencontrez des difficultés, n'hésitez pas à répondre à support@grow-up.com</span><br/>
+                                        <span>Vous avez à présent jusqu'au [date déploiement lot1] pour uploader les sources "[titre lot 1]"</span><br/>
                                         <br/>
-                                        <strong>A très bientôt sur Grow-up</strong>
+                                        <strong>Bon courage et à très bientôt sur Grow-up</strong>
                                     </font>
                                 </td>
                                 <td width="10" style="padding:7px 0">&nbsp;</td>
