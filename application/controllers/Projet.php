@@ -191,33 +191,45 @@ class Projet extends CI_Controller
 		$this->load->helper('url');
 		$this->load->model('Projetbdd');
 		//var_dump($id_devis);
+        //TODO Utiliser variable ACCEPTE car lecture devis empeche acceptation
+        $this->Projetbdd->lectureDevis($id_devis);
 		$data['devis'] = $this->Projetbdd->detailDevis($id_devis);
         $data['lots'] = $this->Projetbdd->detailLotsDevis($id_devis);
-		$this->Projetbdd->lectureDevis($id_devis);
 		$this->load->view('layout/header');
 		$this->load->view('pages/detailDevis', $data);
 	}
 
 	public function accepterDevis(){
         $utilisateur_id = $this->session->userdata('id');
+        $this->load->helper('url');
         $id_devis = $this->input->get('id');
-		$this->load->library('email');
-		$mail['template']='activationCompte';
-        $mail['utilisateur_id']=$utilisateur_id;
-        $this->email->set_newline("\r\n");
-        $this->email->from('frantzcorentin@gmail.com', 'Votre équipe Grow Up');
-        $this->email->to('frantzcorentin@gmail.com');
-        $this->email->subject("Validation du compte");
-        $message=$this->load->view('email/activationCompte', $mail,true);
-        $this->email->message($message);
-        if($this->email->send())
-        {
-            echo 'Email sent.';
-        }
-        else
-        {
-            show_error($this->email->print_debugger());
-        }
+        $id_projet = $this->input->get('p');
+
+            //Partie envoi de mail
+            $this->load->library('email');
+            $mail['template']='activationCompte';
+            //$mail['utilisateur_id']=$utilisateur_id;
+            /*$this->email->set_newline("\r\n");
+            $this->email->from('frantzcorentin@gmail.com', 'Votre équipe Grow Up');
+            $this->email->to('frantzcorentin@gmail.com');
+            $this->email->subject("Votre devis a été accepté");
+            $message=$this->load->view('email/activationCompte', $mail,true);
+            $this->email->message($message);
+            $this->email->send();*/
+            //////////////////////
+
+            $this->load->model('Projetbdd');
+            $data = $this->Projetbdd->accepterDevis($id_devis);
+            $data2 = $this->Projetbdd->refuserAutresDevis($id_projet);
+            if ($data and $data2){
+                redirect('/index.php/Projet/mesProjets', 'refresh');
+
+            }else{
+                $this->load->view('layout/header');
+                $this->load->view('pages/pageErreur');
+            }
+
+
     }
 
     public function refuserDevis(){

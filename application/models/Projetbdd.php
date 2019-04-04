@@ -5,7 +5,7 @@ class Projetbdd extends CI_Model {
     // Affiche les détails d'un devis reçu (vision PP)
 	public function detailDevis($id){
 		$this->load->database();
-		$sql = 'SELECT `devis`.`tarif_hor2`, `devis`.`id`, `devis`.`prix`, `devis`.`heures`, `devis`.`etat`, `devis`.`commentaire`, `devis`.`competence`, `utilisateur`.`login`, `utilisateur`.`image`, AVG(`evaluer`.`note`) AS note
+		$sql = 'SELECT `devis`.`tarif_hor2`, `devis`.`id`,`devis`.`id_projet`, `devis`.`prix`, `devis`.`heures`, `devis`.`etat`, `devis`.`commentaire`, `devis`.`competence`, `utilisateur`.`login`, `utilisateur`.`image`, AVG(`evaluer`.`note`) AS note
 		FROM `devis` 
 		
 		LEFT JOIN `utilisateur` ON `utilisateur`.`id` = `devis`.`utilisateur_id`
@@ -199,21 +199,19 @@ FROM `projet`
 
     }
 
-
-
-
-
-    public function modifierProjet($id_user, $nom, $prenom, $note) {
-
+    public function accepterDevis($id_devis){
         $this->load->database();
-
-        $sql = "UPDATE `name` SET `nom`=?, `prenom`=?, `note`=? WHERE id=".$id_user;
-        $query = $this->db->query($sql, array($nom, $prenom, $note));
-
+        $sql = "UPDATE `devis` SET `devis`.`etat`=5 WHERE `devis`.`id`=?";
+        $query = $this->db->query($sql, $id_devis);
         return $query;
     }
 
-
+    public function refuserAutresDevis($id_projet){
+        $this->load->database();
+        $sql = "UPDATE `devis` SET `devis`.`etat`=4 WHERE `devis`.`etat`=2 AND `devis`.`id_projet`=?";
+        $query = $this->db->query($sql, $id_projet);
+        return $query;
+    }
 
 
 }

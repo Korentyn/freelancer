@@ -80,7 +80,7 @@
 			</div>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <form class="needs-validation">
@@ -101,7 +101,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
                                 <a href="<?php echo site_url('index.php/Projet/refuserDevis?id='); ?><?php echo $devis['id']; ?>" class="btn btn-danger">Refuser</a>
-                                <a href="<?php echo site_url('index.php/Projet/accepterDevis?id='); ?><?php echo $devis['id']; ?>" class="btn btn-success">Accepter</a>
+                                <a href="<?php echo site_url('index.php/Projet/accepterDevis?id='); ?><?php echo $devis['id']; ?>&p=<?php echo $devis['id_projet']; ?>" class="btn btn-success">Accepter</a>
                             </div>
                         </form>
                     </div>
@@ -139,10 +139,11 @@
                 </div>
 			</div>
             <?php } ?>
-			<div class="text-center"><button id="boutton-envoyer" type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Répondre
+            <?php if ($devis['etat'] = 2){ ?>
+			<div class="text-center"><button id="boutton-envoyer" type="button" class="btn btn-warning" data-toggle="modal" data-target="#Modal">Répondre
 				</button>
 			</div>
-
+            <?php  } ?>
 		</div>
 </form>
 
