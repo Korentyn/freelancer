@@ -12,7 +12,8 @@
     <title>Grow up - Mes devis</title>
 </head>
 <body>
-<?php foreach($projet as $projet) { ?>
+<?php if (isset($projet)){
+foreach($projet as $projet) { ?>
 <div class="form-wrapper">
     <h2>Résumé du projet</h2>
     <form class="ficheProjet" action="<?php echo site_url('index.php/Projet/enregistrer'); ?>" >
@@ -63,7 +64,8 @@
             </div>
         </div>
     </form>
-    <?php } ?>
+    <?php }
+    } ?>
     <div class="liste-elem">
         <h2>Devis reçu</h2>
         <div class="liste-elem-title">
@@ -82,7 +84,7 @@
                             <div class="prix-elem"><strong>Prix :</strong><?php echo $devis['prix']; ?>€</div>
                             <div class="date-elem"><strong>Date de déploiement :</strong><?php echo $devis['date_deploiement']; ?></div>
                             <div class="totalrep-elem"><strong>Etat :</strong><?php switch ($devis['etat']){ case 1: echo "Nouveau"; break;
-                        case 2: echo "Réponse nécessaire";break; case 3: echo "Répondu";break; case 5: echo "Accepté";break;}?></div>
+                        case 2: echo "Réponse nécessaire";break; case 3: echo "Répondu";break; case 5: echo "Accepté";break; case 6: echo "Litige";break;case 7: echo "En cours";break;case 8: echo "Terminé";break;}?></div>
                         </div>
                         <div class="body-elem">
                             <div class="createur-elem"><img class="rounded-circle" src="<?php echo base_url()?><?php echo $devis['image']; ?>" alt=""><?php echo $devis['login']; ?></div>
@@ -91,7 +93,7 @@
                             <div class="comp-elem"><strong>Technologie :</strong><?php echo $devis['competence']; ?></div>
 
                             <div class="postuler-elem">
-                                <a href="<?php echo site_url('index.php/Projet/detailDevis'); ?>?id=<?php echo $devis['id']?>" >Détails
+                                <a href="<?php echo site_url('index.php/Projet/detailDevisPP'); ?>?id=<?php echo $devis['id']?>&etat=<?php echo $devis['etat']?>" >Détails
                                 </a>
                             </div>
                         </div>

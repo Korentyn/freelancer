@@ -18,6 +18,14 @@
 </head>
 <body>
 <div class="body2">
+    <div class="welcome-message">
+        <h1>Bienvenue sur</h1><br>
+        <img src="<?php echo base_url('asset/images/logo-large.png'); ?>" alt="logo">
+        <div class="panel-body">
+            <strong>Vous êtes...</strong><div id="type"></div>
+        </div>
+        <strong>Et vous voulez travailler sur des projets intéressant ou trouver un freelance ? Grow up est fait pour vous</strong>
+    </div>
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
 			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -124,5 +132,56 @@
 
 	</div>
 </div>
+<script
+        src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+        crossorigin="anonymous"></script>
+<script>
+    $.fn.typer = function(text, options){
+        options = $.extend({}, {
+            char: ' ',
+            delay: 1000,
+            duration: 600,
+            endless: true
+        }, options || text);
+
+        text = $.isPlainObject(text) ? options.text : text;
+
+        var elem = $(this),
+            isTag = false,
+            c = 0;
+
+        (function typetext(i) {
+            var e = ({string:1, number:1}[typeof text] ? text : text[i]) + options.char,
+                char = e.substr(c++, 1);
+
+            if( char === '<' ){ isTag = true; }
+            if( char === '>' ){ isTag = false; }
+            elem.html(e.substr(0, c));
+            if(c <= e.length){
+                if( isTag ){
+                    typetext(i);
+                } else {
+                    setTimeout(typetext, options.duration/10, i);
+                }
+            } else {
+                c = 0;
+                i++;
+
+                if (i === text.length && !options.endless) {
+                    return;
+                } else if (i === text.length) {
+                    i = 0;
+                }
+                setTimeout(typetext, options.delay, i);
+            }
+        })(0);
+    };
+
+    $('#type').typer(['développeur','designer', 'porteur de projet', 'créateur', 'érudit', 'idéaliste', ]);
+
+
+
+</script>
 </body>
 </html>

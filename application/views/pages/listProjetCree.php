@@ -76,7 +76,9 @@
 				<div class="prix-elem"><strong>Coût :</strong><?php echo $news['description']; ?></div>
 				<div class="titre-elem"><strong>Titre :</strong><?php echo $news['titre']; ?></div>
 				<div class="img-createur-elem"></div>
-				<div class="totalrep-elem"><strong>Réponse(s) en attente :</strong><?php echo $news['totalrep']; ?></div>
+				<div class="totalrep-elem"><strong>Etat :</strong><?php switch ($news['etat']){ case 1: echo "Ouvert"; break;
+                        case 7: echo "En développement";break;case 6: echo "Litige";break;case 8: echo "Terminé";break;}?></div>
+
 			</div>
 			<div class="body-elem">
 				<div class="description-elem"><strong>Description :</strong><?php echo $news['presentation']; ?></div>

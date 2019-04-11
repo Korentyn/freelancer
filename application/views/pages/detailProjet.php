@@ -21,7 +21,8 @@
 
 
 
-    <?php foreach($news as $news) { ?>
+    <?php if (isset($news)){
+    foreach($news as $news) { ?>
 
     <div class="form-wrapper">
         <h2>Fiche du projet</h2>
@@ -95,7 +96,8 @@
 <!------------------------------------------------------------------------------------------------------------------------>
 	<h2>Votre devis</h2>
 	<form class="needs-validation" action="<?php echo site_url('index.php/Projet/deviser'); ?>?id=<?php echo $news['id']; ?>" method="post">
-        <?php } ?>
+        <?php }
+        } ?>
 		<div class="card-header"><strong><div class="createur-elem"><img class="rounded-circle" src="<?php echo base_url()?><?php echo $image = $this->session->userdata('image'); ?>" alt=""><?php echo $pseudo = $this->session->userdata('pseudo'); ?></div></strong></div>
 		<div class="card-body card-block">
             <div class="row form-group">

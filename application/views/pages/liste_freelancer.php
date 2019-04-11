@@ -30,23 +30,6 @@
         </div>
 
     </div>
-    <div id="" class="row">
-        <div class="col s12" action="#">
-            <div class="input-field col s5">
-                <select>
-                    <option value="" disabled selected>> 0 €</option>
-                    <option value="1">0-250€ (Petit projet)</option>
-                    <option value="2">250-500€ (Moyen projet)</option>
-                    <option value="3">500-1000€ (Grand projet)</option>
-                    <option value="3">+1000€ (Très grand projet)</option>
-                </select>
-                <label>Type de projet</label>
-            </div>
-
-
-
-        </div>
-    </div>
 </div>
 
 <div class="liste-elem">
@@ -54,40 +37,29 @@
         <div class="nb-resultats">XX Résultats</div>
         <div class="filtre-resultats">Trier par :</div>
     </div>
-    <?php foreach($news as $news) { ?>
-        <div class="elem">
+    <?php if (isset($news)) {
+        foreach($news as $news) { ?>
+            <div class="elem">
 
-            <div class="header-elem">
-<!--                <div class="prix-elem">--><?php //echo $news['presentation']; ?><!--</div>-->
-                <div class="titre-elem"><?php echo $news['login']; ?></div>
-<!--                <div class="createur-elem">--><?php //echo $news['login']; ?><!--</div>-->
-            </div>
-            <div class="body-elem">
-                <div class="description-elem"><?php echo $news['presentation']; ?></div>
-            </div>
-            <div class="footer-elem">
-                <div class="comp-elem"><?php
-                    if(($news['techno'])!="") {
-                        echo $news['techno'];
-                    }else{
-                        echo ("Non défini");
-                    } ?></div>
-                <div class="postuler-elem">
-                    <button value="<?php echo $news['id']; ?>" class="btn waves-effect waves-light orange accent-4" type="submit" name="freelanceId">Voir profil
-                        <i class="material-icons left">send</i>
-                    </button>
+                <div class="header-elem">
+
+                    <div class="titre-elem">Freelance</div>
+                    <div class="createur-elem"><img class="rounded-circle" src="<?php echo base_url()?><?php echo $news['image']; ?>" alt=""><?php echo $news['login']; ?></div>
                 </div>
+                <div class="body-elem">
+                    <div class="description-elem"><strong>Présentation : </strong><?php echo substr($news['presentation'], 0, 80).'...';  ?></div>
+                </div>
+                <div class="footer-elem">
+
+                    <div class="postuler-elem">
+                        <a class="btn btn-info" href="<?php echo site_url('index.php/Utilisateur/detailFreelance'); ?>?id=<?php echo $news['id']?>">Voir profil</a>
+                        </button>
+                    </div>
+                </div>
+
             </div>
-
-        </div>
-    <?php } ?>
+        <?php }
+    } ?>
 </div>
-<script>
-    $(document).ready(function () {
-
-
-
-    });
-</script>
 </body>
 </html>

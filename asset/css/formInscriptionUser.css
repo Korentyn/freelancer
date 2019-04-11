@@ -34,3 +34,16 @@ h2{
 	border-radius: 2px;
 	display : none;
 }
+
+
+
+.createur-elem{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+img{
+	width: 80px;
+	margin: 10px;
+}

@@ -85,3 +85,24 @@ h2{
 #boutton-envoyer{
 	margin-top: 5%;
 }
+
+.fnlbtn {
+
+    padding: 10px;
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.acc{
+    background-color: #00CC00;
+    margin-top: 10px;
+}
+
+.refu {
+    background-color: #f71d20;
+    margin-top: 10px;
+}

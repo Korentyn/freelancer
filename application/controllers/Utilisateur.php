@@ -37,7 +37,7 @@ class Utilisateur extends CI_Controller
 
 	}
 
-    //Affichage de tous les utilisateurs
+    //Affichage de tous les freelances
     public function lister()
     {
         $this->load->helper('url');
@@ -45,6 +45,14 @@ class Utilisateur extends CI_Controller
         $data['news'] = $this->Userbdd->listerUserTous();
         $this->load->view('layout/header');
         $this->load->view('pages/liste_freelancer', $data);
+    }
+
+    public function detailFreelance(){
+        $user_id = $this->input->get('id');
+        $this->load->model('Userbdd');
+        $data['news'] = $this->Userbdd->detailProfil($user_id);
+        $this->load->view('layout/header');
+        $this->load->view('pages/detailFreelance', $data);
     }
 
     //Formulaire sélection des techno

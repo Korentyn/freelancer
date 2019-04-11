@@ -1,0 +1,11 @@
+footer{
+    background-color: #000748;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.white-text{
+    color: #ffffff;
+}

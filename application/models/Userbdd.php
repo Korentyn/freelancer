@@ -5,23 +5,18 @@ class Userbdd extends CI_Model {
 
 
     public function listerUserTous() {
-
         $this->load->database();
-
-
         // Sélectionne login, presentation, image, techno, moyenne
-        $query = $this->db->query('SELECT `utilisateur`.`login`,`utilisateur`.`id`,`utilisateur`.`image`, `utilisateur`.`presentation`,`utilisateur`.`image`, GROUP_CONCAT(`technologies`.`titre`) AS techno, AVG(`evaluer`.`note`) AS moyenne
+        $query = $this->db->query('SELECT `utilisateur`.`login`,`utilisateur`.`id`,`utilisateur`.`image`, `utilisateur`.`presentation`,`utilisateur`.`image`
 FROM `utilisateur` 
 
-	LEFT JOIN `evaluer` ON `utilisateur`.`id` = `evaluer`.`utilisateur_id_target`
-    LEFT JOIN `utiliser` ON `utiliser`.`utilisateur_id` = `utilisateur`.`id`
-    LEFT JOIN `technologies` ON `utiliser`.`technologies_id` = `technologies`.`id`
+
     where `utilisateur`.`banni`=0 AND `utilisateur`.`role_id`=3');
 
         return $query->result_array();
     }
 
-    public function detailProfil($id){
+    public function detailProfil($user_id){
         $this->load->database();
         // Sélectionne login, presentation, image, techno, moyenne
         $sql = 'SELECT `utilisateur`.`login`,`utilisateur`.`id`,`utilisateur`.`image`, `utilisateur`.`presentation`,`utilisateur`.`image`, GROUP_CONCAT(`technologies`.`titre`) AS techno, AVG(`evaluer`.`note`) AS moyenne
@@ -31,8 +26,7 @@ FROM `utilisateur`
     LEFT JOIN `utiliser` ON `utiliser`.`utilisateur_id` = `utilisateur`.`id`
     LEFT JOIN `technologies` ON `utiliser`.`technologies_id` = `technologies`.`id`
     where `utilisateur`.`id`=?';
-        $query = $this->db->query($sql, $id);
-
+        $query = $this->db->query($sql, $user_id);
         return $query->result_array();
     }
 

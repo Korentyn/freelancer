@@ -34,9 +34,11 @@
 				<div class="col-12 col-md-9">
 					<select name="categorie" id="select" class="form-control" required>
 						<option value="0">Libre</option>
-						<?php foreach($budget as $budget) { ?>
-							<option value="<?php echo $budget['id']; ?>"><?php echo $budget['description']; ?></option>
-						<?php } ?>
+						<?php if (isset($budget)) {
+                            foreach($budget as $budget) { ?>
+                                <option value="<?php echo $budget['id']; ?>"><?php echo $budget['description']; ?></option>
+                            <?php }
+                        } ?>
 					</select>
 				</div>
 			</div>
@@ -48,24 +50,15 @@
 				<div class="col-12 col-md-9">
 					<select name="competence" id="select" class="form-control" required>
 						<option value="1">Libre</option>
-						<?php foreach($competence as $competence) { ?>
-							<option value="<?php echo $competence['id']; ?>"><?php echo $competence['titre']; ?></option>
-						<?php } ?>
+						<?php if (isset($competence)) {
+                            foreach($competence as $competence) { ?>
+                                <option value="<?php echo $competence['id']; ?>"><?php echo $competence['titre']; ?></option>
+                            <?php }
+                        } ?>
 					</select>
 				</div>
 			</div>
-			<div class="row form-group">
-				<div class="input-group mb-3">
-					<div class="input-group-prepend">
-						<span class="input-group-text" id="inputGroupFileAddon01">Fichier à ajouter</span>
-					</div>
-					<div class="custom-file">
-						<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-						<label class="custom-file-label" for="inputGroupFile01">Sélectionner...</label>
-					</div>
-				</div>
-			</div>
-			</div>
+
 
 			<div class="text-center form-actions form-group"><button id="bouton-form" type="submit" class="btn btn-success btn-lg">Envoyer</button>
 			</div>

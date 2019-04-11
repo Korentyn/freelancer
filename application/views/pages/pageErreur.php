@@ -10,5 +10,9 @@
 <body>
 Whoops, une erreur est survenue dans le chargement de votre page. <br>
 Merci de recommencer dans quelques instants
+
+<?php if (isset($error)) {
+    echo $error;
+} ?>
 </body>
 </html>

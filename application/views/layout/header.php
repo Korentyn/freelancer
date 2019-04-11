@@ -183,15 +183,13 @@
 			</div>
 		</div>
 	</header>
-	<!-- /#header -->
-
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+
 	<script src="<?php echo base_url('asset/js/main.js'); ?>" ></script>
-<!--	<script src="--><?php //echo base_url('asset/js/dashboard.js'); ?><!--" ></script>-->
     <script>
 
     </script>
